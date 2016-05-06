@@ -12,21 +12,20 @@ add_residuals <- function(data, ...) {
   models <- list(...)
 
   for (nm in names(models)) {
-    y <- eval(response(models[[nm]]), data)
-    yhat <- predict(models[[nm]], data)
-
-    data[[nm]] <- y - yhat
+    model <- models[[nm]]
+    data[[nm]] <- predict(model, data) - response(model, data)
   }
   data
 }
 
 
-response <- function(model) {
+response <- function(model, data) {
   UseMethod("response")
 }
 
 #' @export
-response.lm <- function(model) {
-  terms(model)[[2]]
+response.lm <- function(model, data) {
+  var <- terms(model)[[2]]
+  eval(var, data)
 }
 
