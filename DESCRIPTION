@@ -9,3 +9,5 @@ Description: What the package does (one paragraph).
 Depends: R (>= 3.2.4)
 License: GPL-3
 LazyData: true
+URL: https://github.com/hadley/modelr
+BugReports: https://github.com/hadley/modelr/issues
