@@ -10,5 +10,5 @@ You can install modelr from github with:
 
 ```R
 # install.packages("devtools")
-devtools::install_github("modelr/hadley")
+devtools::install_github("hadley/modelr")
 ```
