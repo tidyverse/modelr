@@ -11,7 +11,7 @@
 add_predictions <- function(data, ...) {
   models <- list(...)
   for (nm in names(models)) {
-    data[[nm]] <- predict(models[[nm]], data)
+    data[[nm]] <- stats::predict(models[[nm]], data)
   }
   data
 }
