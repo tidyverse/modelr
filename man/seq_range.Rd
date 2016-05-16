@@ -4,22 +4,41 @@
 \alias{seq_range}
 \title{Generate a sequence over the range of a vector}
 \usage{
-seq_range(x, n, trim = NULL)
+seq_range(x, n, by, trim = NULL, pretty = FALSE)
 }
 \arguments{
 \item{x}{A numeric vector}
 
-\item{n}{Length of sequence to generate}
+\item{n, by}{Specify the output sequence either by supplying the
+  length of the sequence with \code{n}, or the spacing between value
+  with \code{by}. Specifying both is an error.
+
+  I recommend that you name these arguments in order to make it clear to
+  the reader.}
 
 \item{trim}{Optionally, trim values off the tails.
 \code{trim / 2 * length(x)} values are removed from each tail.}
+
+\item{pretty}{If \code{TRUE}, will generate a pretty sequence. If \code{n}
+is supplied, this will use \code{\link{pretty}()} instead of
+\code{\link{seq}()}. If \code{by} is supplied, it will round the first
+value to a multiple of \code{by}.}
 }
 \description{
 Generate a sequence over the range of a vector
 }
 \examples{
 x <- rcauchy(100)
-seq_range(x, 10)
-seq_range(x, 10, trim = 0.1)
+seq_range(x, n = 10)
+seq_range(x, n = 10, trim = 0.1)
+seq_range(x, by = 1, trim = 0.1)
+
+# Make pretty sequences
+y <- runif(100)
+seq_range(y, n = 10)
+seq_range(y, n = 10, pretty = TRUE)
+
+seq_range(y, by = 0.1)
+seq_range(y, by = 0.1, pretty = TRUE)
 }
 
