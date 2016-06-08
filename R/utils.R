@@ -7,3 +7,6 @@
 #' @importFrom magrittr %>%
 #' @usage lhs \%>\% rhs
 NULL
+
+#' @importFrom purrr map reduce compact
+NULL

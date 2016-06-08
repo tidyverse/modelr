@@ -13,5 +13,9 @@ LazyData: true
 URL: https://github.com/hadley/modelr
 BugReports: https://github.com/hadley/modelr/issues
 Imports:
-    magrittr
+    magrittr,
+    purrr,
+    lazyeval,
+    tibble
 RoxygenNote: 5.0.1
+Suggests: testthat
