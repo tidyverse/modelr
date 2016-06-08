@@ -15,7 +15,8 @@ BugReports: https://github.com/hadley/modelr/issues
 Imports:
     magrittr,
     purrr,
-    lazyeval,
+    lazyeval (>= 0.1.10.9000),
     tibble
 RoxygenNote: 5.0.1
 Suggests: testthat
+Remotes: hadley/lazyeval
