@@ -16,7 +16,7 @@ test_that("add_predictors() handles lhss", {
 
 test_that("merge_formula() handles lhss", {
   expect_identical(merge_formulas(lhs ~ rhs, lhs ~ rhs), lhs ~ rhs + rhs)
-  expect_error(merge_formulas(lhs ~ rhs, other_lhs ~ rhs), "not identical")
+  expect_error(merge_formulas(lhs ~ rhs, other_lhs ~ rhs), "must be identical")
 })
 
 test_that("merging formulas fail when symbols conflict", {
@@ -32,7 +32,7 @@ test_that("merging formulas fail when symbols conflict", {
 })
 
 test_that("formulas() fails when supplied non-formula objects", {
-  expect_error(formulas(~lhs, NULL), "should only contain formulas")
+  expect_error(formulas(~lhs, NULL), "must contain only formulas")
 })
 
 test_that("formulas() combines the lhs", {

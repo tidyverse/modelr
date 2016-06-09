@@ -37,7 +37,7 @@ fit_with <- function(data, .f, .formulas, ...) {
   args$data <- quote(data)
 
   map(.formulas, function(formula) {
-    do.call(".f", c(list(formula), args))
+    purrr::invoke(".f", args, formula = formula)
   })
 }
 
@@ -76,24 +76,23 @@ formulae <- formulas
 
 validate_formulas <- function(response, formulas) {
   if (!is_formula(response)) {
-    stop(".response should be a formula", call. = FALSE)
+    stop(".response must be a formula", call. = FALSE)
+  }
+  if (length(response) != 2) {
+    stop(".response must be a one-sided formula, call. = FALSE")
   }
 
   if (!length(formulas)) {
     stop("No formula provided", call. = FALSE)
   }
-
   purrr::walk(formulas, function(f) {
     if (!is_formula(f)) {
-      stop("'...' should only contain formulas", call. = FALSE)
+      stop("'...' must contain only formulas", call. = FALSE)
     }
   })
 }
 
 set_lhs <- function(f, lhs) {
-  stopifnot(inherits(f, "formula") && inherits(lhs, "formula"))
-  stopifnot(length(lhs) == 2)
-
   env <- merge_envs(lhs, f)
   lazyeval::f_new(lazyeval::f_rhs(f), lazyeval::f_rhs(lhs), env)
 }
@@ -136,7 +135,7 @@ merge_formulas <- function(f1, f2, fun = "+") {
 common_lhs <- function(lhss) {
   reduce(lhss, function(x, y) {
     if (!identical(x, y)) {
-      stop("LHSs are not identical", call. = FALSE)
+      stop("LHSs must be identical", call. = FALSE)
     }
     y
   })
