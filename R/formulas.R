@@ -75,11 +75,8 @@ formulas <- function(.response, ...) {
 formulae <- formulas
 
 validate_formulas <- function(response, formulas) {
-  if (!is_formula(response)) {
-    stop(".response must be a formula", call. = FALSE)
-  }
-  if (length(response) != 2) {
-    stop(".response must be a one-sided formula, call. = FALSE")
+  if (!is_formula(response) || length(response) != 2) {
+    stop(".response must be a one-sided formula", call. = FALSE)
   }
 
   if (!length(formulas)) {
@@ -162,7 +159,7 @@ find_env_conflicts <- function(symbol, f1, f2) {
       symbol, "'", call. = FALSE)
   }
 
-  return(env1)
+  env1
 }
 
 find_env_nonconflicts <- function(symbol, f1, f2) {
