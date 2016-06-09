@@ -8,7 +8,7 @@
 #' @usage lhs \%>\% rhs
 NULL
 
-#' @importFrom purrr map reduce compact
+#' @importFrom purrr map reduce compact %||%
 NULL
 
 reduce_common <- function(x, msg = "Objects must be identical",

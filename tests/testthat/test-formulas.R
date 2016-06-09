@@ -19,17 +19,25 @@ test_that("merge_formula() handles lhss", {
   expect_error(merge_formulas(lhs ~ rhs, other_lhs ~ rhs), "must be identical")
 })
 
-test_that("merging formulas fail when symbols conflict", {
+test_that("merging formulas fail when scope conflicts within symbols", {
   env <- new.env(parent = emptyenv())
   env$object <- list()
   object <- list()
 
   f_conflict <- lazyeval::f_new(quote(object), env = env)
-  expect_error(merge_envs(~object, f_conflict), "conflict on the symbol 'object'")
-
-  f_ok <- lazyeval::f_new(quote(other_object), env = env)
-  expect_silent(merge_envs(~object, f_ok))
+  expect_error(merge_envs(~object, f_conflict), "conflict for the symbol 'object'")
 })
+
+test_that("merging formulas fail when scope conflicts between symbols", {
+  env1 <- new.env(parent = emptyenv())
+  env1$object <- list()
+  env2 <- new.env(parent = emptyenv())
+  env2$other_object <- list()
+  f1 <- lazyeval::f_new(quote(list(object)), env = env1)
+  f2 <- lazyeval::f_new(quote(list(other_object)), env = env2)
+  expect_error(merge_envs(f1, f2), "conflict across symbols")
+})
+
 
 test_that("formulas() fails when supplied non-formula objects", {
   expect_error(formulas(~lhs, NULL), "must contain only formulas")

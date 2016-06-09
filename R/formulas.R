@@ -133,23 +133,41 @@ merge_formulas <- function(f1, f2, fun = "+") {
 }
 
 merge_envs <- function(f1, f2) {
-  conflicts <- intersect(find_symbols(f1), find_symbols(f2))
-  purrr::walk(conflicts, validate_envs, f1, f2)
-  environment(f1)
+  symbols_f1 <- find_symbols(f1)
+  symbols_f2 <- find_symbols(f2)
+
+  conflicts <- intersect(symbols_f1, symbols_f2)
+  conflicts_envs <- compact(map(conflicts, find_env_conflicts, f1, f2))
+
+  all_symbols <- union(symbols_f1, symbols_f2)
+  nonconflicts <- setdiff(all_symbols, conflicts)
+  nonconflicts_envs <- compact(map(nonconflicts, find_env_nonconflicts, f1, f2))
+
+  env <- reduce_common(c(conflicts_envs, nonconflicts_envs),
+    "Cannot merge formulas as their scopes conflict across symbols")
+  env %||% environment(f1)
 }
 
-validate_envs <- function(symbol, f1, f2) {
+find_env_conflicts <- function(symbol, f1, f2) {
   env1 <- find_binding_env(symbol, environment(f1))
   env2 <- find_binding_env(symbol, environment(f2))
 
   if (is.null(env1) || is.null(env2)) {
-    return(NULL)
+    return(env1 %||% env2)
   }
 
   if (!identical(env1, env2)) {
-    stop("Cannot merge formulas as they conflict on the symbol '",
+    stop("Cannot merge formulas as their scopes conflict for the symbol '",
       symbol, "'", call. = FALSE)
   }
+
+  return(env1)
+}
+
+find_env_nonconflicts <- function(symbol, f1, f2) {
+  env1 <- find_binding_env(symbol, environment(f1))
+  env2 <- find_binding_env(symbol, environment(f2))
+  env1 %||% env2
 }
 
 find_binding_env <- function(symbol, env) {
