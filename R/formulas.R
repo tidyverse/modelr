@@ -127,9 +127,10 @@ merge_formulas <- function(f1, f2, fun = "+") {
   rhs <- call(fun, lazyeval::f_rhs(f1), lazyeval::f_rhs(f2))
 
   lhss <- compact(map(list(f1, f2), lazyeval::f_lhs))
-  lhs <- reduce_common(lhss, "LHSs must be identical")
+  lhs <- reduce_common(lhss, "Left-hand sides must be identical")
 
-  lazyeval::f_new(rhs, lhs, env = merge_envs(f1, f2))
+  env <- merge_envs(f1, f2)
+  lazyeval::f_new(rhs, lhs, env)
 }
 
 merge_envs <- function(f1, f2) {
