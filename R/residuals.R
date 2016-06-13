@@ -13,7 +13,7 @@ add_residuals <- function(data, ...) {
 
   for (nm in names(models)) {
     model <- models[[nm]]
-    data[[nm]] <- response(model, data) - stats::predict(model, data)
+    data[[nm]] <- residuals(model, data)
   }
   data
 }
@@ -29,3 +29,7 @@ response.lm <- function(model, data) {
   eval(var, data)
 }
 
+
+residuals <- function(model, data) {
+  response(model, data) - stats::predict(model, data)
+}
