@@ -11,12 +11,14 @@ rmse(model, data)
 
 mae(model, data)
 
-qae(model, data, prob = c(0.05, 0.25, 0.5, 0.75, 0.95))
+qae(model, data, probs = c(0.05, 0.25, 0.5, 0.75, 0.95))
 }
 \arguments{
 \item{model}{A model}
 
 \item{data}{The dataset}
+
+\item{probs}{Numeric vector of probabilit}
 }
 \description{
 \code{rmse} is the root-mean-squared-error, \code{mae} is the median

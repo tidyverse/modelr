@@ -31,7 +31,8 @@ mae <- function(model, data) {
 
 #' @export
 #' @rdname model-quality
-qae <- function(model, data, prob = c(0.05, 0.25, 0.5, 0.75, 0.95)) {
+#' @param probs Numeric vector of probabilit
+qae <- function(model, data, probs = c(0.05, 0.25, 0.5, 0.75, 0.95)) {
   x <- residuals(model, data)
-  quantile(abs(x), prob)
+  stats::quantile(abs(x), probs)
 }
