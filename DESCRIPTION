@@ -1,11 +1,12 @@
 Package: modelr
-Title: What the Package Does (one line, title case)
+Title: Helper functions for modelling
 Version: 0.0.0.9000
 Authors@R: c(
     person("Hadley", "Wickham", , "hadley@rstudio.com", role = c("aut", "cre")),
     person("RStudio", role = "cph")
   )
-Description: What the package does (one paragraph).
+Description: Functions for modelling that help you seemlessly intergrate
+    modelling into a pipeline of data manipulation and visualisation.
 Depends:
     R (>= 3.2.4)
 License: GPL-3
