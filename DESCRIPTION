@@ -16,7 +16,8 @@ Imports:
     magrittr,
     purrr (>= 0.2.1.9000),
     lazyeval (>= 0.1.10.9000),
-    tibble
+    tibble,
+    broom
 RoxygenNote: 5.0.1
 Suggests: testthat
 Remotes:
