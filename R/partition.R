@@ -23,8 +23,9 @@ partition <- function(data, p) {
 
   if (abs(sum(p) - 1) > 1e-6) {
     message("Rescaling `p` to sum to 1.")
-    p <- p / sum(p)
   }
+  # Always rescale so sums exactly to 1
+  p <- p / sum(p)
 
   n <- nrow(data)
   g <- findInterval(seq_len(n) / n, c(0, cumsum(p)), rightmost.closed = TRUE)
