@@ -1,25 +1,26 @@
 Package: modelr
-Title: Helper functions for modelling
 Version: 0.0.0.9000
+Title: Helper functions for modelling
+Description: Functions for modelling that help you seamlessly integrate
+    modelling into a pipeline of data manipulation and visualisation.
 Authors@R: c(
     person("Hadley", "Wickham", , "hadley@rstudio.com", role = c("aut", "cre")),
     person("RStudio", role = "cph")
   )
-Description: Functions for modelling that help you seemlessly intergrate
-    modelling into a pipeline of data manipulation and visualisation.
-Depends:
-    R (>= 3.2.4)
 License: GPL-3
 LazyData: true
-URL: https://github.com/hadley/modelr
-BugReports: https://github.com/hadley/modelr/issues
+Depends:
+    R (>= 3.1.0)
 Imports:
     magrittr,
     purrr (>= 0.2.1.9000),
     lazyeval (>= 0.2.0),
     tibble,
     broom
-RoxygenNote: 5.0.1
-Suggests: testthat
+Suggests:
+    testthat
+URL: https://github.com/hadley/modelr
+BugReports: https://github.com/hadley/modelr/issues
 Remotes:
     hadley/purrr
+RoxygenNote: 5.0.1
