@@ -2,22 +2,50 @@
 % Please edit documentation in R/residuals.R
 \name{add_residuals}
 \alias{add_residuals}
+\alias{gather_residuals}
+\alias{spread_residuals}
 \title{Add residuals to a data frame}
 \usage{
-add_residuals(data, ...)
+add_residuals(data, model, var = "resid")
+
+spread_residuals(data, ...)
+
+gather_residuals(data, ..., .resid = "resid", .model = "model")
 }
 \arguments{
-\item{data}{A data frame used to generate the predictions.}
+\item{data}{A data frame used to generate the residuals}
 
-\item{...}{Name-value pairs giving the variable name and model.}
+\item{model, var}{\code{add_residuals} takes a single \code{model}; the
+output column will be called \code{pred}}
+
+\item{...}{\code{gather_residuals} and \code{spread_residuals} take
+multiple models. The name will be taken from either the argument
+name of the name of the model.}
+
+\item{.resid, .model}{The variable names used by \code{gather_residuals}.}
+}
+\value{
+A data frame. \code{add_prediction} adds a single new column,
+  \code{.pred}, to the input \code{data}. \code{spread_residuals} adds
+  one column for each model. \code{gather_prections} adds two columns
+  \code{.model} and \code{.pred}, and repeats the input rows for
+  each model.
 }
 \description{
 Add residuals to a data frame
 }
 \examples{
-m1 <- lm(mpg ~ wt, data = mtcars)
-m2 <- lm(mpg ~ poly(wt, 2), data = mtcars)
-mtcars \%>\%
-  add_residuals(m1 = m1, m2 = m2)
+df <- tibble::data_frame(
+  x = sort(runif(100)),
+  y = 5 * x + 0.5 * x ^ 2 + 3 + rnorm(length(x))
+)
+plot(df)
+
+m1 <- lm(y ~ x, data = df)
+df \%>\% add_residuals(m1)
+
+m2 <- lm(y ~ poly(x, 2), data = df)
+df \%>\% spread_residuals(m1, m2)
+df \%>\% gather_residuals(m1, m2)
 }
 

@@ -22,7 +22,7 @@ reduce_common <- function(x, msg = "Objects must be identical",
 }
 
 
-has_names <- function(x) {
+has_name <- function(x) {
   nms <- names(x)
   if (is.null(nms)) {
     rep(FALSE, length(x))

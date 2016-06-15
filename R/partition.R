@@ -11,7 +11,7 @@
 #' rmse(mod, ex$test)
 #' rmse(mod, ex$train)
 resample_partition <- function(data, p) {
-  if (!is.numeric(p) || length(p) < 2 || !all(has_names(p))) {
+  if (!is.numeric(p) || length(p) < 2 || !all(has_name(p))) {
     stop("`p` must be a named numeric vector with at least two values.")
   }
 

@@ -2,22 +2,51 @@
 % Please edit documentation in R/predictions.R
 \name{add_predictions}
 \alias{add_predictions}
+\alias{gather_predictions}
+\alias{spread_predictions}
 \title{Add predictions to a data frame}
 \usage{
-add_predictions(data, ...)
+add_predictions(data, model, var = "pred")
+
+spread_predictions(data, ...)
+
+gather_predictions(data, ..., .pred = "pred", .model = "model")
 }
 \arguments{
 \item{data}{A data frame used to generate the predictions.}
 
-\item{...}{Name-value pairs giving the variable name and model.}
+\item{model, var}{\code{add_predictions} takes a single \code{model}; the
+output column will be called \code{pred}}
+
+\item{...}{\code{gather_predictions} and \code{spread_predictions} take
+multiple models. The name will be taken from either the argument
+name of the name of the model.}
+
+\item{.pred, .model}{The variable names used by \code{gather_predictions}.}
+}
+\value{
+A data frame. \code{add_prediction} adds a single new column,
+  \code{.pred}, to the input \code{data}. \code{spread_predictions} adds
+  one column for each model. \code{gather_prections} adds two columns
+  \code{.model} and \code{.pred}, and repeats the input rows for
+  each model.
 }
 \description{
 Add predictions to a data frame
 }
 \examples{
-m1 <- lm(mpg ~ wt, data = mtcars)
-m2 <- lm(mpg ~ poly(wt, 2), data = mtcars)
-mtcars \%>\%
-  add_predictions(m1 = m1, m2 = m2)
+df <- tibble::data_frame(
+  x = sort(runif(100)),
+  y = 5 * x + 0.5 * x ^ 2 + 3 + rnorm(length(x))
+)
+plot(df)
+
+m1 <- lm(y ~ x, data = df)
+grid <- data.frame(x = seq(0, 1, length = 10))
+grid \%>\% add_predictions(m1)
+
+m2 <- lm(y ~ poly(x, 2), data = df)
+grid \%>\% spread_predictions(m1, m2)
+grid \%>\% gather_predictions(m1, m2)
 }
 
