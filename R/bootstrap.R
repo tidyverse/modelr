@@ -13,5 +13,5 @@
 #' hist(subset(tidied, term == "wt")$estimate)
 #' hist(subset(tidied, term == "(Intercept)")$estimate)
 bootstrap <- function(data) {
-  data[sample(nrow(data), replace = TRUE), , drop = FALSE]
+  resample(data, sample(nrow(data), replace = TRUE))
 }

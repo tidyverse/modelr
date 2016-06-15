@@ -26,7 +26,7 @@ response <- function(model, data) {
 #' @export
 response.lm <- function(model, data) {
   var <- stats::terms(model)[[2]]
-  eval(var, data)
+  eval(var, as.data.frame(data))
 }
 
 

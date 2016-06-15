@@ -30,8 +30,8 @@ partition <- function(data, p) {
   n <- nrow(data)
   g <- findInterval(seq_len(n) / n, c(0, cumsum(p)), rightmost.closed = TRUE)
 
-  out <- split(data, sample(g))
-  names(out) <- names(p)
+  idx <- split(seq_len(n), sample(g))
+  names(idx) <- names(p)
 
-  out
+  map(idx, resample, data = data)
 }
