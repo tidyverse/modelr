@@ -23,7 +23,7 @@ to extract the indices, use \code{as.integer}.
 \examples{
 resample(mtcars, 1:10)
 
-b <- bootstrap(mtcars)
+b <- resample_bootstrap(mtcars)
 b
 as.integer(b)
 as.data.frame(b)

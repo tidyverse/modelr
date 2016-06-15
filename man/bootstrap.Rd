@@ -2,22 +2,26 @@
 % Please edit documentation in R/bootstrap.R
 \name{bootstrap}
 \alias{bootstrap}
-\title{Generate a boostrap replicate}
+\title{Generate \code{n} bootstrap replicates.}
 \usage{
-bootstrap(data)
+bootstrap(data, n)
 }
 \arguments{
 \item{data}{A data frame}
+
+\item{n}{Number of test-training pairs to generate}
+}
+\value{
+A data frame with \code{n} rows and one column: \code{strap}
 }
 \description{
-Generate a boostrap replicate
+Generate \code{n} bootstrap replicates.
 }
 \examples{
-coef(lm(mpg ~ wt, data = bootstrap(mtcars)))
-
 library(purrr)
-bootstraps <- rerun(100, bootstrap(mtcars))
-models <- map(bootstraps, ~ lm(mpg ~ wt, data = .))
+boot <- bootstrap(mtcars, 100)
+
+models <- map(boot$strap, ~ lm(mpg ~ wt, data = .))
 tidied <- map_df(models, broom::tidy, .id = "id")
 
 hist(subset(tidied, term == "wt")$estimate)

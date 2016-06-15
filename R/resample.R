@@ -10,11 +10,12 @@
 #' @param idx A vector of integer indexes indicating which rows have
 #'   been selected. These values should lie between 1 and \code{nrow(data)}
 #'   but they are not checked by this function in the interests of performance.
+#' @inheritParams resampling techniques
 #' @export
 #' @examples
 #' resample(mtcars, 1:10)
 #'
-#' b <- bootstrap(mtcars)
+#' b <- resample_bootstrap(mtcars)
 #' b
 #' as.integer(b)
 #' as.data.frame(b)
@@ -48,8 +49,7 @@ print.resample <- function(x, ...) {
     id10 <- x$idx
   }
 
-  cat(
-    "<resample of ", big_mark(n), " rows> ", paste(id10, collapse = ", "), "\n",
+  cat("<", obj_sum.resample(x), "> ", paste(id10, collapse = ", "), "\n",
     sep = ""
   )
 }
@@ -62,4 +62,16 @@ as.integer.resample <- function(x, ...) {
 #' @export
 as.data.frame.resample <- function(x, ...) {
   x$data[x$idx, , drop = FALSE]
+}
+
+#' @export
+dim.resample <- function(x, ...) {
+  c(length(x$idx), ncol(x$data))
+}
+
+#' @importFrom tibble obj_sum
+#' @method obj_sum resample
+#' @export
+obj_sum.resample <- function(x, ...) {
+  paste0("resample [", big_mark(nrow(x)), " x ", big_mark(ncol(x)), "]")
 }
