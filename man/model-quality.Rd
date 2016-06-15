@@ -5,11 +5,14 @@
 \alias{model-quality}
 \alias{qae}
 \alias{rmse}
+\alias{rsquare}
 \title{Compute model quality for a given dataset}
 \usage{
 rmse(model, data)
 
 mae(model, data)
+
+rsquare(model, data)
 
 qae(model, data, probs = c(0.05, 0.25, 0.5, 0.75, 0.95))
 }
@@ -24,11 +27,13 @@ qae(model, data, probs = c(0.05, 0.25, 0.5, 0.75, 0.95))
 \code{rmse} is the root-mean-squared-error, \code{mae} is the median
 absolute error, \code{qae} is quantiles of absolute error. These can both
 be interpreted on the scale of the response; \code{mae} is less sensitive
-to outliers.
+to outliers. \code{rsquare} is the variance of the predictions divided by
+by the variance of the response.
 }
 \examples{
 mod <- lm(mpg ~ wt, data = mtcars)
 rmse(mod, mtcars)
+rsquare(mod, mtcars)
 mae(mod, mtcars)
 qae(mod, mtcars)
 }

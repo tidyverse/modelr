@@ -3,7 +3,8 @@
 #' \code{rmse} is the root-mean-squared-error, \code{mae} is the median
 #' absolute error, \code{qae} is quantiles of absolute error. These can both
 #' be interpreted on the scale of the response; \code{mae} is less sensitive
-#' to outliers.
+#' to outliers. \code{rsquare} is the variance of the predictions divided by
+#' by the variance of the response.
 #'
 #' @param model A model
 #' @param data The dataset
@@ -11,6 +12,7 @@
 #' @examples
 #' mod <- lm(mpg ~ wt, data = mtcars)
 #' rmse(mod, mtcars)
+#' rsquare(mod, mtcars)
 #' mae(mod, mtcars)
 #' qae(mod, mtcars)
 NULL
@@ -27,6 +29,12 @@ rmse <- function(model, data) {
 mae <- function(model, data) {
   x <- residuals(model, data)
   mean(abs(x))
+}
+
+#' @export
+#' @rdname model-quality
+rsquare <- function(model, data) {
+  stats::var(stats::predict(model, data)) / stats::var(response(model, data))
 }
 
 #' @export
