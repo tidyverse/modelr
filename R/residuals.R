@@ -52,19 +52,6 @@ gather_residuals <- function(data, ..., .resid = "resid", .model = "model") {
   dplyr::bind_rows(df, .id = .model)
 }
 
-
-
-response <- function(model, data) {
-  UseMethod("response")
-}
-
-#' @export
-response.lm <- function(model, data) {
-  var <- stats::terms(model)[[2]]
-  eval(var, as.data.frame(data))
-}
-
-
 residuals <- function(model, data) {
   response(model, data) - stats::predict(model, data)
 }
