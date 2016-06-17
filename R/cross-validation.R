@@ -1,7 +1,7 @@
 #' Generate cross-validated test-training pairs
 #'
 #' \code{crossv_kfold} splits the data into \code{k} exclusive partitions,
-#' and uses each partition for a test-training split. \code{crossv_mcmc}
+#' and uses each partition for a test-training split. \code{crossv_mc}
 #' generates \code{n} random partitions, holding out \code{p} of the
 #' data for training.
 #'
@@ -19,11 +19,11 @@
 #' cv1
 #'
 #' library(purrr)
-#' cv2 <- crossv_mcmc(mtcars, 100)
+#' cv2 <- crossv_mc(mtcars, 100)
 #' models <- map(cv2$train, ~ lm(mpg ~ wt, data = .))
 #' errs <- map2_dbl(models, cv2$test, rmse)
 #' hist(errs)
-crossv_mcmc <- function(data, n, test = 0.1, id = ".id") {
+crossv_mc <- function(data, n, test = 0.1, id = ".id") {
   if (!is.numeric(n) || length(n) != 1) {
     stop("`n` must be a single integer.", call. = FALSE)
   }
@@ -41,7 +41,7 @@ crossv_mcmc <- function(data, n, test = 0.1, id = ".id") {
 
 #' @export
 #' @param k Number of folds (an integer).
-#' @rdname crossv_mcmc
+#' @rdname crossv_mc
 crossv_kfold <- function(data, k, id = ".id") {
   if (!is.numeric(k) || length(k) != 1) {
     stop("`n` must be a single integer.", call. = FALSE)
