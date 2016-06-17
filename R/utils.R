@@ -35,3 +35,8 @@ big_mark <- function(x, ...) {
   mark <- if (identical(getOption("OutDec"), ",")) "." else ","
   formatC(x, big.mark = mark, ...)
 }
+
+id <- function(n) {
+  width <- ceiling(log10(n))
+  sprintf(paste0("%0", width, "d"), seq_len(n))
+}
