@@ -34,7 +34,7 @@ crossv_mc <- function(data, n, test = 0.1, id = ".id") {
   p <- c(test = test, train = 1 - test)
   runs <- purrr::rerun(n, resample_partition(data, p))
   cols <- purrr::transpose(runs)
-  cols[[id]] <- seq_len(n)
+  cols[[id]] <- factor(seq_len(n))
 
   tibble::as_data_frame(cols)
 }
@@ -61,7 +61,7 @@ crossv_kfold <- function(data, k, id = ".id") {
   }
 
   cols <- purrr::transpose(purrr::map(fold_idx, fold))
-  cols[[id]] <- seq_len(k)
+  cols[[id]] <- factor(seq_len(k))
 
   tibble::as_data_frame(cols)
 }

@@ -18,7 +18,7 @@ bootstrap <- function(data, n, id = ".id") {
   bootstrap <- purrr::rerun(n, resample_bootstrap(data))
 
   df <- tibble::data_frame(strap = bootstrap)
-  df[[id]] <- seq_len(n)
+  df[[id]] <- factor(seq_len(n))
   df
 }
 
