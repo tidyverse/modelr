@@ -23,7 +23,7 @@
 #' models <- map(cv2$train, ~ lm(mpg ~ wt, data = .))
 #' errs <- map2_dbl(models, cv2$test, rmse)
 #' hist(errs)
-crossv_mc <- function(data, n, test = 0.1, id = ".id") {
+crossv_mc <- function(data, n, test = 0.2, id = ".id") {
   if (!is.numeric(n) || length(n) != 1) {
     stop("`n` must be a single integer.", call. = FALSE)
   }
@@ -31,7 +31,7 @@ crossv_mc <- function(data, n, test = 0.1, id = ".id") {
     stop("`test` must be a value between 0 and 1.", call. = FALSE)
   }
 
-  p <- c(test = test, train = 1 - test)
+  p <- c(train = 1 - test, test = test)
   runs <- purrr::rerun(n, resample_partition(data, p))
   cols <- purrr::transpose(runs)
   cols[[id]] <- factor(seq_len(n))
@@ -42,7 +42,7 @@ crossv_mc <- function(data, n, test = 0.1, id = ".id") {
 #' @export
 #' @param k Number of folds (an integer).
 #' @rdname crossv_mc
-crossv_kfold <- function(data, k, id = ".id") {
+crossv_kfold <- function(data, k = 5, id = ".id") {
   if (!is.numeric(k) || length(k) != 1) {
     stop("`n` must be a single integer.", call. = FALSE)
   }

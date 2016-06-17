@@ -5,9 +5,9 @@
 \alias{crossv_mc}
 \title{Generate cross-validated test-training pairs}
 \usage{
-crossv_mc(data, n, test = 0.1, id = ".id")
+crossv_mc(data, n, test = 0.2, id = ".id")
 
-crossv_kfold(data, k, id = ".id")
+crossv_kfold(data, k = 5, id = ".id")
 }
 \arguments{
 \item{data}{A data frame}
