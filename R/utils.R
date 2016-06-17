@@ -37,6 +37,6 @@ big_mark <- function(x, ...) {
 }
 
 id <- function(n) {
-  width <- ceiling(log10(n))
+  width <- nchar(n)
   sprintf(paste0("%0", width, "d"), seq_len(n))
 }
