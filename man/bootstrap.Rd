@@ -4,12 +4,14 @@
 \alias{bootstrap}
 \title{Generate \code{n} bootstrap replicates.}
 \usage{
-bootstrap(data, n)
+bootstrap(data, n, id = ".id")
 }
 \arguments{
 \item{data}{A data frame}
 
 \item{n}{Number of test-training pairs to generate}
+
+\item{id}{Name of variable that gives each model a unique integer id.}
 }
 \value{
 A data frame with \code{n} rows and one column: \code{strap}

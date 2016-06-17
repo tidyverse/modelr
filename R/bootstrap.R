@@ -2,6 +2,7 @@
 #'
 #' @inheritParams resample_partition
 #' @param n Number of test-training pairs to generate
+#' @param id Name of variable that gives each model a unique integer id.
 #' @return A data frame with \code{n} rows and one column: \code{strap}
 #' @export
 #' @examples
@@ -13,9 +14,12 @@
 #'
 #' hist(subset(tidied, term == "wt")$estimate)
 #' hist(subset(tidied, term == "(Intercept)")$estimate)
-bootstrap <- function(data, n) {
+bootstrap <- function(data, n, id = ".id") {
   bootstrap <- purrr::rerun(n, resample_bootstrap(data))
-  tibble::data_frame(strap = bootstrap)
+
+  df <- tibble::data_frame(strap = bootstrap)
+  df[[id]] <- seq_len(n)
+  df
 }
 
 #' Generate a boostrap replicate

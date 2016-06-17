@@ -5,9 +5,9 @@
 \alias{crossv_mcmc}
 \title{Generate cross-validated test-training pairs}
 \usage{
-crossv_mcmc(data, n, test = 0.1)
+crossv_mcmc(data, n, test = 0.1, id = ".id")
 
-crossv_kfold(data, k)
+crossv_kfold(data, k, id = ".id")
 }
 \arguments{
 \item{data}{A data frame}
@@ -16,6 +16,8 @@ crossv_kfold(data, k)
 
 \item{test}{Proportion of observations that should be held out for testing
 (a double).}
+
+\item{id}{Name of variable that gives each model a unique integer id.}
 
 \item{k}{Number of folds (an integer).}
 }

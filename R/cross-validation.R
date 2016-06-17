@@ -9,6 +9,7 @@
 #' @param n Number of test-training pairs to generate (an integer).
 #' @param test Proportion of observations that should be held out for testing
 #'   (a double).
+#' @param id Name of variable that gives each model a unique integer id.
 #' @return A data frame with \code{n}/\code{k} rows and columns \code{test} and
 #'   \code{train}. \code{test} and \code{train} are list-columns containing
 #'   \code{\link{resample}} objects.
@@ -22,7 +23,7 @@
 #' models <- map(cv2$train, ~ lm(mpg ~ wt, data = .))
 #' errs <- map2_dbl(models, cv2$test, rmse)
 #' hist(errs)
-crossv_mcmc <- function(data, n, test = 0.1) {
+crossv_mcmc <- function(data, n, test = 0.1, id = ".id") {
   if (!is.numeric(n) || length(n) != 1) {
     stop("`n` must be a single integer.", call. = FALSE)
   }
@@ -33,6 +34,7 @@ crossv_mcmc <- function(data, n, test = 0.1) {
   p <- c(test = test, train = 1 - test)
   runs <- purrr::rerun(n, resample_partition(data, p))
   cols <- purrr::transpose(runs)
+  cols[[id]] <- seq_len(n)
 
   tibble::as_data_frame(cols)
 }
@@ -40,7 +42,7 @@ crossv_mcmc <- function(data, n, test = 0.1) {
 #' @export
 #' @param k Number of folds (an integer).
 #' @rdname crossv_mcmc
-crossv_kfold <- function(data, k) {
+crossv_kfold <- function(data, k, id = ".id") {
   if (!is.numeric(k) || length(k) != 1) {
     stop("`n` must be a single integer.", call. = FALSE)
   }
@@ -57,6 +59,9 @@ crossv_kfold <- function(data, k) {
       test = resample(data, test)
     )
   }
+
   cols <- purrr::transpose(purrr::map(fold_idx, fold))
+  cols[[id]] <- seq_len(k)
+
   tibble::as_data_frame(cols)
 }
