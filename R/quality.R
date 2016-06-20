@@ -21,20 +21,20 @@ NULL
 #' @rdname model-quality
 rmse <- function(model, data) {
   x <- residuals(model, data)
-  sqrt(mean(x ^ 2))
+  sqrt(mean(x ^ 2, na.rm = TRUE))
 }
 
 #' @export
 #' @rdname model-quality
 mae <- function(model, data) {
   x <- residuals(model, data)
-  mean(abs(x))
+  mean(abs(x), na.rm = TRUE)
 }
 
 #' @export
 #' @rdname model-quality
 rsquare <- function(model, data) {
-  stats::var(stats::predict(model, data)) / stats::var(response(model, data))
+  stats::var(stats::predict(model, data), na.rm = TRUE) / stats::var(response(model, data), na.rm = TRUE)
 }
 
 #' @export
@@ -42,5 +42,5 @@ rsquare <- function(model, data) {
 #' @param probs Numeric vector of probabilit
 qae <- function(model, data, probs = c(0.05, 0.25, 0.5, 0.75, 0.95)) {
   x <- residuals(model, data)
-  stats::quantile(abs(x), probs)
+  stats::quantile(abs(x), probs, na.rm = TRUE)
 }
