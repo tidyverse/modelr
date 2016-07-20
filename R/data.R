@@ -19,3 +19,24 @@
 #'  \item{afqt}{Percentile score on Armed Forces Qualification Test.}
 #' }
 "heights"
+
+
+#' Simple simulated datasets
+#'
+#' These simple simulated datasets are useful for teaching modelling
+#' basics.
+#'
+#' @name sim
+NULL
+
+#' @rdname sim
+"sim1"
+
+#' @rdname sim
+"sim2"
+
+#' @rdname sim
+"sim3"
+
+#' @rdname sim
+"sim4"
