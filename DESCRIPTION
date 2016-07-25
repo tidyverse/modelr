@@ -17,7 +17,8 @@ Imports:
     lazyeval (>= 0.2.0),
     tibble,
     broom,
-    dplyr
+    dplyr,
+    tidyr (>= 0.5.1.9001)
 Suggests:
     testthat,
     ggplot2
