@@ -20,6 +20,6 @@ fills in variables not otherwise provided with their typical values.
 \examples{
 mod <- lm(mpg ~ wt + cyl + vs, data = mtcars)
 expand_model(mtcars, mod)
-expand_model(mtcars, mod, cyl = seq_range(cyl, 10))
+expand_model(mtcars, mod, cyl = seq_range(cyl, 9))
 }
 
