@@ -22,9 +22,9 @@
 #' m2 <- lm(y ~ x, data = df, na.action = na.warn)
 #' resid(m2)
 na.warn <- function(object) {
-  missing <- stats::complete.cases(object)
-  if (any(missing)) {
-    warning("Dropping ", sum(missing), " rows with missing values", call. = FALSE)
+  missing <- sum(!stats::complete.cases(object))
+  if (missing > 0) {
+    warning("Dropping ", missing, " rows with missing values", call. = FALSE)
   }
 
   stats::na.exclude(object)
