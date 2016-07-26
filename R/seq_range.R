@@ -13,6 +13,8 @@
 #'   value to a multiple of \code{by}.
 #' @param trim Optionally, trim values off the tails.
 #'   \code{trim / 2 * length(x)} values are removed from each tail.
+#' @param expand Optionally, expand the range by \code{expand * (1 + range(x)}
+#'   (computed after trimming).
 #' @export
 #' @examples
 #' x <- rcauchy(100)
@@ -24,10 +26,11 @@
 #' y <- runif(100)
 #' seq_range(y, n = 10)
 #' seq_range(y, n = 10, pretty = TRUE)
+#' seq_range(y, n = 10, expand = 0.5, pretty = TRUE)
 #'
 #' seq_range(y, by = 0.1)
 #' seq_range(y, by = 0.1, pretty = TRUE)
-seq_range <- function(x, n, by, trim = NULL, pretty = FALSE) {
+seq_range <- function(x, n, by, trim = NULL, expand = NULL, pretty = FALSE) {
   if (!missing(n) && !missing(by)) {
     stop("May only specify one of `n` and `by`", call. = FALSE)
   }
@@ -36,6 +39,10 @@ seq_range <- function(x, n, by, trim = NULL, pretty = FALSE) {
     rng <- stats::quantile(x, c(trim / 2, 1 - trim / 2), na.rm = TRUE)
   } else {
     rng <- range(x, na.rm = TRUE)
+  }
+
+  if (!is.null(expand)) {
+    rng <- rng + c(-expand / 2, expand / 2) * (rng[2] - rng[1])
   }
 
   if (missing(by)) {

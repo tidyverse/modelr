@@ -4,7 +4,7 @@
 \alias{seq_range}
 \title{Generate a sequence over the range of a vector}
 \usage{
-seq_range(x, n, by, trim = NULL, pretty = FALSE)
+seq_range(x, n, by, trim = NULL, expand = NULL, pretty = FALSE)
 }
 \arguments{
 \item{x}{A numeric vector}
@@ -18,6 +18,9 @@ seq_range(x, n, by, trim = NULL, pretty = FALSE)
 
 \item{trim}{Optionally, trim values off the tails.
 \code{trim / 2 * length(x)} values are removed from each tail.}
+
+\item{expand}{Optionally, expand the range by \code{expand * (1 + range(x)}
+(computed after trimming).}
 
 \item{pretty}{If \code{TRUE}, will generate a pretty sequence. If \code{n}
 is supplied, this will use \code{\link{pretty}()} instead of
@@ -37,6 +40,7 @@ seq_range(x, by = 1, trim = 0.1)
 y <- runif(100)
 seq_range(y, n = 10)
 seq_range(y, n = 10, pretty = TRUE)
+seq_range(y, n = 10, expand = 0.5, pretty = TRUE)
 
 seq_range(y, by = 0.1)
 seq_range(y, by = 0.1, pretty = TRUE)
