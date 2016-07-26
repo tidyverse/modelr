@@ -13,7 +13,7 @@ Depends:
     R (>= 3.1.0)
 Imports:
     magrittr,
-    purrr (>= 0.2.1.9000),
+    purrr (>= 0.2.2),
     lazyeval (>= 0.2.0),
     tibble,
     broom,
@@ -25,5 +25,5 @@ Suggests:
 URL: https://github.com/hadley/modelr
 BugReports: https://github.com/hadley/modelr/issues
 Remotes:
-    hadley/purrr
+    hadley/tidyr
 RoxygenNote: 5.0.1
