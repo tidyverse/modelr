@@ -31,7 +31,7 @@ typical.numeric <- function(x) {
 #' @export
 typical.factor <- function(x) {
   counts <- table(x)
-  factor(levels(x)[max(counts) == counts], levels = levels(x))
+  levels(x)[max(counts) == counts]
 }
 
 #' @export
