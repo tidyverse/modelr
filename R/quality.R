@@ -1,6 +1,6 @@
 #' Compute model quality for a given dataset
 #'
-#' \code{rmse} is the root-mean-squared-error, \code{mae} is the median
+#' \code{rmse} is the root-mean-squared-error, \code{mae} is the mean
 #' absolute error, \code{qae} is quantiles of absolute error. These can both
 #' be interpreted on the scale of the response; \code{mae} is less sensitive
 #' to outliers. \code{rsquare} is the variance of the predictions divided by
