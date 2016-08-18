@@ -21,7 +21,8 @@ Imports:
     tidyr (>= 0.5.1.9001)
 Suggests:
     testthat,
-    ggplot2
+    ggplot2,
+    covr
 URL: https://github.com/hadley/modelr
 BugReports: https://github.com/hadley/modelr/issues
 Remotes:
