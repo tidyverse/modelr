@@ -1,6 +1,6 @@
 Package: modelr
-Version: 0.0.0.9000
-Title: Helper functions for modelling
+Version: 0.1.0
+Title: Modelling Functions that Work with the Pipe
 Description: Functions for modelling that help you seamlessly integrate
     modelling into a pipeline of data manipulation and visualisation.
 Authors@R: c(
@@ -18,13 +18,11 @@ Imports:
     tibble,
     broom,
     dplyr,
-    tidyr (>= 0.5.1.9001)
+    tidyr (>= 0.6.0)
 Suggests:
     testthat,
     ggplot2,
     covr
 URL: https://github.com/hadley/modelr
 BugReports: https://github.com/hadley/modelr/issues
-Remotes:
-    hadley/tidyr
 RoxygenNote: 5.0.1
