@@ -1,6 +1,6 @@
 #' Handle missing values with a warning
 #'
-#' This NA handler works ensures that those models that support the
+#' This NA handler ensures that those models that support the
 #' \code{na.action} parameter do not silently drop missing values. It
 #' wraps around \code{\link[stats]{na.exclude}} so that there is one
 #' prediction/residual for input row. To apply it globally, run
