@@ -100,7 +100,6 @@ as.data.frame.permutation <- function(x, ...) {
   ret <- x$data
   indices <- x$idx
   for (col in x$columns) {
-    print(col)
     ret[[col]] <- ret[[col]][indices]
   }
   ret
