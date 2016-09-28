@@ -74,3 +74,37 @@ dim(cv2$train[[1]])
 dim(cv2$test[[1]])
 ```
 
+### Model quality metrics
+
+modelr includes several common model quality metrics:
+
+```{r}
+mod <- lm(mpg ~ wt, data = mtcars)
+rmse(mod, mtcars)
+rsquare(mod, mtcars)
+mae(mod, mtcars)
+qae(mod, mtcars)
+```
+
+### Interacting with models
+
+A set of functions let you seamlessly add predictions and residuals as additional columns to an existing data frame:
+
+```{r}
+df <- tibble::data_frame(
+  x = sort(runif(100)),
+  y = 5 * x + 0.5 * x ^ 2 + 3 + rnorm(length(x))
+)
+
+mod <- lm(y ~ x, data = df)
+df %>% add_predictions(mod)
+df %>% add_residuals(mod)
+```
+
+For visualization purposes it is often useful to use an evenly spaced grid of points from the data:
+
+```{r}
+data_grid(df, x, y)
+data_grid(df, x, y) %>% add_predictions(mod)
+```
+
