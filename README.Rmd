@@ -1,7 +1,9 @@
 # modelr
 
+<!--
 [![Travis-CI Build Status](https://travis-ci.org/hadley/modelr.svg?branch=master)](https://travis-ci.org/hadley/modelr)
 [![Coverage Status](https://img.shields.io/codecov/c/github/hadley/modelr/master.svg)](https://codecov.io/github/hadley/modelr?branch=master)
+-->
 
 The goal of the modelr package is to provide functions that help you create elegant pipelines when modelling. The package design follows Hadley Wickham's [tidy tool manifesto](https://mran.microsoft.com/web/packages/tidyverse/vignettes/manifesto.html).
 
@@ -9,34 +11,58 @@ The goal of the modelr package is to provide functions that help you create eleg
 
 You can install modelr from github with:
 
-```R
+```
 # install.packages("devtools")
 devtools::install_github("hadley/modelr")
 ```
 
 Alternatively, modelr is available as part of [the tidyverse package](http://blog.revolutionanalytics.com/2016/09/tidyverse.html) which can be installed via:
 
-```R
+```
 install.packages("tidyverse")
 ```
 
-Note that unlike the core tidyverse packages, modelr would not be loaded via `library(tidyverse)`. Instead, you can load it explicitly via `library(modelr)`.
+Note that unlike the core tidyverse packages, modelr would not be loaded via `library(tidyverse)`. Instead, you can load it explicitly:
+
+```{r}
+library(modelr)
+```
 
 Full documentation is available in [R for Data Science](http://r4ds.had.co.nz/), especially in the [Model basics](http://r4ds.had.co.nz/model-basics.html) chapter.
 
 ## Main Features
 
-### Sampling
+### Partitioning and sampling
 
 The `resample` class stores a "pointer" to the original dataset and a vector of row indices. `resample` can be turned into a dataframe by calling `as.data.frame`. The indices can be extracted using `as.integer`:
 
-```R
+```{r}
+# a subsample of the first ten rows in the data frame
 rs <- resample(mtcars, 1:10)
 as.data.frame(rs)
 as.integer(rs)
 ```
 
-modelr offers several resampling methods:
+The class can be utilized in generating an exclusive partitioning of a data frame:
 
-modelr offers several options for resampling data and storing resample indices using the `resample` class. 
+```{r}
+# generate a 30% testing partition and a 70% training partition
+ex <- resample_partition(mtcars, c(test = 0.3, train = 0.7))
+lapply(ex, dim)
+```
+
+modelr offers several resampling methods that result in a list of `resample` objects (organized in a data frame):
+
+```{r}
+# bootstrap
+boot <- bootstrap(mtcars, 100)
+# k-fold cross-validation
+cv1 <- crossv_kfold(mtcars, 5)
+# Monte Carlo cross-validation
+cv2 <- crossv_mc(mtcars, 100)
+
+head(boot, 1)
+head(cv1, 1)
+head(cv2, 1)
+```
 
