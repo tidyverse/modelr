@@ -82,28 +82,31 @@ cv1 <- crossv_kfold(mtcars, 5)
 # Monte Carlo cross-validation
 cv2 <- crossv_mc(mtcars, 100)
 
-head(boot, 1)
+dim(boot$strap[[1]])
 ```
 
-    ## # A tibble: 1 × 2
-    ##            strap   .id
-    ##           <list> <chr>
-    ## 1 <S3: resample>   001
+    ## [1] 32 11
 
 ``` r
-head(cv1, 1)
+dim(cv1$train[[1]])
 ```
 
-    ## # A tibble: 1 × 3
-    ##            train           test   .id
-    ##           <list>         <list> <chr>
-    ## 1 <S3: resample> <S3: resample>     1
+    ## [1] 25 11
 
 ``` r
-head(cv2, 1)
+dim(cv1$test[[1]])
 ```
 
-    ## # A tibble: 1 × 3
-    ##            train           test   .id
-    ##           <list>         <list> <chr>
-    ## 1 <S3: resample> <S3: resample>   001
+    ## [1]  7 11
+
+``` r
+dim(cv2$train[[1]])
+```
+
+    ## [1] 25 11
+
+``` r
+dim(cv2$test[[1]])
+```
+
+    ## [1]  7 11
