@@ -1,10 +1,8 @@
 modelr
 ======
 
-<!--
-[![Travis-CI Build Status](https://travis-ci.org/hadley/modelr.svg?branch=master)](https://travis-ci.org/hadley/modelr)
-[![Coverage Status](https://img.shields.io/codecov/c/github/hadley/modelr/master.svg)](https://codecov.io/github/hadley/modelr?branch=master)
--->
+[![Travis-CI Build Status](https://travis-ci.org/hadley/modelr.svg?branch=master)](https://travis-ci.org/hadley/modelr) [![Coverage Status](https://img.shields.io/codecov/c/github/hadley/modelr/master.svg)](https://codecov.io/github/hadley/modelr?branch=master)
+
 The goal of the modelr package is to provide functions that help you create elegant pipelines when modelling. The package design follows Hadley Wickham's [tidy tool manifesto](https://mran.microsoft.com/web/packages/tidyverse/vignettes/manifesto.html).
 
 Installation and Documentation
@@ -156,18 +154,18 @@ df %>% add_predictions(mod)
 ```
 
     ## # A tibble: 100 × 3
-    ##             x         y     pred
-    ##         <dbl>     <dbl>    <dbl>
-    ## 1  0.01191188 3.4871823 3.199698
-    ## 2  0.01545097 3.1556472 3.217814
-    ## 3  0.01814216 2.5679193 3.231590
-    ## 4  0.02842162 3.9639099 3.284210
-    ## 5  0.02973059 3.8880663 3.290911
-    ## 6  0.03476430 3.5329191 3.316678
-    ## 7  0.06491011 0.8477495 3.470993
-    ## 8  0.07005374 4.4283553 3.497323
-    ## 9  0.08937813 3.6767860 3.596243
-    ## 10 0.09843938 3.3684750 3.642627
+    ##             x        y     pred
+    ##         <dbl>    <dbl>    <dbl>
+    ## 1  0.01476397 1.823854 2.606714
+    ## 2  0.04990046 2.546020 2.824544
+    ## 3  0.07141134 4.103942 2.957902
+    ## 4  0.08798685 5.101482 3.060663
+    ## 5  0.09231937 3.040385 3.087523
+    ## 6  0.09560236 1.561038 3.107876
+    ## 7  0.10766109 4.223057 3.182634
+    ## 8  0.11964936 2.483228 3.256956
+    ## 9  0.13091284 3.356387 3.326785
+    ## 10 0.13186306 4.143894 3.332676
     ## # ... with 90 more rows
 
 ``` r
@@ -175,18 +173,18 @@ df %>% add_residuals(mod)
 ```
 
     ## # A tibble: 100 × 3
-    ##             x         y       resid
-    ##         <dbl>     <dbl>       <dbl>
-    ## 1  0.01191188 3.4871823  0.28748472
-    ## 2  0.01545097 3.1556472 -0.06216673
-    ## 3  0.01814216 2.5679193 -0.66367064
-    ## 4  0.02842162 3.9639099  0.67969987
-    ## 5  0.02973059 3.8880663  0.59715574
-    ## 6  0.03476430 3.5329191  0.21624128
-    ## 7  0.06491011 0.8477495 -2.62324313
-    ## 8  0.07005374 4.4283553  0.93103277
-    ## 9  0.08937813 3.6767860  0.08054285
-    ## 10 0.09843938 3.3684750 -0.27415214
+    ##             x        y       resid
+    ##         <dbl>    <dbl>       <dbl>
+    ## 1  0.01476397 1.823854 -0.78285938
+    ## 2  0.04990046 2.546020 -0.27852398
+    ## 3  0.07141134 4.103942  1.14603976
+    ## 4  0.08798685 5.101482  2.04081878
+    ## 5  0.09231937 3.040385 -0.04713777
+    ## 6  0.09560236 1.561038 -1.54683783
+    ## 7  0.10766109 4.223057  1.04042300
+    ## 8  0.11964936 2.483228 -0.77372828
+    ## 9  0.13091284 3.356387  0.02960159
+    ## 10 0.13186306 4.143894  0.81121778
     ## # ... with 90 more rows
 
 For visualization purposes it is often useful to use an evenly spaced grid of points from the data:
