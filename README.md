@@ -3,7 +3,7 @@
 [![Travis-CI Build Status](https://travis-ci.org/hadley/modelr.svg?branch=master)](https://travis-ci.org/hadley/modelr)
 [![Coverage Status](https://img.shields.io/codecov/c/github/hadley/modelr/master.svg)](https://codecov.io/github/hadley/modelr?branch=master)
 
-The goal of the modelr package is to provide functions that help you create elegant pipelines when modelling. The package design follows Hadley Wickham's (tidy tool manifesto)[https://mran.microsoft.com/web/packages/tidyverse/vignettes/manifesto.html]. Full documentation is available in (R for Data Science)[http://r4ds.had.co.nz/], especially in the (Model basics)[http://r4ds.had.co.nz/model-basics.html] chapter.
+The goal of the modelr package is to provide functions that help you create elegant pipelines when modelling. The package design follows Hadley Wickham's [tidy tool manifesto](https://mran.microsoft.com/web/packages/tidyverse/vignettes/manifesto.html). Full documentation is available in [R for Data Science](http://r4ds.had.co.nz/), especially in the [Model basics](http://r4ds.had.co.nz/model-basics.html) chapter.
 
 ## Installation
 
