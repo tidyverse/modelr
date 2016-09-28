@@ -9,7 +9,7 @@ output:
 [![Travis-CI Build Status](https://travis-ci.org/hadley/modelr.svg?branch=master)](https://travis-ci.org/hadley/modelr)
 [![Coverage Status](https://img.shields.io/codecov/c/github/hadley/modelr/master.svg)](https://codecov.io/github/hadley/modelr?branch=master)
 
-The goal of the modelr package is to provide functions that help you create elegant pipelines when modelling. The package design follows Hadley Wickham's [tidy tool manifesto](https://mran.microsoft.com/web/packages/tidyverse/vignettes/manifesto.html).
+The modelr package provides functions that help you create elegant pipelines when modelling. Its design follows Hadley Wickham's [tidy tool manifesto](https://mran.microsoft.com/web/packages/tidyverse/vignettes/manifesto.html).
 
 ## Installation and Documentation
 
@@ -32,7 +32,7 @@ Note that unlike the core tidyverse packages, modelr would not be loaded via `li
 library(modelr)
 ```
 
-Full documentation is available in [R for Data Science](http://r4ds.had.co.nz/), especially in the [Model basics](http://r4ds.had.co.nz/model-basics.html) chapter.
+Full documentation is available in [R for Data Science](http://r4ds.had.co.nz/), mostly in the [Model basics](http://r4ds.had.co.nz/model-basics.html) chapter.
 
 ## Main Features
 
@@ -74,7 +74,7 @@ dim(cv2$test[[1]])
 
 ### Model quality metrics
 
-modelr includes several common model quality metrics:
+modelr includes several often-used model quality metrics:
 
 ```{r}
 mod <- lm(mpg ~ wt, data = mtcars)
