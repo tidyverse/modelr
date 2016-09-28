@@ -104,7 +104,10 @@ df %>% add_residuals(mod)
 For visualization purposes it is often useful to use an evenly spaced grid of points from the data:
 
 ```{r}
-data_grid(df, x, y)
-data_grid(df, x, y) %>% add_predictions(mod)
+data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs)
+
+# For continuous variables, seq_range is useful
+mtcars_mod <- lm(mpg ~ wt + cyl + vs, data = mtcars)
+data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs) %>% add_predictions(mtcars_mod)
 ```
 
