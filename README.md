@@ -13,3 +13,13 @@ You can install modelr from github with:
 # install.packages("devtools")
 devtools::install_github("hadley/modelr")
 ```
+
+Additionally, modelr is available as part of [the tidyverse package](http://blog.revolutionanalytics.com/2016/09/tidyverse.html), which can be installed via:
+
+```R
+install.packages("tidyverse")
+```
+
+Note that unlike the core tidyverse packages, modelr would not be loaded via `library(tidyverse)`. You should load it explicitly using `library(modelr)`.
+
+
