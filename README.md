@@ -3,7 +3,7 @@ modelr
 
 [![Travis-CI Build Status](https://travis-ci.org/hadley/modelr.svg?branch=master)](https://travis-ci.org/hadley/modelr) [![Coverage Status](https://img.shields.io/codecov/c/github/hadley/modelr/master.svg)](https://codecov.io/github/hadley/modelr?branch=master)
 
-The goal of the modelr package is to provide functions that help you create elegant pipelines when modelling. The package design follows Hadley Wickham's [tidy tool manifesto](https://mran.microsoft.com/web/packages/tidyverse/vignettes/manifesto.html).
+The modelr package provides functions that help you create elegant pipelines when modelling. Its design follows Hadley Wickham's [tidy tool manifesto](https://mran.microsoft.com/web/packages/tidyverse/vignettes/manifesto.html).
 
 Installation and Documentation
 ------------------------------
@@ -23,7 +23,7 @@ Note that unlike the core tidyverse packages, modelr would not be loaded via `li
 library(modelr)
 ```
 
-Full documentation is available in [R for Data Science](http://r4ds.had.co.nz/), especially in the [Model basics](http://r4ds.had.co.nz/model-basics.html) chapter.
+Full documentation is available in [R for Data Science](http://r4ds.had.co.nz/), mostly in the [Model basics](http://r4ds.had.co.nz/model-basics.html) chapter.
 
 Main Features
 -------------
@@ -111,7 +111,7 @@ dim(cv2$test[[1]])
 
 ### Model quality metrics
 
-modelr includes several common model quality metrics:
+modelr includes several often-used model quality metrics:
 
 ``` r
 mod <- lm(mpg ~ wt, data = mtcars)
@@ -156,16 +156,16 @@ df %>% add_predictions(mod)
     ## # A tibble: 100 × 3
     ##             x        y     pred
     ##         <dbl>    <dbl>    <dbl>
-    ## 1  0.01476397 1.823854 2.606714
-    ## 2  0.04990046 2.546020 2.824544
-    ## 3  0.07141134 4.103942 2.957902
-    ## 4  0.08798685 5.101482 3.060663
-    ## 5  0.09231937 3.040385 3.087523
-    ## 6  0.09560236 1.561038 3.107876
-    ## 7  0.10766109 4.223057 3.182634
-    ## 8  0.11964936 2.483228 3.256956
-    ## 9  0.13091284 3.356387 3.326785
-    ## 10 0.13186306 4.143894 3.332676
+    ## 1  0.01427670 3.721312 2.711961
+    ## 2  0.03266748 2.710266 2.821827
+    ## 3  0.04262224 1.987127 2.881297
+    ## 4  0.04948524 5.081014 2.922297
+    ## 5  0.05274304 3.377812 2.941759
+    ## 6  0.06896184 2.112626 3.038650
+    ## 7  0.10147856 2.766535 3.232904
+    ## 8  0.10270099 4.485707 3.240207
+    ## 9  0.10872939 2.800255 3.276221
+    ## 10 0.11231967 4.257017 3.297669
     ## # ... with 90 more rows
 
 ``` r
@@ -173,18 +173,18 @@ df %>% add_residuals(mod)
 ```
 
     ## # A tibble: 100 × 3
-    ##             x        y       resid
-    ##         <dbl>    <dbl>       <dbl>
-    ## 1  0.01476397 1.823854 -0.78285938
-    ## 2  0.04990046 2.546020 -0.27852398
-    ## 3  0.07141134 4.103942  1.14603976
-    ## 4  0.08798685 5.101482  2.04081878
-    ## 5  0.09231937 3.040385 -0.04713777
-    ## 6  0.09560236 1.561038 -1.54683783
-    ## 7  0.10766109 4.223057  1.04042300
-    ## 8  0.11964936 2.483228 -0.77372828
-    ## 9  0.13091284 3.356387  0.02960159
-    ## 10 0.13186306 4.143894  0.81121778
+    ##             x        y      resid
+    ##         <dbl>    <dbl>      <dbl>
+    ## 1  0.01427670 3.721312  1.0093505
+    ## 2  0.03266748 2.710266 -0.1115615
+    ## 3  0.04262224 1.987127 -0.8941701
+    ## 4  0.04948524 5.081014  2.1587170
+    ## 5  0.05274304 3.377812  0.4360533
+    ## 6  0.06896184 2.112626 -0.9260238
+    ## 7  0.10147856 2.766535 -0.4663692
+    ## 8  0.10270099 4.485707  1.2455001
+    ## 9  0.10872939 2.800255 -0.4759657
+    ## 10 0.11231967 4.257017  0.9593481
     ## # ... with 90 more rows
 
 For visualization purposes it is often useful to use an evenly spaced grid of points from the data:
