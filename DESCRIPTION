@@ -22,7 +22,8 @@ Imports:
 Suggests:
     testthat,
     ggplot2,
-    covr
+    covr,
+    compiler
 URL: https://github.com/hadley/modelr
 BugReports: https://github.com/hadley/modelr/issues
 Remotes:

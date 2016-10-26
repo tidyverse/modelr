@@ -46,3 +46,9 @@ test_that("formulas() fails when supplied non-formula objects", {
 test_that("formulas() combines the lhs", {
   expect_equal(formulas(~lhs, a = ~1, b = other ~ 2), list(a = lhs ~ 1, b = lhs ~ 2))
 })
+
+test_that("bytecoded fit_with() works", {
+  bc_fit_with <- compiler::cmpfun(fit_with)
+  fit <- bc_fit_with(mtcars, lm, list(disp ~ drat))
+  expect_is(fit[[1]], "lm")
+})
