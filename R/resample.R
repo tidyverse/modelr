@@ -75,3 +75,16 @@ dim.resample <- function(x, ...) {
 obj_sum.resample <- function(x, ...) {
   paste0("resample [", big_mark(nrow(x)), " x ", big_mark(ncol(x)), "]")
 }
+
+`$.resample` <- function(x, name) {
+  x[[name]]
+}
+
+`[[.resample` <- function(x, name, ...) {
+  unclassed <- unclass(x)
+  if (name == "data" || name == "idx") {
+    unclassed[[name]]
+  } else {
+    unclassed$data[[name]][unclassed$idx]
+  }
+}
