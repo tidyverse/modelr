@@ -5,9 +5,9 @@
 \alias{crossv_mc}
 \title{Generate cross-validated test-training pairs}
 \usage{
-crossv_mc(data, n, test = 0.2, id = ".id")
+crossv_mc(data, n, test = 0.2, id = ".id", seed = NULL)
 
-crossv_kfold(data, k = 5, id = ".id")
+crossv_kfold(data, k = 5, id = ".id", seed = NULL)
 }
 \arguments{
 \item{data}{A data frame}
@@ -18,6 +18,8 @@ crossv_kfold(data, k = 5, id = ".id")
 (a double).}
 
 \item{id}{Name of variable that gives each model a unique integer id.}
+
+\item{seed}{An integer to seed random sampling, making result reproducible.}
 
 \item{k}{Number of folds (an integer).}
 }
@@ -41,5 +43,13 @@ cv2 <- crossv_mc(mtcars, 100)
 models <- map(cv2$train, ~ lm(mpg ~ wt, data = .))
 errs <- map2_dbl(models, cv2$test, rmse)
 hist(errs)
+
+# Set seed to make results reproducible
+cv1 <- crossv_kfold(mtcars, 5, seed = 287)
+cv2 <- crossv_kfold(mtcars, 5, seed = 287)
+cv3 <- crossv_kfold(mtcars, 5, seed = 100)  # will be different
+
+identical(cv1, cv2)
+identical(cv1, cv3)
 }
 

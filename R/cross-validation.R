@@ -10,6 +10,7 @@
 #' @param test Proportion of observations that should be held out for testing
 #'   (a double).
 #' @param id Name of variable that gives each model a unique integer id.
+#' @param seed An integer to seed random sampling, making result reproducible.
 #' @return A data frame with \code{n}/\code{k} rows and columns \code{test} and
 #'   \code{train}. \code{test} and \code{train} are list-columns containing
 #'   \code{\link{resample}} objects.
@@ -23,7 +24,15 @@
 #' models <- map(cv2$train, ~ lm(mpg ~ wt, data = .))
 #' errs <- map2_dbl(models, cv2$test, rmse)
 #' hist(errs)
-crossv_mc <- function(data, n, test = 0.2, id = ".id") {
+#'
+#' # Set seed to make results reproducible
+#' cv1 <- crossv_kfold(mtcars, 5, seed = 287)
+#' cv2 <- crossv_kfold(mtcars, 5, seed = 287)
+#' cv3 <- crossv_kfold(mtcars, 5, seed = 100)  # will be different
+#'
+#' identical(cv1, cv2)
+#' identical(cv1, cv3)
+crossv_mc <- function(data, n, test = 0.2, id = ".id", seed = NULL) {
   if (!is.numeric(n) || length(n) != 1) {
     stop("`n` must be a single integer.", call. = FALSE)
   }
@@ -32,6 +41,8 @@ crossv_mc <- function(data, n, test = 0.2, id = ".id") {
   }
 
   p <- c(train = 1 - test, test = test)
+
+  set.seed(seed)
   runs <- purrr::rerun(n, resample_partition(data, p))
   cols <- purrr::transpose(runs)
   cols[[id]] <- id(n)
@@ -42,11 +53,12 @@ crossv_mc <- function(data, n, test = 0.2, id = ".id") {
 #' @export
 #' @param k Number of folds (an integer).
 #' @rdname crossv_mc
-crossv_kfold <- function(data, k = 5, id = ".id") {
+crossv_kfold <- function(data, k = 5, id = ".id", seed = NULL) {
   if (!is.numeric(k) || length(k) != 1) {
     stop("`k` must be a single integer.", call. = FALSE)
   }
 
+  set.seed(seed)
   n <- nrow(data)
   folds <- sample(rep(1:k, length.out = n))
 
