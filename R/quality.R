@@ -1,21 +1,30 @@
 #' Compute model quality for a given dataset
 #'
 #' \code{rmse} is the root-mean-squared-error, \code{mae} is the mean
-#' absolute error, \code{qae} is quantiles of absolute error. These can both
+#' absolute error, \code{qae} is quantiles of absolute error. These can all
 #' be interpreted on the scale of the response; \code{mae} is less sensitive
-#' to outliers. \code{rsquare} is the variance of the predictions divided by
-#' by the variance of the response.
+#' to outliers. \code{mse} is the mean-squared-error and can be interpreted on
+#' the squared scale of the response. \code{rsquare} is the variance of the
+#' predictions divided by the variance of the response.
 #'
 #' @param model A model
 #' @param data The dataset
 #' @name model-quality
 #' @examples
 #' mod <- lm(mpg ~ wt, data = mtcars)
+#' mse(mod, mtcars)
 #' rmse(mod, mtcars)
 #' rsquare(mod, mtcars)
 #' mae(mod, mtcars)
 #' qae(mod, mtcars)
 NULL
+
+#' @export
+#' @rdname model-quality
+mse <- function (model, data){
+  x <- residuals(model, data)
+  mean(x ^ 2, na.rm = TRUE)
+}
 
 #' @export
 #' @rdname model-quality
