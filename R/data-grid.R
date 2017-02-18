@@ -2,9 +2,12 @@
 #'
 #' To visualise a model, it is very useful to be able to generate an
 #' evenly spaced grid of points from the data. \code{data_grid} helps you
-#' do this by wrapping around \code{\link[tidyr]{expand}()}.
+#' do this by wrapping around \code{\link[tidyr]{expand}()}. \code{data_grid_}
+#' is the standard evaluation version for use in programming.
+#'
 #'
 #' @param data A data frame
+#' @param .dots Used to work around non-standard evaluation.
 #' @param ... Variables passed on to \code{\link[tidyr]{expand}()}
 #' @param .model A model.  If supplied, any predictors needed for the model
 #'   not present in \code{...} will be filled in with "\link{typical}" values.
@@ -23,7 +26,15 @@
 #' data_grid(mtcars, .model = mod)
 #' data_grid(mtcars, cyl = seq_range(cyl, 9), .model = mod)
 data_grid <- function(data, ..., .model = NULL) {
-  expanded <- tidyr::expand(data, ...)
+  dots <- lazyeval::lazy_dots(...)
+  data_grid_(data, .dots = dots, .model = .model)
+}
+
+#' @rdname data_grid
+#' @export
+data_grid_ <- function(data, ..., .dots, .model = NULL) {
+  dots <- lazyeval::all_dots(.dots, ..., all_named = FALSE)
+  expanded <- tidyr::expand_(data, dots)
 
   if (is.null(.model))
     return(expanded)
