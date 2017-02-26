@@ -48,10 +48,5 @@ typical.logical <- function(x) {
 
 #' @export
 typical.data.frame <- function(x) {
-  as.data.frame(purrr::map(x, typical))
-}
-
-#' @export
-typical.tibble <- function(x) {
-  tibble::as_tibble(typical(as.data.frame(x)))
+  purrr::invoke(tidyr::crossing, purrr::map(x, typical))
 }
