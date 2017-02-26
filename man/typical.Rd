@@ -7,13 +7,14 @@
 typical(x)
 }
 \arguments{
-\item{x}{A vector}
+\item{x}{An object}
 }
 \description{
-For numeric vectors, it retunrs the median. For factors, characters, and
+For numeric vectors, it returns the median. For factors, characters, and
 logical vectors, it returns the most frequent value. If multiple values are
 tied for most frequent, it returns them all. \code{NA} missing values are
-always silently dropped.
+always silently dropped. For data frames it returns a data frame with the
+typical value for each column.
 }
 \examples{
 # median of numeric vector
@@ -28,4 +29,3 @@ typical(factor(x))
 x <- c("a", "a", "b", "b", "c")
 typical(x)
 }
-

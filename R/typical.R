@@ -1,11 +1,12 @@
 #' Find the typical value
 #'
-#' For numeric vectors, it retunrs the median. For factors, characters, and
+#' For numeric vectors, it returns the median. For factors, characters, and
 #' logical vectors, it returns the most frequent value. If multiple values are
 #' tied for most frequent, it returns them all. \code{NA} missing values are
-#' always silently dropped.
+#' always silently dropped. For data frames it returns a data frame with the
+#' typical value for each column.
 #'
-#' @param x A vector
+#' @param x An object
 #' @export
 #' @examples
 #' # median of numeric vector
@@ -43,4 +44,14 @@ typical.character <- function(x) {
 #' @export
 typical.logical <- function(x) {
   mean(x, na.rm = TRUE) >= 0.5
+}
+
+#' @export
+typical.data.frame <- function(x) {
+  as.data.frame(purrr::map(x, typical))
+}
+
+#' @export
+typical.tibble <- function(x) {
+  tibble::as_tibble(typical(as.data.frame(x)))
 }
