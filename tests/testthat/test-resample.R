@@ -47,6 +47,13 @@ test_that("resample works with empty idx", {
   expect_identical(dim(x), c(0L, 1L))
 })
 
+test_that("resample works with empty idx and empty data frame", {
+  x <- resample(tibble::tibble(), integer())
+  expect_is(x, "resample")
+  expect_identical(dim(x), c(0L, 0L))
+})
+
+
 
 test_that("as.data.frame.resample works", {
   df <- tibble::tibble(a = 1:5)
