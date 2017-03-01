@@ -28,6 +28,20 @@ test_that("resample raises error for non-numeric `idx`", {
                regexp = "`idx` must be an integer vector")
 })
 
+test_that("resample raises error for invalid `idx`", {
+  msg <- paste0("All values of `idx` must be between 1 and `nrow\\(data\\)`")
+  df <- tibble::tibble(a = 1:10)
+  expect_error(resample(df, c(0L, 2:3)), regexp = msg)
+  expect_error(resample(df, c(nrow(df) + 1L, 2:3)), regexp = msg)
+})
+
+test_that("resample raises error for invalid `idx`", {
+  df <- tibble::tibble(a = 1:10)
+  expect_error(resample(df, c(NA_integer_, 2:3)),
+               regexp = paste0("`idx` cannot be `NA`"))
+})
+
+
 test_that("as.data.frame.resample works", {
   df <- tibble::tibble(a = 1:5)
   idx <- c(3, 2)

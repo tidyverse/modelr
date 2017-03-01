@@ -32,6 +32,13 @@ resample <- function(data, idx) {
   } else if (!is.integer(idx)) {
     stop("`idx` must be an integer vector.", call. = FALSE)
   }
+  if (any(is.na(idx))) {
+    stop("`idx` cannot be `NA`", call. = FALSE)
+  }
+  if (any((idx < 1) | (idx > nrow(data)))) {
+    stop("All values of `idx` must be between 1 and `nrow(data)`",
+         call. = FALSE)
+  }
 
   structure(
     list(
