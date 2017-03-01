@@ -35,10 +35,16 @@ test_that("resample raises error for invalid `idx`", {
   expect_error(resample(df, c(nrow(df) + 1L, 2:3)), regexp = msg)
 })
 
-test_that("resample raises error for invalid `idx`", {
+test_that("resample raises error for missing `idx`", {
   df <- tibble::tibble(a = 1:10)
   expect_error(resample(df, c(NA_integer_, 2:3)),
                regexp = paste0("`idx` cannot be `NA`"))
+})
+
+test_that("resample works with empty idx", {
+  x <- resample(tibble::tibble(a = 1:10), integer(0))
+  expect_is(x, "resample")
+  expect_identical(dim(x), c(0L, 1L))
 })
 
 
