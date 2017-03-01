@@ -27,7 +27,9 @@ resample <- function(data, idx) {
   if (!is.data.frame(data)) {
     stop("`data` must be a data frame.", call. = FALSE)
   }
-  if (!is.integer(idx)) {
+  if (is.numeric(idx)) {
+    idx <- as.integer(idx)
+  } else if (!is.integer(idx)) {
     stop("`idx` must be an integer vector.", call. = FALSE)
   }
 
