@@ -29,7 +29,7 @@
 #'
 #' # test against the unpermuted model to get a permutation p-value
 #' mod <- lm(mpg ~ wt, mtcars)
-#' mean(glanced$statistic > glance(mod)$statistic)
+#' mean(glanced$statistic > broom::glance(mod)$statistic)
 #'
 #' @export
 permute <- function(data, n, ..., .id = ".id") {
