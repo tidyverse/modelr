@@ -33,11 +33,10 @@ to the generated distribution of null statistics.
 \examples{
 
 library(purrr)
-library(broom)
 perms <- permute(mtcars,  1000, mpg)
 
 models <- map(perms$perm, ~ lm(mpg ~ wt, data = .))
-glanced <- map_df(models, glance, .id = "id")
+glanced <- map_df(models, broom::glance, .id = "id")
 
 # distribution of null permutation statistics
 hist(glanced$statistic)
@@ -49,3 +48,4 @@ mod <- lm(mpg ~ wt, mtcars)
 mean(glanced$statistic > glance(mod)$statistic)
 
 }
+
