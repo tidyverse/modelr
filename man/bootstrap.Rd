@@ -29,3 +29,4 @@ tidied <- map_df(models, broom::tidy, .id = "id")
 hist(subset(tidied, term == "wt")$estimate)
 hist(subset(tidied, term == "(Intercept)")$estimate)
 }
+
