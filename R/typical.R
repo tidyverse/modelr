@@ -1,6 +1,6 @@
 #' Find the typical value
 #'
-#' For numeric vectors, it retunrs the median. For factors, characters, and
+#' For numeric vectors, it returns the median. For factors, characters, and
 #' logical vectors, it returns the most frequent value. If multiple values are
 #' tied for most frequent, it returns them all. \code{NA} missing values are
 #' always silently dropped.
