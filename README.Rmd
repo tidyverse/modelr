@@ -10,8 +10,8 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 
 # modelr
 
-[![Travis-CI Build Status](https://travis-ci.org/hadley/modelr.svg?branch=master)](https://travis-ci.org/hadley/modelr)
-[![Coverage Status](https://img.shields.io/codecov/c/github/hadley/modelr/master.svg)](https://codecov.io/github/hadley/modelr?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/tidyverse/modelr.svg?branch=master)](https://travis-ci.org/tidyverse/modelr)
+[![Coverage Status](https://img.shields.io/codecov/c/github/tidyverse/modelr/master.svg)](https://codecov.io/github/tidyverse/modelr?branch=master)
 
 The modelr package provides functions that help you create elegant pipelines when modelling. Its design follows Hadley Wickham's [tidy tool manifesto](https://mran.microsoft.com/web/packages/tidyverse/vignettes/manifesto.html).
 

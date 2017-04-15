@@ -24,8 +24,8 @@ Suggests:
     ggplot2,
     covr,
     compiler
-URL: https://github.com/hadley/modelr
-BugReports: https://github.com/hadley/modelr/issues
+URL: https://github.com/tidyverse/modelr
+BugReports: https://github.com/tidyverse/modelr/issues
 Remotes:
-    hadley/tidyr
+    tidyverse/tidyr
 RoxygenNote: 5.0.1
