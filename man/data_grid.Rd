@@ -2,9 +2,12 @@
 % Please edit documentation in R/data-grid.R
 \name{data_grid}
 \alias{data_grid}
+\alias{data_grid_}
 \title{Generate a data grid.}
 \usage{
 data_grid(data, ..., .model = NULL)
+
+data_grid_(data, ..., .dots, .model = NULL)
 }
 \arguments{
 \item{data}{A data frame}
@@ -13,11 +16,14 @@ data_grid(data, ..., .model = NULL)
 
 \item{.model}{A model.  If supplied, any predictors needed for the model
 not present in \code{...} will be filled in with "\link{typical}" values.}
+
+\item{.dots}{Used to work around non-standard evaluation.}
 }
 \description{
 To visualise a model, it is very useful to be able to generate an
 evenly spaced grid of points from the data. \code{data_grid} helps you
-do this by wrapping around \code{\link[tidyr]{expand}()}.
+do this by wrapping around \code{\link[tidyr]{expand}()}. \code{data_grid_}
+is the standard evaluation version for use in programming.
 }
 \examples{
 data_grid(mtcars, vs, am)
@@ -35,4 +41,3 @@ data_grid(mtcars, cyl = seq_range(cyl, 9), .model = mod)
 \code{\link{seq_range}()} for generating ranges from continuous
   variables.
 }
-
