@@ -1,50 +1,38 @@
----
-output:
-  md_document:
-    variant: markdown_github
----
+modelr
+======
 
-
-
-# modelr
-
-[![Travis-CI Build Status](https://travis-ci.org/tidyverse/modelr.svg?branch=master)](https://travis-ci.org/tidyverse/modelr)
-[![Coverage Status](https://img.shields.io/codecov/c/github/tidyverse/modelr/master.svg)](https://codecov.io/github/tidyverse/modelr?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/tidyverse/modelr.svg?branch=master)](https://travis-ci.org/tidyverse/modelr) [![Coverage Status](https://img.shields.io/codecov/c/github/tidyverse/modelr/master.svg)](https://codecov.io/github/tidyverse/modelr?branch=master)
 
 The modelr package provides functions that help you create elegant pipelines when modelling. Its design follows Hadley Wickham's [tidy tool manifesto](https://mran.microsoft.com/web/packages/tidyverse/vignettes/manifesto.html).
 
-## Installation and Documentation
+Installation and Documentation
+------------------------------
 
 You can install modelr from github with:
 
-```
-# install.packages("devtools")
-devtools::install_github("hadley/modelr")
-```
+    # install.packages("devtools")
+    devtools::install_github("tidyverse/modelr")
 
 Alternatively, modelr is available as part of [the tidyverse package](http://blog.revolutionanalytics.com/2016/09/tidyverse.html) which can be installed via:
 
-```
-install.packages("tidyverse")
-```
+    install.packages("tidyverse")
 
 Note that unlike the core tidyverse packages, modelr would not be loaded via `library(tidyverse)`. Instead, you can load it explicitly:
 
-
-```r
+``` r
 library(modelr)
 ```
 
 Full documentation is available in [R for Data Science](http://r4ds.had.co.nz/), mostly in the [Model basics](http://r4ds.had.co.nz/model-basics.html) chapter.
 
-## Main Features
+Main Features
+-------------
 
 ### Partitioning and sampling
 
 The `resample` class stores a "pointer" to the original dataset and a vector of row indices. `resample` can be turned into a dataframe by calling `as.data.frame`. The indices can be extracted using `as.integer`:
 
-
-```r
+``` r
 # a subsample of the first ten rows in the data frame
 rs <- resample(mtcars, 1:10)
 as.data.frame(rs)
@@ -65,8 +53,7 @@ as.integer(rs)
 
 The class can be utilized in generating an exclusive partitioning of a data frame:
 
-
-```r
+``` r
 # generate a 30% testing partition and a 70% training partition
 ex <- resample_partition(mtcars, c(test = 0.3, train = 0.7))
 lapply(ex, dim)
@@ -79,8 +66,7 @@ lapply(ex, dim)
 
 modelr offers several resampling methods that result in a list of `resample` objects (organized in a data frame):
 
-
-```r
+``` r
 # bootstrap
 boot <- bootstrap(mtcars, 100)
 # k-fold cross-validation
@@ -104,8 +90,7 @@ dim(cv2$test[[1]])
 
 modelr includes several often-used model quality metrics:
 
-
-```r
+``` r
 mod <- lm(mpg ~ wt, data = mtcars)
 rmse(mod, mtcars)
 #> [1] 2.949163
@@ -122,8 +107,7 @@ qae(mod, mtcars)
 
 A set of functions let you seamlessly add predictions and residuals as additional columns to an existing data frame:
 
-
-```r
+``` r
 df <- tibble::data_frame(
   x = sort(runif(100)),
   y = 5 * x + 0.5 * x ^ 2 + 3 + rnorm(length(x))
@@ -132,40 +116,39 @@ df <- tibble::data_frame(
 mod <- lm(y ~ x, data = df)
 df %>% add_predictions(mod)
 #> # A tibble: 100 × 3
-#>             x         y     pred
-#>         <dbl>     <dbl>    <dbl>
-#> 1  0.00859932 3.1862180 2.601857
-#> 2  0.01545169 2.6204296 2.644123
-#> 3  0.01848258 4.6334283 2.662818
-#> 4  0.02955594 2.2979198 2.731121
-#> 5  0.03737513 0.8101851 2.779351
-#> 6  0.04397960 2.4761070 2.820088
-#> 7  0.04623513 5.0681121 2.834001
-#> 8  0.04800758 1.7018879 2.844934
-#> 9  0.06098940 2.0351324 2.925008
-#> 10 0.06455042 3.7841005 2.946973
+#>              x          y     pred
+#>          <dbl>      <dbl>    <dbl>
+#> 1  0.004551168  4.4094962 2.974578
+#> 2  0.008166418  3.6230386 2.992874
+#> 3  0.019450687  2.9519737 3.049983
+#> 4  0.020638397  2.2405154 3.055994
+#> 5  0.025516685 -0.7612182 3.080682
+#> 6  0.047591223  3.8024277 3.192399
+#> 7  0.061847141  2.5463889 3.264546
+#> 8  0.068438557  5.5676229 3.297905
+#> 9  0.074237996  3.3127416 3.327255
+#> 10 0.094575781  3.1728107 3.430182
 #> # ... with 90 more rows
 df %>% add_residuals(mod)
 #> # A tibble: 100 × 3
-#>             x         y       resid
-#>         <dbl>     <dbl>       <dbl>
-#> 1  0.00859932 3.1862180  0.58436135
-#> 2  0.01545169 2.6204296 -0.02369364
-#> 3  0.01848258 4.6334283  1.97061002
-#> 4  0.02955594 2.2979198 -0.43320093
-#> 5  0.03737513 0.8101851 -1.96916562
-#> 6  0.04397960 2.4761070 -0.34398128
-#> 7  0.04623513 5.0681121  2.23411135
-#> 8  0.04800758 1.7018879 -1.14304565
-#> 9  0.06098940 2.0351324 -0.88987534
-#> 10 0.06455042 3.7841005  0.83712781
+#>              x          y       resid
+#>          <dbl>      <dbl>       <dbl>
+#> 1  0.004551168  4.4094962  1.43491825
+#> 2  0.008166418  3.6230386  0.63016426
+#> 3  0.019450687  2.9519737 -0.09800902
+#> 4  0.020638397  2.2405154 -0.81547820
+#> 5  0.025516685 -0.7612182 -3.84190025
+#> 6  0.047591223  3.8024277  0.61002894
+#> 7  0.061847141  2.5463889 -0.71815735
+#> 8  0.068438557  5.5676229  2.26971827
+#> 9  0.074237996  3.3127416 -0.01451329
+#> 10 0.094575781  3.1728107 -0.25737137
 #> # ... with 90 more rows
 ```
 
 For visualization purposes it is often useful to use an evenly spaced grid of points from the data:
 
-
-```r
+``` r
 data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs)
 #> # A tibble: 60 × 3
 #>          wt   cyl    vs
@@ -200,4 +183,3 @@ data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs) %>% add_predictions(mtcars_mo
 #> 10 1.947556     6     1 24.76314
 #> # ... with 50 more rows
 ```
-
