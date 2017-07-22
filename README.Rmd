@@ -1,7 +1,5 @@
 ---
-output:
-  md_document:
-    variant: markdown_github
+output: github_document
 ---
 
 ```{r, echo = FALSE}
@@ -11,22 +9,22 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 # modelr
 
 [![Travis-CI Build Status](https://travis-ci.org/tidyverse/modelr.svg?branch=master)](https://travis-ci.org/tidyverse/modelr)
-[![Coverage Status](https://img.shields.io/codecov/c/github/tidyverse/modelr/master.svg)](https://codecov.io/github/tidyverse/modelr?branch=master)
+[![codecov](https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/modelr)
 
-The modelr package provides functions that help you create elegant pipelines when modelling. Its design follows Hadley Wickham's [tidy tool manifesto](https://mran.microsoft.com/web/packages/tidyverse/vignettes/manifesto.html).
+The modelr package provides functions that help you create elegant pipelines when modelling. Its design follows Hadley Wickham's [tidy tool manifesto](https://cran.rstudio.com/web/packages/tidyverse/vignettes/manifesto.html).
 
 ## Installation and Documentation
 
 You can install modelr from github with:
 
-```
+```R
 # install.packages("devtools")
-devtools::install_github("hadley/modelr")
+devtools::install_github("tidyverse/modelr")
 ```
 
 Alternatively, modelr is available as part of [the tidyverse package](http://blog.revolutionanalytics.com/2016/09/tidyverse.html) which can be installed via:
 
-```
+```R
 install.packages("tidyverse")
 ```
 
