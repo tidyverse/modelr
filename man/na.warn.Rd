@@ -31,4 +31,3 @@ resid(m1)
 m2 <- lm(y ~ x, data = df, na.action = na.warn)
 resid(m2)
 }
-

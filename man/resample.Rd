@@ -32,4 +32,3 @@ as.data.frame(b)
 # use a resample object directly in the data argument
 lm(mpg ~ wt, data = b)
 }
-

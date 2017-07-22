@@ -28,4 +28,3 @@ typical(factor(x))
 x <- c("a", "a", "b", "b", "c")
 typical(x)
 }
-

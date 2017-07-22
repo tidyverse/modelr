@@ -17,4 +17,3 @@ coef(lm(mpg ~ wt, data = resample_bootstrap(mtcars)))
 coef(lm(mpg ~ wt, data = resample_bootstrap(mtcars)))
 coef(lm(mpg ~ wt, data = resample_bootstrap(mtcars)))
 }
-

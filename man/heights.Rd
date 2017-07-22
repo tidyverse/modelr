@@ -28,4 +28,3 @@ sponsored by the U.S. Bureau of Labor Statistics.
 This contains data as at 2012.
 }
 \keyword{datasets}
-

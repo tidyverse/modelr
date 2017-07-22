@@ -23,4 +23,3 @@ These simple simulated datasets are useful for teaching modelling
 basics.
 }
 \keyword{datasets}
-

@@ -45,4 +45,3 @@ seq_range(y, n = 10, expand = 0.5, pretty = TRUE)
 seq_range(y, by = 0.1)
 seq_range(y, by = 0.1, pretty = TRUE)
 }
-
