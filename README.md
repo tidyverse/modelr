@@ -4,7 +4,7 @@ modelr
 
 [![Travis-CI Build Status](https://travis-ci.org/tidyverse/modelr.svg?branch=master)](https://travis-ci.org/tidyverse/modelr) [![codecov](https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/modelr)
 
-The modelr package provides functions that help you create elegant pipelines when modelling. Its design follows Hadley Wickham's [tidy tool manifesto](https://cran.rstudio.com/web/packages/tidyverse/vignettes/manifesto.html).
+The modelr package provides functions that help you create elegant pipelines when modelling. Its design follows Hadley Wickham's [tidy tool manifesto](http://tidyverse.tidyverse.org/articles/manifesto.html).
 
 Installation and Documentation
 ------------------------------
@@ -123,31 +123,31 @@ df %>% add_predictions(mod)
 #> # A tibble: 100 x 3
 #>              x        y     pred
 #>          <dbl>    <dbl>    <dbl>
-#>  1 0.006529844 3.168571 2.788582
-#>  2 0.010466832 4.158009 2.811044
-#>  3 0.011314511 3.432412 2.815880
-#>  4 0.013616039 3.182833 2.829011
-#>  5 0.014256082 2.672729 2.832663
-#>  6 0.019583174 1.848818 2.863056
-#>  7 0.042677952 1.640258 2.994821
-#>  8 0.044046088 3.191457 3.002626
-#>  9 0.048112544 1.971483 3.025827
-#> 10 0.060260620 4.003465 3.095136
+#>  1 0.007764089 3.434399 3.065858
+#>  2 0.010139684 3.924469 3.078856
+#>  3 0.020426476 3.574665 3.135142
+#>  4 0.054073586 1.786603 3.319247
+#>  5 0.075632210 2.544859 3.437208
+#>  6 0.099335418 2.855342 3.566903
+#>  7 0.122253743 3.571305 3.692304
+#>  8 0.138008688 3.867327 3.778509
+#>  9 0.152028988 3.671963 3.855223
+#> 10 0.152634759 3.860819 3.858538
 #> # ... with 90 more rows
 df %>% add_residuals(mod)
 #> # A tibble: 100 x 3
-#>              x        y      resid
-#>          <dbl>    <dbl>      <dbl>
-#>  1 0.006529844 3.168571  0.3799886
-#>  2 0.010466832 4.158009  1.3469648
-#>  3 0.011314511 3.432412  0.6165314
-#>  4 0.013616039 3.182833  0.3538214
-#>  5 0.014256082 2.672729 -0.1599337
-#>  6 0.019583174 1.848818 -1.0142385
-#>  7 0.042677952 1.640258 -1.3545627
-#>  8 0.044046088 3.191457  0.1888310
-#>  9 0.048112544 1.971483 -1.0543439
-#> 10 0.060260620 4.003465  0.9083282
+#>              x        y        resid
+#>          <dbl>    <dbl>        <dbl>
+#>  1 0.007764089 3.434399  0.368540719
+#>  2 0.010139684 3.924469  0.845612896
+#>  3 0.020426476 3.574665  0.439523271
+#>  4 0.054073586 1.786603 -1.532643175
+#>  5 0.075632210 2.544859 -0.892348715
+#>  6 0.099335418 2.855342 -0.711561273
+#>  7 0.122253743 3.571305 -0.120998985
+#>  8 0.138008688 3.867327  0.088817647
+#>  9 0.152028988 3.671963 -0.183260285
+#> 10 0.152634759 3.860819  0.002281414
 #> # ... with 90 more rows
 ```
 
