@@ -5,3 +5,5 @@
 * Fixed R CMD CHECK note
 
 * Updated usage of `reduce()` for upcoming purrr release
+
+* More general `permute()` function
