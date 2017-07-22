@@ -21,7 +21,7 @@ qae(model, data, probs = c(0.05, 0.25, 0.5, 0.75, 0.95))
 
 \item{data}{The dataset}
 
-\item{probs}{Numeric vector of probabilit}
+\item{probs}{Numeric vector of probabilities}
 }
 \description{
 \code{rmse} is the root-mean-squared-error, \code{mae} is the mean

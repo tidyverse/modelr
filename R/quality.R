@@ -39,7 +39,7 @@ rsquare <- function(model, data) {
 
 #' @export
 #' @rdname model-quality
-#' @param probs Numeric vector of probabilit
+#' @param probs Numeric vector of probabilities
 qae <- function(model, data, probs = c(0.05, 0.25, 0.5, 0.75, 0.95)) {
   x <- residuals(model, data)
   stats::quantile(abs(x), probs, na.rm = TRUE)

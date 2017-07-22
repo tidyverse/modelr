@@ -44,7 +44,7 @@ crossv_mc <- function(data, n, test = 0.2, id = ".id") {
 #' @rdname crossv_mc
 crossv_kfold <- function(data, k = 5, id = ".id") {
   if (!is.numeric(k) || length(k) != 1) {
-    stop("`n` must be a single integer.", call. = FALSE)
+    stop("`k` must be a single integer.", call. = FALSE)
   }
 
   n <- nrow(data)

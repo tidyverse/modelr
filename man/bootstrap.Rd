@@ -9,7 +9,7 @@ bootstrap(data, n, id = ".id")
 \arguments{
 \item{data}{A data frame}
 
-\item{n}{Number of test-training pairs to generate}
+\item{n}{Number of bootstrap replicates to generate}
 
 \item{id}{Name of variable that gives each model a unique integer id.}
 }
