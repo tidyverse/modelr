@@ -48,4 +48,3 @@ mod <- lm(mpg ~ wt, mtcars)
 mean(glanced$statistic > broom::glance(mod)$statistic)
 
 }
-

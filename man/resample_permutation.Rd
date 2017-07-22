@@ -20,4 +20,3 @@ data frame
 \description{
 Create a resampled permutation of a data frame
 }
-
