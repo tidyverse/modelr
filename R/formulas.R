@@ -124,7 +124,11 @@ merge_formulas <- function(f1, f2, fun = "+") {
   rhs <- call(fun, lazyeval::f_rhs(f1), lazyeval::f_rhs(f2))
 
   lhss <- compact(map(list(f1, f2), lazyeval::f_lhs))
-  lhs <- reduce_common(lhss, "Left-hand sides must be identical")
+  if (length(lhss) == 0) {
+    lhs <- NULL
+  } else {
+    lhs <- reduce_common(lhss, "Left-hand sides must be identical")
+  }
 
   env <- merge_envs(f1, f2)
   lazyeval::f_new(rhs, lhs, env)
@@ -141,9 +145,16 @@ merge_envs <- function(f1, f2) {
   nonconflicts <- setdiff(all_symbols, conflicts)
   nonconflicts_envs <- compact(map(nonconflicts, find_env_nonconflicts, f1, f2))
 
-  env <- reduce_common(c(conflicts_envs, nonconflicts_envs),
-    "Cannot merge formulas as their scopes conflict across symbols")
-  env %||% environment(f1)
+  all_envs <- c(conflicts_envs, nonconflicts_envs)
+
+  if (length(all_envs) == 0) {
+    environment(f1)
+  } else {
+    reduce_common(
+      all_envs,
+      "Cannot merge formulas as their scopes conflict across symbols"
+    )
+  }
 }
 
 find_env_conflicts <- function(symbol, f1, f2) {
