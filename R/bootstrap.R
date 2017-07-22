@@ -1,3 +1,6 @@
+#' @importFrom broom tidy
+NULL
+
 #' Generate \code{n} bootstrap replicates.
 #'
 #' @inheritParams resample_partition
