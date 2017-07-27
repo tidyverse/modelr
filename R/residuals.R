@@ -2,7 +2,7 @@
 #'
 #' @param data A data frame used to generate the residuals
 #' @param model,var \code{add_residuals} takes a single \code{model}; the
-#'   output column will be called \code{pred}
+#'   output column will be called \code{resid}
 #' @param ... \code{gather_residuals} and \code{spread_residuals} take
 #'   multiple models. The name will be taken from either the argument
 #'   name of the name of the model.

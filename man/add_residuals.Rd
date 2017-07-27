@@ -16,7 +16,7 @@ gather_residuals(data, ..., .resid = "resid", .model = "model")
 \item{data}{A data frame used to generate the residuals}
 
 \item{model, var}{\code{add_residuals} takes a single \code{model}; the
-output column will be called \code{pred}}
+output column will be called \code{resid}}
 
 \item{...}{\code{gather_residuals} and \code{spread_residuals} take
 multiple models. The name will be taken from either the argument
