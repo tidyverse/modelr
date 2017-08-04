@@ -4,7 +4,8 @@
 #' @param size Line size
 #' @param colour Line colour
 #' @export
-geom_ref_line <- function(h, v, size = 2, colour = "white") {
+geom_ref_line <- function(h, v, size = 2, 
+                          colour = ggplot2::theme_get()$panel.grid.major$colour) {
   if (!missing(h)) {
     ggplot2::geom_hline(yintercept = h, size = size, colour = colour)
   } else if (!missing(v)) {
