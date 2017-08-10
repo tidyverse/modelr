@@ -1,7 +1,10 @@
+#' @importFrom broom tidy
+NULL
+
 #' Generate \code{n} bootstrap replicates.
 #'
 #' @inheritParams resample_partition
-#' @param n Number of test-training pairs to generate
+#' @param n Number of bootstrap replicates to generate
 #' @param id Name of variable that gives each model a unique integer id.
 #' @return A data frame with \code{n} rows and one column: \code{strap}
 #' @export

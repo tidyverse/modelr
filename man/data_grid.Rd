@@ -35,4 +35,3 @@ data_grid(mtcars, cyl = seq_range(cyl, 9), .model = mod)
 \code{\link{seq_range}()} for generating ranges from continuous
   variables.
 }
-

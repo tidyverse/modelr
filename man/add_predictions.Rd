@@ -2,8 +2,8 @@
 % Please edit documentation in R/predictions.R
 \name{add_predictions}
 \alias{add_predictions}
-\alias{gather_predictions}
 \alias{spread_predictions}
+\alias{gather_predictions}
 \title{Add predictions to a data frame}
 \usage{
 add_predictions(data, model, var = "pred")
@@ -49,4 +49,3 @@ m2 <- lm(y ~ poly(x, 2), data = df)
 grid \%>\% spread_predictions(m1, m2)
 grid \%>\% gather_predictions(m1, m2)
 }
-

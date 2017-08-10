@@ -2,8 +2,8 @@
 % Please edit documentation in R/residuals.R
 \name{add_residuals}
 \alias{add_residuals}
-\alias{gather_residuals}
 \alias{spread_residuals}
+\alias{gather_residuals}
 \title{Add residuals to a data frame}
 \usage{
 add_residuals(data, model, var = "resid")
@@ -48,4 +48,3 @@ m2 <- lm(y ~ poly(x, 2), data = df)
 df \%>\% spread_residuals(m1, m2)
 df \%>\% gather_residuals(m1, m2)
 }
-

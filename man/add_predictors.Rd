@@ -29,4 +29,3 @@ add_predictors(f, lhs1 ~ var1, lhs2 ~ var2)
 # fun can also be set to a function like "*":
 add_predictors(f, ~var1, ~var2, fun = "*")
 }
-

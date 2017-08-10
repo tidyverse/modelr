@@ -44,4 +44,3 @@ mtcars \%>\% fit_with(glm, list(am ~ disp), family = binomial)
 \seealso{
 \code{\link{formulas}}()
 }
-

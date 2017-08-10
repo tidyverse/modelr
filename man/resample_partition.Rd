@@ -21,4 +21,3 @@ mod <- lm(mpg ~ wt, data = ex$train)
 rmse(mod, ex$test)
 rmse(mod, ex$train)
 }
-

@@ -16,4 +16,3 @@ geom_ref_line(h, v, size = 2, colour = "white")
 \description{
 Add a reference line (ggplot2).
 }
-

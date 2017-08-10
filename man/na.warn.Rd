@@ -12,7 +12,7 @@ na.warn(object)
 \item{...}{Other arguments (not currently used)}
 }
 \description{
-This NA handler works ensures that those models that support the
+This NA handler ensures that those models that support the
 \code{na.action} parameter do not silently drop missing values. It
 wraps around \code{\link[stats]{na.exclude}} so that there is one
 prediction/residual for input row. To apply it globally, run
@@ -31,4 +31,3 @@ resid(m1)
 m2 <- lm(y ~ x, data = df, na.action = na.warn)
 resid(m2)
 }
-

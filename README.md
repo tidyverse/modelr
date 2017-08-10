@@ -1,21 +1,26 @@
+
 modelr
 ======
 
-[![Travis-CI Build Status](https://travis-ci.org/hadley/modelr.svg?branch=master)](https://travis-ci.org/hadley/modelr) [![Coverage Status](https://img.shields.io/codecov/c/github/hadley/modelr/master.svg)](https://codecov.io/github/hadley/modelr?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/tidyverse/modelr.svg?branch=master)](https://travis-ci.org/tidyverse/modelr) [![codecov](https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/modelr)
 
-The modelr package provides functions that help you create elegant pipelines when modelling. Its design follows Hadley Wickham's [tidy tool manifesto](https://mran.microsoft.com/web/packages/tidyverse/vignettes/manifesto.html).
+The modelr package provides functions that help you create elegant pipelines when modelling. Its design follows Hadley Wickham's [tidy tool manifesto](http://tidyverse.tidyverse.org/articles/manifesto.html).
 
 Installation and Documentation
 ------------------------------
 
 You can install modelr from github with:
 
-    # install.packages("devtools")
-    devtools::install_github("hadley/modelr")
+``` r
+# install.packages("devtools")
+devtools::install_github("tidyverse/modelr")
+```
 
 Alternatively, modelr is available as part of [the tidyverse package](http://blog.revolutionanalytics.com/2016/09/tidyverse.html) which can be installed via:
 
-    install.packages("tidyverse")
+``` r
+install.packages("tidyverse")
+```
 
 Note that unlike the core tidyverse packages, modelr would not be loaded via `library(tidyverse)`. Instead, you can load it explicitly:
 
@@ -115,34 +120,34 @@ df <- tibble::data_frame(
 
 mod <- lm(y ~ x, data = df)
 df %>% add_predictions(mod)
-#> # A tibble: 100 × 3
-#>             x        y     pred
-#>         <dbl>    <dbl>    <dbl>
-#> 1  0.01307005 2.940620 2.837404
-#> 2  0.02472237 4.671480 2.900621
-#> 3  0.04132342 2.204218 2.990686
-#> 4  0.04182353 3.650614 2.993399
-#> 5  0.07004611 3.723562 3.146514
-#> 6  0.07920751 3.164767 3.196217
-#> 7  0.08360708 3.204572 3.220086
-#> 8  0.08998645 2.414765 3.254696
-#> 9  0.09054400 4.120299 3.257721
-#> 10 0.09622498 2.468223 3.288541
+#> # A tibble: 100 x 3
+#>              x        y     pred
+#>          <dbl>    <dbl>    <dbl>
+#>  1 0.007764089 3.434399 3.065858
+#>  2 0.010139684 3.924469 3.078856
+#>  3 0.020426476 3.574665 3.135142
+#>  4 0.054073586 1.786603 3.319247
+#>  5 0.075632210 2.544859 3.437208
+#>  6 0.099335418 2.855342 3.566903
+#>  7 0.122253743 3.571305 3.692304
+#>  8 0.138008688 3.867327 3.778509
+#>  9 0.152028988 3.671963 3.855223
+#> 10 0.152634759 3.860819 3.858538
 #> # ... with 90 more rows
 df %>% add_residuals(mod)
-#> # A tibble: 100 × 3
-#>             x        y       resid
-#>         <dbl>    <dbl>       <dbl>
-#> 1  0.01307005 2.940620  0.10321605
-#> 2  0.02472237 4.671480  1.77085881
-#> 3  0.04132342 2.204218 -0.78646780
-#> 4  0.04182353 3.650614  0.65721514
-#> 5  0.07004611 3.723562  0.57704823
-#> 6  0.07920751 3.164767 -0.03144974
-#> 7  0.08360708 3.204572 -0.01551420
-#> 8  0.08998645 2.414765 -0.83993044
-#> 9  0.09054400 4.120299  0.86257820
-#> 10 0.09622498 2.468223 -0.82031889
+#> # A tibble: 100 x 3
+#>              x        y        resid
+#>          <dbl>    <dbl>        <dbl>
+#>  1 0.007764089 3.434399  0.368540719
+#>  2 0.010139684 3.924469  0.845612896
+#>  3 0.020426476 3.574665  0.439523271
+#>  4 0.054073586 1.786603 -1.532643175
+#>  5 0.075632210 2.544859 -0.892348715
+#>  6 0.099335418 2.855342 -0.711561273
+#>  7 0.122253743 3.571305 -0.120998985
+#>  8 0.138008688 3.867327  0.088817647
+#>  9 0.152028988 3.671963 -0.183260285
+#> 10 0.152634759 3.860819  0.002281414
 #> # ... with 90 more rows
 ```
 
@@ -150,36 +155,36 @@ For visualization purposes it is often useful to use an evenly spaced grid of po
 
 ``` r
 data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs)
-#> # A tibble: 60 × 3
+#> # A tibble: 60 x 3
 #>          wt   cyl    vs
 #>       <dbl> <dbl> <dbl>
-#> 1  1.513000     4     0
-#> 2  1.513000     4     1
-#> 3  1.513000     6     0
-#> 4  1.513000     6     1
-#> 5  1.513000     8     0
-#> 6  1.513000     8     1
-#> 7  1.947556     4     0
-#> 8  1.947556     4     1
-#> 9  1.947556     6     0
+#>  1 1.513000     4     0
+#>  2 1.513000     4     1
+#>  3 1.513000     6     0
+#>  4 1.513000     6     1
+#>  5 1.513000     8     0
+#>  6 1.513000     8     1
+#>  7 1.947556     4     0
+#>  8 1.947556     4     1
+#>  9 1.947556     6     0
 #> 10 1.947556     6     1
 #> # ... with 50 more rows
 
 # For continuous variables, seq_range is useful
 mtcars_mod <- lm(mpg ~ wt + cyl + vs, data = mtcars)
 data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs) %>% add_predictions(mtcars_mod)
-#> # A tibble: 60 × 4
+#> # A tibble: 60 x 4
 #>          wt   cyl    vs     pred
 #>       <dbl> <dbl> <dbl>    <dbl>
-#> 1  1.513000     4     0 28.37790
-#> 2  1.513000     4     1 28.90207
-#> 3  1.513000     6     0 25.64969
-#> 4  1.513000     6     1 26.17386
-#> 5  1.513000     8     0 22.92148
-#> 6  1.513000     8     1 23.44566
-#> 7  1.947556     4     0 26.96717
-#> 8  1.947556     4     1 27.49134
-#> 9  1.947556     6     0 24.23896
+#>  1 1.513000     4     0 28.37790
+#>  2 1.513000     4     1 28.90207
+#>  3 1.513000     6     0 25.64969
+#>  4 1.513000     6     1 26.17386
+#>  5 1.513000     8     0 22.92148
+#>  6 1.513000     8     1 23.44566
+#>  7 1.947556     4     0 26.96717
+#>  8 1.947556     4     1 27.49134
+#>  9 1.947556     6     0 24.23896
 #> 10 1.947556     6     1 24.76314
 #> # ... with 50 more rows
 ```

@@ -26,4 +26,3 @@ model_matrix(mtcars, mpg ~ cyl)
 model_matrix(iris, Sepal.Length ~ Species)
 model_matrix(iris, Sepal.Length ~ Species - 1)
 }
-
