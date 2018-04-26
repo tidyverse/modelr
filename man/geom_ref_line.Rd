@@ -4,7 +4,7 @@
 \alias{geom_ref_line}
 \title{Add a reference line (ggplot2).}
 \usage{
-geom_ref_line(h, v, size = 2, colour = "white")
+geom_ref_line(h, v, size = 2, colour = ggplot2::theme_get()$panel.grid.major$colour)
 }
 \arguments{
 \item{h, v}{Position of horizontal or vertical reference line}
