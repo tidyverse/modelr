@@ -7,3 +7,5 @@
 * Updated usage of `reduce()` for upcoming purrr release
 
 * More general `permute()` function
+
+* Add `mse()` function to calculate mean squared error. Written by @bensoltoff, pull request #57
