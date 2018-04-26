@@ -3,7 +3,10 @@
 #' \code{rmse} is the root-mean-squared-error, \code{mae} is the mean
 #' absolute error, \code{qae} is quantiles of absolute error. These can both
 #' be interpreted on the scale of the response; \code{mae} is less sensitive
-#' to outliers. \code{rsquare} is the variance of the predictions divided by
+#' to outliers. 
+#' \code{mape} is the mean absolute percentage error;
+#' \code{rsae} is the relative sum of absolute errors. 
+#' \code{rsquare} is the variance of the predictions divided by
 #' by the variance of the response.
 #'
 #' @param model A model
@@ -15,6 +18,8 @@
 #' rsquare(mod, mtcars)
 #' mae(mod, mtcars)
 #' qae(mod, mtcars)
+#' mape(mod, mtcars)
+#' rsae(mod, mtcars)
 NULL
 
 #' @export
@@ -43,4 +48,22 @@ rsquare <- function(model, data) {
 qae <- function(model, data, probs = c(0.05, 0.25, 0.5, 0.75, 0.95)) {
   x <- residuals(model, data)
   stats::quantile(abs(x), probs, na.rm = TRUE)
+}
+
+#' @export
+#' @rdname model-quality
+mape <- function(model, data) {
+  x <- residuals(model, data)
+  y <- response(model, data)
+  mean(abs(x/y), na.rm = TRUE)
+}
+
+#' @export
+#' @rdname model-quality
+#' @param na.rm Should missing values be removed?
+rsae <- function(model, data, na.rm = FALSE) {
+  xy <- data.frame(x = residuals(model, data),
+                   y = response(model, data))
+  xy <- na.omit(xy)
+  sum(abs(xy[[1]]), na.rm = na.rm)/sum(abs(xy[[2]]), na.rm = na.rm)
 }
