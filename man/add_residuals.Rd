@@ -27,7 +27,7 @@ name of the name of the model.}
 \value{
 A data frame. \code{add_residuals} adds a single new column,
   \code{.resid}, to the input \code{data}. \code{spread_residuals} adds
-  one column for each model. \code{gather_prections} adds two columns
+  one column for each model. \code{gather_predictions} adds two columns
   \code{.model} and \code{.resid}, and repeats the input rows for
   each model.
 }

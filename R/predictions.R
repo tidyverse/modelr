@@ -9,7 +9,7 @@
 #' @param .pred,.model The variable names used by \code{gather_predictions}.
 #' @return A data frame. \code{add_prediction} adds a single new column,
 #'   \code{.pred}, to the input \code{data}. \code{spread_predictions} adds
-#'   one column for each model. \code{gather_prections} adds two columns
+#'   one column for each model. \code{gather_predictions} adds two columns
 #'   \code{.model} and \code{.pred}, and repeats the input rows for
 #'   each model.
 #' @export
