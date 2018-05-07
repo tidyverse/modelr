@@ -1,5 +1,5 @@
 Package: modelr
-Version: 0.1.1
+Version: 0.1.1.9000
 Title: Modelling Functions that Work with the Pipe
 Description: Functions for modelling that help you seamlessly integrate
     modelling into a pipeline of data manipulation and visualisation.
