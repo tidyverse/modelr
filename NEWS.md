@@ -1,5 +1,7 @@
 # modelr 0.1.1.9000
 
+* Added `...` argument to the `typical()` generic function (@jrnold, #42)
+
 * Added `typical.ordered` and `typical.integer` methods (@jrnold, #44)
 
 # modelr 0.1.1

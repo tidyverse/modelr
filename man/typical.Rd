@@ -4,10 +4,12 @@
 \alias{typical}
 \title{Find the typical value}
 \usage{
-typical(x)
+typical(x, ...)
 }
 \arguments{
 \item{x}{A vector}
+
+\item{...}{Arguments used by methods}
 }
 \description{
 For numeric, integer, and ordered factor vectors, it returns the median.

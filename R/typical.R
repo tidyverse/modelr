@@ -6,6 +6,7 @@
 #' them all. \code{NA} missing values are always silently dropped.
 #'
 #' @param x A vector
+#' @param ... Arguments used by methods
 #' @export
 #' @importFrom stats quantile
 #' @examples
@@ -24,29 +25,29 @@
 #' # median of an ordered factor
 #' typical(ordered(c("a", "a", "b", "c", "d")))
 #'
-typical <- function(x) {
+typical <- function(x, ...) {
   UseMethod("typical")
 }
 
 #' @export
-typical.numeric <- function(x) {
+typical.numeric <- function(x, ...) {
   stats::median(x, na.rm = TRUE)
 }
 
 #' @export
-typical.factor <- function(x) {
+typical.factor <- function(x, ...) {
   counts <- table(x)
   levels(x)[max(counts) == counts]
 }
 
 #' @export
-typical.character <- function(x) {
+typical.character <- function(x, ...) {
   counts <- table(x)
   names(counts)[max(counts) == counts]
 }
 
 #' @export
-typical.logical <- function(x) {
+typical.logical <- function(x, ...) {
   mean(x, na.rm = TRUE) >= 0.5
 }
 
