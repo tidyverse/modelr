@@ -205,3 +205,9 @@ data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs) %>% add_predictions(mtcars_mo
 #> 10  1.95     6     1  24.8
 #> # ... with 50 more rows
 ```
+
+## Code of conduct
+
+Please note that this project is released with a [Contributor Code of
+Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree
+to abide by its terms.

@@ -7,3 +7,4 @@
 ^README.Rmd$
 ^_pkgdown\.yml$
 ^docs$
+^CODE_OF_CONDUCT\.md$
