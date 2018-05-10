@@ -1,16 +1,17 @@
 
 # modelr
 
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/modelr)](https://cran.r-project.org/package=modelr)
 [![Travis-CI Build
 Status](https://travis-ci.org/tidyverse/modelr.svg?branch=master)](https://travis-ci.org/tidyverse/modelr)
 [![codecov](https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/modelr)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/modelr)](https://cran.r-project.org/package=modelr)
 
 The modelr package provides functions that help you create elegant
 pipelines when modelling. It is designed primarily to support teaching
-the idea of modelling within the tidyverse, particularly in [R for data
-science](http://r4ds.had.co.nz/model-basics.html).
+the basics of modelling within the tidyverse, particularly in [R for
+Data Science](http://r4ds.had.co.nz/model-basics.html).
 
 ## Installation
 
@@ -25,6 +26,16 @@ install.packages("tidyr")
 # install.packages("devtools")
 devtools::install_github("tidyverse/modelr")
 ```
+
+## Status
+
+modelr is stable: it has achieved its goal of making it easier to teach
+modelling within the tidyverse. For more general modelling tasks, check
+out the family of “tidymodel” packages like
+[recipes](https://topepo.github.io/recipes/),
+[rsample](https://topepo.github.io/rsample/),
+[parsnip](https://topepo.github.io/parsnip/), and
+[tidyposterior](https://topepo.github.io/tidyposterior/).
 
 ## Getting started
 
