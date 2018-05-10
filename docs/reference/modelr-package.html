@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a list of formulas — formulas • modelr</title>
+<title>modelr: Modelling Functions that Work with the Pipe — modelr-package • modelr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -80,67 +80,45 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a list of formulas</h1>
-    <small class="dont-index">Source: <a href='https://github.com/hadley/modelr/blob/master/R/formulas.R'><code>R/formulas.R</code></a></small>
-    <div class="hidden name"><code>formulas.Rd</code></div>
+    <h1>modelr: Modelling Functions that Work with the Pipe</h1>
+    <small class="dont-index">Source: <a href='https://github.com/hadley/modelr/blob/master/R/modelr.R'><code>R/modelr.R</code></a></small>
+    <div class="hidden name"><code>modelr-package.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><code>formulas()</code> creates a list of two-sided formulas by merging a
-unique left-hand side to a list of right-hand sides.</p>
+    <p>Functions for modelling that help you seamlessly integrate
+modelling into a pipeline of data manipulation and visualisation.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>formulas</span>(<span class='no'>.response</span>, <span class='no'>...</span>)
+        
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-<span class='fu'>formulae</span>(<span class='no'>.response</span>, <span class='no'>...</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>.response</th>
-      <td><p>A one-sided formula used as the left-hand side of
-all resulting formulas.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>List of formulas whose right-hand sides will be merged
-to <code>.response</code>.</p></td>
-    </tr>
-    </table>
+    <div class='dont-index'><p>Useful links:</p><ul>
+<li><p><a href='https://modelr.tidyverse.org'>https://modelr.tidyverse.org</a></p></li>
+<li><p><a href='https://github.com/hadley/modelr'>https://github.com/hadley/modelr</a></p></li>
+<li><p>Report bugs at <a href='https://github.com/hadley/modelr/issues'>https://github.com/hadley/modelr/issues</a></p></li>
+</ul></div>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Provide named arguments to create a named list of formulas:</span>
-<span class='no'>models</span> <span class='kw'>&lt;-</span> <span class='fu'>formulas</span>(~<span class='no'>lhs</span>,
-  <span class='kw'>additive</span> <span class='kw'>=</span> ~<span class='no'>var1</span> + <span class='no'>var2</span>,
-  <span class='kw'>interaction</span> <span class='kw'>=</span> ~<span class='no'>var1</span> * <span class='no'>var2</span>
-)
-<span class='no'>models</span>$<span class='no'>additive</span></div><div class='output co'>#&gt; lhs ~ var1 + var2
-#&gt; &lt;environment: 0x7fecd8031870&gt;</div><div class='input'>
-<span class='co'># The formulas are created sequentially, so that you can refer to</span>
-<span class='co'># previously created formulas:</span>
-<span class='fu'>formulas</span>(~<span class='no'>lhs</span>,
-  <span class='kw'>linear</span> <span class='kw'>=</span> ~<span class='no'>var1</span> + <span class='no'>var2</span>,
-  <span class='kw'>hierarchical</span> <span class='kw'>=</span> <span class='fu'><a href='add_predictors.html'>add_predictors</a></span>(<span class='no'>linear</span>, ~(<span class='fl'>1</span> <span class='kw'>|</span> <span class='no'>group</span>))
-)</div><div class='output co'>#&gt; $linear
-#&gt; lhs ~ var1 + var2
-#&gt; &lt;environment: 0x7fecd8031870&gt;
-#&gt; 
-#&gt; $hierarchical
-#&gt; lhs ~ var1 + var2 + (1 | group)
-#&gt; &lt;environment: 0x7fecd8031870&gt;
-#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+      
+      <li><a href="#see-also">See also</a></li>
+          </ul>
+
+    <h2>Author</h2>
+    
+<strong>Maintainer</strong>: Hadley Wickham <a href='mailto:hadley@rstudio.com'>hadley@rstudio.com</a>
+
+Other contributors:
+<ul>
+<li><p>RStudio [copyright holder]</p></li>
+</ul>
+
 
   </div>
 </div>
