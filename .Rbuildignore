@@ -8,3 +8,4 @@
 ^_pkgdown\.yml$
 ^docs$
 ^CODE_OF_CONDUCT\.md$
+^LICENSE\.md$
