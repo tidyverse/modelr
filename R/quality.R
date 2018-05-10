@@ -1,11 +1,16 @@
 #' Compute model quality for a given dataset
 #'
-#' `rmse` is the root-mean-squared-error, `mae` is the mean
-#' absolute error, `qae` is quantiles of absolute error. These can all
-#' be interpreted on the scale of the response; `mae` is less sensitive
-#' to outliers. `mse` is the mean-squared-error and can be interpreted on
-#' the squared scale of the response. `rsquare` is the variance of the
-#' predictions divided by the variance of the response.
+#' @description
+#' Three summaries can be interpreted on the scale of the response:
+#' * `rmse()` is the root-mean-squared-error
+#' * `mae()` is the mean absolute error
+#' * `qae()` is quantiles of absolute error.
+#'
+#' Other summaries have varying scales:
+#' * `mse()` is the mean-squared-error and can be interpreted on the squared
+#'   scale of the response.
+#' * `rsquare()` is the variance of the predictions divided by the
+#'   variance of the response.
 #'
 #' @param model A model
 #' @param data The dataset

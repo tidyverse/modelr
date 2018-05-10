@@ -27,12 +27,20 @@ qae(model, data, probs = c(0.05, 0.25, 0.5, 0.75, 0.95))
 \item{probs}{Numeric vector of probabilities}
 }
 \description{
-\code{rmse} is the root-mean-squared-error, \code{mae} is the mean
-absolute error, \code{qae} is quantiles of absolute error. These can all
-be interpreted on the scale of the response; \code{mae} is less sensitive
-to outliers. \code{mse} is the mean-squared-error and can be interpreted on
-the squared scale of the response. \code{rsquare} is the variance of the
-predictions divided by the variance of the response.
+Three summaries can be interpreted on the scale of the response:
+\itemize{
+\item \code{rmse()} is the root-mean-squared-error
+\item \code{mae()} is the mean absolute error
+\item \code{qae()} is quantiles of absolute error.
+}
+
+Other summaries have varying scales:
+\itemize{
+\item \code{mse()} is the mean-squared-error and can be interpreted on the squared
+scale of the response.
+\item \code{rsquare()} is the variance of the predictions divided by the
+variance of the response.
+}
 }
 \examples{
 mod <- lm(mpg ~ wt, data = mtcars)
