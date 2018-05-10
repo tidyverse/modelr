@@ -51,7 +51,10 @@ mae <- function(model, data) {
 #' @export
 #' @rdname model-quality
 rsquare <- function(model, data) {
-  stats::var(stats::predict(model, data), na.rm = TRUE) / stats::var(response(model, data), na.rm = TRUE)
+  x <- residuals(model, data)
+  y <- response(model, data)
+
+  1 - stats::var(x, na.rm = TRUE) / stats::var(y, na.rm = TRUE)
 }
 
 #' @export

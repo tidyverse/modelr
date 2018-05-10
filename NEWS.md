@@ -1,5 +1,8 @@
 # modelr 0.1.1.9000
 
+* Use more robust calculation of `rsquare()`: 1 - SS_res / SS_tot rather 
+  than SS_reg / SS_tot (#37).
+
 * New `mape()` and `rsae()` model quality statistics (@paulponcet, #33).
 
 * Added `...` argument to the `typical()` generic function (@jrnold, #42)
