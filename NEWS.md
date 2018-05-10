@@ -1,4 +1,4 @@
-# modelr 0.1.1.9000
+# modelr 0.1.2
 
 * `data_grid()` no longer fails with modern tidyr (#58).
 
