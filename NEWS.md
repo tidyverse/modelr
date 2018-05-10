@@ -2,6 +2,8 @@
 
 * Added `...` argument to the `typical()` generic function (@jrnold, #42)
 
+* Added `typical.ordered` and `typical.integer` methods (@jrnold, #44)
+
 # modelr 0.1.1
 
 * Added a `NEWS.md` file to track changes to the package.
