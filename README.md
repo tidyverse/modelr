@@ -20,7 +20,7 @@ Data Science](http://r4ds.had.co.nz/model-basics.html).
 install.packages("tidyverse")
 
 # Alternatively, install just modelr:
-install.packages("tidyr")
+install.packages("modelr")
 
 # Or the development version from GitHub:
 # install.packages("devtools")

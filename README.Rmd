@@ -24,7 +24,7 @@ It is designed primarily to support teaching the basics of modelling within the 
 install.packages("tidyverse")
 
 # Alternatively, install just modelr:
-install.packages("tidyr")
+install.packages("modelr")
 
 # Or the development version from GitHub:
 # install.packages("devtools")
