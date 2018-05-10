@@ -2,14 +2,13 @@
 
 * `data_grid()` no longer fails with modern tidyr (#58).
 
-* Use more robust calculation of `rsquare()`: 1 - SS_res / SS_tot rather 
-  than SS_reg / SS_tot (#37).
-
 * New `mape()` and `rsae()` model quality statistics (@paulponcet, #33).
 
-* Added `...` argument to the `typical()` generic function (@jrnold, #42)
+* `rsquare()` use more robust calculation 1 - SS_res / SS_tot rather 
+  than SS_reg / SS_tot (#37).
 
-* Added `typical.ordered` and `typical.integer` methods (@jrnold, #44)
+* `typical()` gains `ordered` and `integer` methods (@jrnold, #44), 
+  and `...` argument (@jrnold, #42).
 
 # modelr 0.1.1
 
