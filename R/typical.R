@@ -52,11 +52,11 @@ typical.logical <- function(x, ...) {
 }
 
 #' @export
-typical.integer <- function(x) {
+typical.integer <- function(x, ...) {
   unname(stats::quantile(x, 0.5, type = 1, na.rm = TRUE))
 }
 
 #' @export
-typical.ordered <- function(x) {
+typical.ordered <- function(x, ...) {
   as.character(stats::quantile(x, 0.5, type = 1, na.rm = TRUE))
 }
