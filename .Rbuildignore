@@ -10,3 +10,4 @@
 ^CODE_OF_CONDUCT\.md$
 ^LICENSE\.md$
 ^revdep$
+^CRAN-RELEASE$
