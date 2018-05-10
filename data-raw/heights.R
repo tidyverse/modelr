@@ -30,7 +30,8 @@ new_data <- new_data %>%
     ),
     sex = factor(sex,
       levels = 1:2,
-      labels = c("male", "female")),
+      labels = c("male", "female")
+    ),
     marital = factor(
       marital,
       levels = c(0, 1, 2, 3, 6),

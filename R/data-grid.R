@@ -25,8 +25,9 @@
 data_grid <- function(data, ..., .model = NULL) {
   expanded <- tidyr::expand(data, ...)
 
-  if (is.null(.model))
+  if (is.null(.model)) {
     return(expanded)
+  }
 
   # Generate grid of typical values
   needed <- setdiff(predictor_vars(.model), names(expanded))

@@ -169,7 +169,9 @@ find_env_conflicts <- function(symbol, f1, f2) {
 
   if (!identical(env1, env2)) {
     stop("Cannot merge formulas as their scopes conflict for the symbol '",
-      symbol, "'", call. = FALSE)
+      symbol, "'",
+      call. = FALSE
+    )
   }
 
   env1

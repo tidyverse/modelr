@@ -66,12 +66,14 @@ resample_permutation <- function(data, columns, idx = NULL) {
     stop("`data` must be a data frame.", call. = FALSE)
   }
   if (!is.character(columns) ||
-      !(all(columns %in% colnames(data)))) {
+    !(all(columns %in% colnames(data)))) {
     stop("`columns` must be a vector of column names in `data`", call. = FALSE)
   }
   if (!is.integer(idx) || length(idx) != nrow(data)) {
     stop("`idx` must be an integer vector with the same length as there are ",
-         "rows in `data`", call. = FALSE)
+      "rows in `data`",
+      call. = FALSE
+    )
   }
 
   structure(
@@ -94,7 +96,7 @@ print.permutation <- function(x, ...) {
   }
 
   cat("<", obj_sum.permutation(x), "> ", paste(id10, collapse = ", "), "\n",
-      sep = ""
+    sep = ""
   )
 }
 
@@ -122,6 +124,8 @@ dim.permutation <- function(x, ...) {
 #' @method obj_sum resample
 #' @export
 obj_sum.permutation <- function(x, ...) {
-  paste0("permutation (", paste0(x$columns, collapse = ", "), ") [",
-         big_mark(nrow(x)), " x ", big_mark(ncol(x)), "]")
+  paste0(
+    "permutation (", paste0(x$columns, collapse = ", "), ") [",
+    big_mark(nrow(x)), " x ", big_mark(ncol(x)), "]"
+  )
 }

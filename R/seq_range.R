@@ -58,5 +58,4 @@ seq_range <- function(x, n, by, trim = NULL, expand = NULL, pretty = FALSE) {
     }
     seq(rng[1], rng[2], by = by)
   }
-
 }

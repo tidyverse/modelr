@@ -31,14 +31,14 @@ NULL
 #' @rdname model-quality
 mse <- function(model, data) {
   x <- residuals(model, data)
-  mean(x ^ 2, na.rm = TRUE)
+  mean(x^2, na.rm = TRUE)
 }
 
 #' @export
 #' @rdname model-quality
 rmse <- function(model, data) {
   x <- residuals(model, data)
-  sqrt(mean(x ^ 2, na.rm = TRUE))
+  sqrt(mean(x^2, na.rm = TRUE))
 }
 
 #' @export
