@@ -1,12 +1,12 @@
 #' Construct a design matrix
 #'
-#' This is a thin wrapper around \code{\link[stats]{model.matrix}()} which
+#' This is a thin wrapper around [stats::model.matrix()] which
 #' returns a tibble. Use it to determine how your modelling formula is
 #' translated into a matrix, an thence into an equation.
 #'
 #' @param data A data frame
 #' @param formula A modelling formula
-#' @param ... Other arguments passed onto \code{\link[stats]{model.matrix}()}
+#' @param ... Other arguments passed onto [stats::model.matrix()]
 #' @return A tibble.
 #' @export
 #' @examples

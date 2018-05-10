@@ -9,8 +9,8 @@ fit_with(data, .f, .formulas, ...)
 \arguments{
 \item{data}{A dataset used to fit the models.}
 
-\item{.f}{A fitting function such as \code{\link[stats]{lm}()},
-\code{\link[lme4]{lmer}}() or \code{\link[rstanarm]{stan_glmer}()}.}
+\item{.f}{A fitting function such as \code{\link[stats:lm]{stats::lm()}},
+\code{\link[lme4:lmer]{lme4::lmer()}} or \code{\link[rstanarm:stan_glmer]{rstanarm::stan_glmer()}}.}
 
 \item{.formulas}{A list of formulas specifying a model.}
 
@@ -18,8 +18,8 @@ fit_with(data, .f, .formulas, ...)
 }
 \description{
 \code{fit_with()} is a pipe-friendly tool that applies a list of
-formulas to a fitting function such as \code{\link[stats]{lm}()}.
-The list of formulas is typically created with \code{\link{formulas}}().
+formulas to a fitting function such as \code{\link[stats:lm]{stats::lm()}}.
+The list of formulas is typically created with \url{formulas()}.
 }
 \details{
 Assumes that \code{.f} takes the formula either as first argument
@@ -42,5 +42,5 @@ disp_fits$full
 mtcars \%>\% fit_with(glm, list(am ~ disp), family = binomial)
 }
 \seealso{
-\code{\link{formulas}}()
+\url{formulas()}
 }

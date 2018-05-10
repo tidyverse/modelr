@@ -1,16 +1,16 @@
 #' Add predictions to a data frame
 #'
 #' @param data A data frame used to generate the predictions.
-#' @param model,var \code{add_predictions} takes a single \code{model}; the
-#'   output column will be called \code{pred}
-#' @param ... \code{gather_predictions} and \code{spread_predictions} take
+#' @param model,var `add_predictions` takes a single `model`; the
+#'   output column will be called `pred`
+#' @param ... `gather_predictions` and `spread_predictions` take
 #'   multiple models. The name will be taken from either the argument
 #'   name of the name of the model.
-#' @param .pred,.model The variable names used by \code{gather_predictions}.
-#' @return A data frame. \code{add_prediction} adds a single new column,
-#'   \code{.pred}, to the input \code{data}. \code{spread_predictions} adds
-#'   one column for each model. \code{gather_predictions} adds two columns
-#'   \code{.model} and \code{.pred}, and repeats the input rows for
+#' @param .pred,.model The variable names used by `gather_predictions`.
+#' @return A data frame. `add_prediction` adds a single new column,
+#'   `.pred`, to the input `data`. `spread_predictions` adds
+#'   one column for each model. `gather_predictions` adds two columns
+#'   `.model` and `.pred`, and repeats the input rows for
 #'   each model.
 #' @export
 #' @examples

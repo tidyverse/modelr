@@ -1,18 +1,18 @@
 #' Fit a list of formulas
 #'
-#' \code{fit_with()} is a pipe-friendly tool that applies a list of
-#' formulas to a fitting function such as \code{\link[stats]{lm}()}.
-#' The list of formulas is typically created with \code{\link{formulas}}().
+#' `fit_with()` is a pipe-friendly tool that applies a list of
+#' formulas to a fitting function such as [stats::lm()].
+#' The list of formulas is typically created with [formulas()]().
 #'
-#' Assumes that \code{.f} takes the formula either as first argument
-#' or as second argument if the first argument is \code{data}.  Most
+#' Assumes that `.f` takes the formula either as first argument
+#' or as second argument if the first argument is `data`.  Most
 #' fitting functions should fit these requirements.
 #' @param data A dataset used to fit the models.
-#' @param .f A fitting function such as \code{\link[stats]{lm}()},
-#'   \code{\link[lme4]{lmer}}() or \code{\link[rstanarm]{stan_glmer}()}.
+#' @param .f A fitting function such as [stats::lm()],
+#'   [lme4::lmer()] or [rstanarm::stan_glmer()].
 #' @param .formulas A list of formulas specifying a model.
-#' @param ... Additional arguments passed on to \code{.f}
-#' @seealso \code{\link{formulas}}()
+#' @param ... Additional arguments passed on to `.f`
+#' @seealso [formulas()]()
 #' @export
 #' @examples
 #' # fit_with() is typically used with formulas().
@@ -45,12 +45,12 @@ fit_with <- function(data, .f, .formulas, ...) {
 
 #' Create a list of formulas
 #'
-#' \code{formulas()} creates a list of two-sided formulas by merging a
+#' `formulas()` creates a list of two-sided formulas by merging a
 #' unique left-hand side to a list of right-hand sides.
 #' @param .response A one-sided formula used as the left-hand side of
 #'   all resulting formulas.
 #' @param ... List of formulas whose right-hand sides will be merged
-#'   to \code{.response}.
+#'   to `.response`.
 #' @export
 #' @examples
 #' # Provide named arguments to create a named list of formulas:
@@ -98,11 +98,11 @@ set_lhs <- function(f, lhs) {
 
 #' Add predictors to a formula
 #'
-#' This merges a one- or two-sided formula \code{f} with the
-#' right-hand sides of all formulas supplied in \code{...}.
+#' This merges a one- or two-sided formula `f` with the
+#' right-hand sides of all formulas supplied in `...`.
 #' @param f A formula.
 #' @param ... Formulas whose right-hand sides will be merged to
-#'   \code{f}.
+#'   `f`.
 #' @param fun A function name indicating how to merge the right-hand
 #'   sides.
 #' @export

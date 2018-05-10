@@ -23,8 +23,8 @@ crossv_kfold(data, k = 5, id = ".id")
 }
 \value{
 A data frame with \code{n}/\code{k} rows and columns \code{test} and
-  \code{train}. \code{test} and \code{train} are list-columns containing
-  \code{\link{resample}} objects.
+\code{train}. \code{test} and \code{train} are list-columns containing
+\code{\link[=resample]{resample()}} objects.
 }
 \description{
 \code{crossv_kfold} splits the data into \code{k} exclusive partitions,

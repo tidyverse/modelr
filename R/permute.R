@@ -1,4 +1,4 @@
-#' Generate \code{n} permutation replicates.
+#' Generate `n` permutation replicates.
 #'
 #' A permutation test involves permuting one or more variables in a data set
 #' before performing the test, in order to break any existing relationships
@@ -8,11 +8,11 @@
 #' @inheritParams resample_partition
 #' @param n Number of permutations to generate.
 #' @param ... Columns to permute. This supports bare column names or dplyr
-#' \link[dplyr]{select_helpers}.
-#' @param columns In \code{permute_}, vector of column names to permute.
+#' [dplyr::select_helpers]
+#' @param columns In `permute_`, vector of column names to permute.
 #' @param .id Name of variable that gives each model a unique integer id.
 #'
-#' @return A data frame with \code{n} rows and one column: \code{perm}
+#' @return A data frame with `n` rows and one column: `perm`
 #' @export
 #' @examples
 #'

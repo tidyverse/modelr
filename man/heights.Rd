@@ -5,15 +5,15 @@
 \alias{heights}
 \title{Height and income data.}
 \format{\describe{
- \item{income}{Yearly income. The top two percent of values were averaged
-   and that average was used to replace all values in the top range. }
- \item{height}{Height, in feet}
- \item{weight}{Weight, in pounds}
- \item{age}{Age, in years, between 47 and 56.}
- \item{marital}{Marital status}
- \item{sex}{Sex}
- \item{education}{Years of education}
- \item{afqt}{Percentile score on Armed Forces Qualification Test.}
+\item{income}{Yearly income. The top two percent of values were averaged
+and that average was used to replace all values in the top range. }
+\item{height}{Height, in feet}
+\item{weight}{Weight, in pounds}
+\item{age}{Age, in years, between 47 and 56.}
+\item{marital}{Marital status}
+\item{sex}{Sex}
+\item{education}{Years of education}
+\item{afqt}{Percentile score on Armed Forces Qualification Test.}
 }}
 \usage{
 heights

@@ -10,11 +10,11 @@ seq_range(x, n, by, trim = NULL, expand = NULL, pretty = FALSE)
 \item{x}{A numeric vector}
 
 \item{n, by}{Specify the output sequence either by supplying the
-  length of the sequence with \code{n}, or the spacing between value
-  with \code{by}. Specifying both is an error.
+length of the sequence with \code{n}, or the spacing between value
+with \code{by}. Specifying both is an error.
 
-  I recommend that you name these arguments in order to make it clear to
-  the reader.}
+I recommend that you name these arguments in order to make it clear to
+the reader.}
 
 \item{trim}{Optionally, trim values off the tails.
 \code{trim / 2 * length(x)} values are removed from each tail.}
@@ -23,8 +23,8 @@ seq_range(x, n, by, trim = NULL, expand = NULL, pretty = FALSE)
 (computed after trimming).}
 
 \item{pretty}{If \code{TRUE}, will generate a pretty sequence. If \code{n}
-is supplied, this will use \code{\link{pretty}()} instead of
-\code{\link{seq}()}. If \code{by} is supplied, it will round the first
+is supplied, this will use \code{\link[=pretty]{pretty()}} instead of
+\code{\link[=seq]{seq()}}. If \code{by} is supplied, it will round the first
 value to a multiple of \code{by}.}
 }
 \description{

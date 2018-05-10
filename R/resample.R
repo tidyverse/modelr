@@ -3,12 +3,12 @@
 #' Often you will resample a dataset hundreds or thousands of times. Storing
 #' the complete resample each time would be very inefficient so this class
 #' instead stores a "pointer" to the original dataset, and a vector of row
-#' indexes. To turn this into a regular data frame, call \code{as.data.frame},
-#' to extract the indices, use \code{as.integer}.
+#' indexes. To turn this into a regular data frame, call `as.data.frame`,
+#' to extract the indices, use `as.integer`.
 #'
 #' @param data The data frame
 #' @param idx A vector of integer indexes indicating which rows have
-#'   been selected. These values should lie between 1 and \code{nrow(data)}
+#'   been selected. These values should lie between 1 and `nrow(data)`
 #'   but they are not checked by this function in the interests of performance.
 #' @inheritParams resampling techniques
 #' @export

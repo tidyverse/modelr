@@ -2,18 +2,18 @@
 #'
 #' @param x A numeric vector
 #' @param n,by Specify the output sequence either by supplying the
-#'   length of the sequence with \code{n}, or the spacing between value
-#'   with \code{by}. Specifying both is an error.
+#'   length of the sequence with `n`, or the spacing between value
+#'   with `by`. Specifying both is an error.
 #'
 #'   I recommend that you name these arguments in order to make it clear to
 #'   the reader.
-#' @param pretty If \code{TRUE}, will generate a pretty sequence. If \code{n}
-#'   is supplied, this will use \code{\link{pretty}()} instead of
-#'   \code{\link{seq}()}. If \code{by} is supplied, it will round the first
-#'   value to a multiple of \code{by}.
+#' @param pretty If `TRUE`, will generate a pretty sequence. If `n`
+#'   is supplied, this will use [pretty()] instead of
+#'   [seq()]. If `by` is supplied, it will round the first
+#'   value to a multiple of `by`.
 #' @param trim Optionally, trim values off the tails.
-#'   \code{trim / 2 * length(x)} values are removed from each tail.
-#' @param expand Optionally, expand the range by \code{expand * (1 + range(x)}
+#'   `trim / 2 * length(x)` values are removed from each tail.
+#' @param expand Optionally, expand the range by `expand * (1 + range(x)`
 #'   (computed after trimming).
 #' @export
 #' @examples

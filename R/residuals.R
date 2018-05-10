@@ -1,16 +1,16 @@
 #' Add residuals to a data frame
 #'
 #' @param data A data frame used to generate the residuals
-#' @param model,var \code{add_residuals} takes a single \code{model}; the
-#'   output column will be called \code{resid}
-#' @param ... \code{gather_residuals} and \code{spread_residuals} take
+#' @param model,var `add_residuals` takes a single `model`; the
+#'   output column will be called `resid`
+#' @param ... `gather_residuals` and `spread_residuals` take
 #'   multiple models. The name will be taken from either the argument
 #'   name of the name of the model.
-#' @param .resid,.model The variable names used by \code{gather_residuals}.
-#' @return A data frame. \code{add_residuals} adds a single new column,
-#'   \code{.resid}, to the input \code{data}. \code{spread_residuals} adds
-#'   one column for each model. \code{gather_predictions} adds two columns
-#'   \code{.model} and \code{.resid}, and repeats the input rows for
+#' @param .resid,.model The variable names used by `gather_residuals`.
+#' @return A data frame. `add_residuals` adds a single new column,
+#'   `.resid`, to the input `data`. `spread_residuals` adds
+#'   one column for each model. `gather_predictions` adds two columns
+#'   `.model` and `.resid`, and repeats the input rows for
 #'   each model.
 #' @export
 #' @examples

@@ -26,4 +26,5 @@ Suggests:
     compiler
 URL: https://github.com/hadley/modelr
 BugReports: https://github.com/hadley/modelr/issues
-RoxygenNote: 6.0.1
+RoxygenNote: 6.0.1.9000
+Roxygen: list(markdown = TRUE)

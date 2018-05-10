@@ -11,13 +11,13 @@ model_matrix(data, formula, ...)
 
 \item{formula}{A modelling formula}
 
-\item{...}{Other arguments passed onto \code{\link[stats]{model.matrix}()}}
+\item{...}{Other arguments passed onto \code{\link[stats:model.matrix]{stats::model.matrix()}}}
 }
 \value{
 A tibble.
 }
 \description{
-This is a thin wrapper around \code{\link[stats]{model.matrix}()} which
+This is a thin wrapper around \code{\link[stats:model.matrix]{stats::model.matrix()}} which
 returns a tibble. Use it to determine how your modelling formula is
 translated into a matrix, an thence into an equation.
 }

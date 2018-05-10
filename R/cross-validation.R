@@ -1,8 +1,8 @@
 #' Generate cross-validated test-training pairs
 #'
-#' \code{crossv_kfold} splits the data into \code{k} exclusive partitions,
-#' and uses each partition for a test-training split. \code{crossv_mc}
-#' generates \code{n} random partitions, holding out \code{p} of the
+#' `crossv_kfold` splits the data into `k` exclusive partitions,
+#' and uses each partition for a test-training split. `crossv_mc`
+#' generates `n` random partitions, holding out `p` of the
 #' data for training.
 #'
 #' @inheritParams resample_partition
@@ -10,9 +10,9 @@
 #' @param test Proportion of observations that should be held out for testing
 #'   (a double).
 #' @param id Name of variable that gives each model a unique integer id.
-#' @return A data frame with \code{n}/\code{k} rows and columns \code{test} and
-#'   \code{train}. \code{test} and \code{train} are list-columns containing
-#'   \code{\link{resample}} objects.
+#' @return A data frame with `n`/`k` rows and columns `test` and
+#'   `train`. `test` and `train` are list-columns containing
+#'   [resample()] objects.
 #' @export
 #' @examples
 #' cv1 <- crossv_kfold(mtcars, 5)
