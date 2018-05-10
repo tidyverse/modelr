@@ -15,11 +15,11 @@ Depends:
 Imports: 
     broom,
     dplyr,
-    lazyeval (>= 0.2.0),
     magrittr,
     purrr (>= 0.2.2),
     tibble,
-    tidyr (>= 0.8.0)
+    tidyr (>= 0.8.0),
+    rlang (>= 0.2.0)
 Suggests: 
     compiler,
     covr,

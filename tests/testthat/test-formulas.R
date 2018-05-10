@@ -24,7 +24,7 @@ test_that("merging formulas fail when scope conflicts within symbols", {
   env$object <- list()
   object <- list()
 
-  f_conflict <- lazyeval::f_new(quote(object), env = env)
+  f_conflict <- new_formula(NULL, quote(object), env = env)
   expect_error(merge_envs(~object, f_conflict), "conflict for the symbol 'object'")
 })
 
@@ -33,8 +33,8 @@ test_that("merging formulas fail when scope conflicts between symbols", {
   env1$object <- list()
   env2 <- new.env(parent = emptyenv())
   env2$other_object <- list()
-  f1 <- lazyeval::f_new(quote(list(object)), env = env1)
-  f2 <- lazyeval::f_new(quote(list(other_object)), env = env2)
+  f1 <- new_formula(NULL, quote(list(object)), env = env1)
+  f2 <- new_formula(NULL, quote(list(other_object)), env = env2)
   expect_error(merge_envs(f1, f2), "conflict across symbols")
 })
 

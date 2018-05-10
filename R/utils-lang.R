@@ -23,7 +23,7 @@ find_symbols_call <- function(lang) {
 }
 
 f_zap_lhs <- function(f) {
-  lazyeval::f_new(lazyeval::f_rhs(f), env = lazyeval::f_env(f))
+  new_formula(NULL, f_rhs(f), env = f_env(f))
 }
 
 is_formula <- function(f) {

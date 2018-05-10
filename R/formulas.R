@@ -93,7 +93,7 @@ validate_formulas <- function(response, formulas) {
 
 set_lhs <- function(f, lhs) {
   env <- merge_envs(lhs, f)
-  lazyeval::f_new(lazyeval::f_rhs(f), lazyeval::f_rhs(lhs), env)
+  new_formula(f_rhs(lhs), f_rhs(f), env)
 }
 
 #' Add predictors to a formula
@@ -119,13 +119,14 @@ add_predictors <- function(f, ..., fun = "+") {
   rhss <- map(list(f, ...), f_zap_lhs)
   rhs <- reduce(rhss, merge_formulas, fun = fun)
   env <- merge_envs(f, rhs)
-  lazyeval::f_new(lazyeval::f_rhs(rhs), lazyeval::f_lhs(f), env)
+
+  new_formula(f_lhs(f), f_rhs(rhs), env)
 }
 
 merge_formulas <- function(f1, f2, fun = "+") {
-  rhs <- call(fun, lazyeval::f_rhs(f1), lazyeval::f_rhs(f2))
+  rhs <- call(fun, f_rhs(f1), f_rhs(f2))
 
-  lhss <- compact(map(list(f1, f2), lazyeval::f_lhs))
+  lhss <- compact(map(list(f1, f2), f_lhs))
   if (length(lhss) == 0) {
     lhs <- NULL
   } else {
@@ -133,7 +134,7 @@ merge_formulas <- function(f1, f2, fun = "+") {
   }
 
   env <- merge_envs(f1, f2)
-  lazyeval::f_new(rhs, lhs, env)
+  new_formula(lhs, rhs, env)
 }
 
 merge_envs <- function(f1, f2) {
