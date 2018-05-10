@@ -7,6 +7,8 @@
 \alias{mae}
 \alias{rsquare}
 \alias{qae}
+\alias{mape}
+\alias{rsae}
 \title{Compute model quality for a given dataset}
 \usage{
 mse(model, data)
@@ -18,6 +20,10 @@ mae(model, data)
 rsquare(model, data)
 
 qae(model, data, probs = c(0.05, 0.25, 0.5, 0.75, 0.95))
+
+mape(model, data)
+
+rsae(model, data)
 }
 \arguments{
 \item{model}{A model}
@@ -27,17 +33,19 @@ qae(model, data, probs = c(0.05, 0.25, 0.5, 0.75, 0.95))
 \item{probs}{Numeric vector of probabilities}
 }
 \description{
-Three summaries can be interpreted on the scale of the response:
+Three summaries are immediately interpretible on the scale of the response
+variable:
 \itemize{
 \item \code{rmse()} is the root-mean-squared-error
 \item \code{mae()} is the mean absolute error
 \item \code{qae()} is quantiles of absolute error.
 }
 
-Other summaries have varying scales:
+Other summaries have varying scales and interpretations:
 \itemize{
-\item \code{mse()} is the mean-squared-error and can be interpreted on the squared
-scale of the response.
+\item \code{mape()} mean absolute percentage error.
+\item \code{rsae()} is the relative sum of absolute errors.
+\item \code{mse()} is the mean-squared-error.
 \item \code{rsquare()} is the variance of the predictions divided by the
 variance of the response.
 }
@@ -49,4 +57,6 @@ rmse(mod, mtcars)
 rsquare(mod, mtcars)
 mae(mod, mtcars)
 qae(mod, mtcars)
+mape(mod, mtcars)
+rsae(mod, mtcars)
 }
