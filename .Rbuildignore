@@ -5,3 +5,5 @@
 ^codecov\.yml$
 ^cran-comments\.md$
 ^README.Rmd$
+^_pkgdown\.yml$
+^docs$

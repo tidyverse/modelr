@@ -1,0 +1,29 @@
+home:
+  strip_header: true
+  links:
+    - text: Learn more
+      href: http://r4ds.had.co.nz/model-basics.html
+
+template:
+  package: tidytemplate
+  default_assets: false
+
+reference:
+
+- title: Resampling
+  contents: [bootstrap, crossv_mc, permute, starts_with("resample")]
+
+- title: Prediction grids
+  contents: [add_predictions, data_grid, typical, seq_range]
+
+- title: Residuals and quality metrics
+  contents: [add_residuals, mse]
+
+- title: Formulas
+  contents: [fit_with, add_predictors, formulas]
+
+- title: Data
+  contents: [sim1, heights]
+
+- title: Helpers
+  contents: [geom_ref_line, model_matrix, na.warn]
