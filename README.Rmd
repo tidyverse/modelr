@@ -11,37 +11,34 @@ set.seed(1014)
 
 [![Travis-CI Build Status](https://travis-ci.org/tidyverse/modelr.svg?branch=master)](https://travis-ci.org/tidyverse/modelr)
 [![codecov](https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/modelr)
+[![CRAN status](https://www.r-pkg.org/badges/version/modelr)](https://cran.r-project.org/package=modelr)
 
-The modelr package provides functions that help you create elegant pipelines when modelling. Its design follows Hadley Wickham's [tidy tool manifesto](http://tidyverse.tidyverse.org/articles/manifesto.html).
+The modelr package provides functions that help you create elegant pipelines when modelling. 
+It is designed primarily to support teaching the idea of modelling within the tidyverse, particularly in [R for data science](http://r4ds.had.co.nz/model-basics.html).
 
-## Installation and Documentation
+## Installation
 
-You can install modelr from github with:
+```{r, eval = FALSE}
+# The easiest way to get modelr is to install the whole tidyverse:
+install.packages("tidyverse")
 
-```R
+# Alternatively, install just modelr:
+install.packages("tidyr")
+
+# Or the development version from GitHub:
 # install.packages("devtools")
 devtools::install_github("tidyverse/modelr")
 ```
 
-Alternatively, modelr is available as part of [the tidyverse package](http://blog.revolutionanalytics.com/2016/09/tidyverse.html) which can be installed via:
-
-```R
-install.packages("tidyverse")
-```
-
-Note that unlike the core tidyverse packages, modelr would not be loaded via `library(tidyverse)`. Instead, you can load it explicitly:
+## Getting started
 
 ```{r}
 library(modelr)
 ```
 
-Full documentation is available in [R for Data Science](http://r4ds.had.co.nz/), mostly in the [Model basics](http://r4ds.had.co.nz/model-basics.html) chapter.
-
-## Main Features
-
 ### Partitioning and sampling
 
-The `resample` class stores a "pointer" to the original dataset and a vector of row indices. `resample` can be turned into a dataframe by calling `as.data.frame`. The indices can be extracted using `as.integer`:
+The `resample` class stores a "reference" to the original dataset and a vector of row indices. A resample can be turned into a dataframe by calling `as.data.frame()`. The indices can be extracted using `as.integer)(`:
 
 ```{r}
 # a subsample of the first ten rows in the data frame
