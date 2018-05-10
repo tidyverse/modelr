@@ -18,7 +18,7 @@ Imports:
     tibble,
     broom,
     dplyr,
-    tidyr (>= 0.6.0)
+    tidyr (>= 0.8.0)
 Suggests:
     testthat,
     ggplot2,

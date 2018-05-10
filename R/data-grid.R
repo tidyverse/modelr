@@ -30,7 +30,8 @@ data_grid <- function(data, ..., .model = NULL) {
 
   # Generate grid of typical values
   needed <- setdiff(predictor_vars(.model), names(expanded))
-  typical <- tidyr::crossing_(lapply(data[needed], typical))
+  typical_vals <- lapply(data[needed], typical)
+  typical_df <- tidyr::crossing(!!!typical_vals)
 
-  tidyr::crossing(expanded, typical)
+  tidyr::crossing(expanded, typical_df)
 }
