@@ -6,17 +6,21 @@
 \alias{gather_predictions}
 \title{Add predictions to a data frame}
 \usage{
-add_predictions(data, model, var = "pred")
+add_predictions(data, model, var = "pred", type = NULL)
 
-spread_predictions(data, ...)
+spread_predictions(data, ..., type = NULL)
 
-gather_predictions(data, ..., .pred = "pred", .model = "model")
+gather_predictions(data, ..., .pred = "pred", .model = "model",
+  type = NULL)
 }
 \arguments{
 \item{data}{A data frame used to generate the predictions.}
 
-\item{model, var}{\code{add_predictions} takes a single \code{model}; the
-output column will be called \code{pred}}
+\item{model}{\code{add_predictions} takes a single \code{model};}
+
+\item{var}{The name of the output column, default value is \code{pred}}
+
+\item{type}{The value of \code{type} is passed through to \code{stats::predict()}}
 
 \item{...}{\code{gather_predictions} and \code{spread_predictions} take
 multiple models. The name will be taken from either the argument
@@ -26,10 +30,10 @@ name of the name of the model.}
 }
 \value{
 A data frame. \code{add_prediction} adds a single new column,
-\code{.pred}, to the input \code{data}. \code{spread_predictions} adds
-one column for each model. \code{gather_predictions} adds two columns
-\code{.model} and \code{.pred}, and repeats the input rows for
-each model.
+with default name \code{pred}, to the input \code{data}.
+\code{spread_predictions} adds one column for each model. \code{gather_predictions}
+adds two columns \code{.model} and \code{.pred}, and repeats the input rows for each
+model.
 }
 \description{
 Add predictions to a data frame
