@@ -3,11 +3,14 @@
 \name{crossv_mc}
 \alias{crossv_mc}
 \alias{crossv_kfold}
-\title{Generate cross-validated test-training pairs}
+\alias{crossv_loo}
+\title{Generate test-training pairs for cross-validation}
 \usage{
 crossv_mc(data, n, test = 0.2, id = ".id")
 
 crossv_kfold(data, k = 5, id = ".id")
+
+crossv_loo(data, id = ".id")
 }
 \arguments{
 \item{data}{A data frame}
@@ -22,15 +25,18 @@ crossv_kfold(data, k = 5, id = ".id")
 \item{k}{Number of folds (an integer).}
 }
 \value{
-A data frame with \code{n}/\code{k} rows and columns \code{test} and
-\code{train}. \code{test} and \code{train} are list-columns containing
-\code{\link[=resample]{resample()}} objects.
+A data frame with columns \code{test}, \code{train}, and \code{.id}.
+\code{test} and \code{train} are list-columns containing \code{\link[=resample]{resample()}} objects.
+The number of rows is \code{n} for \code{crossv_mc()}, \code{k} for \code{crossv_kfold()}
+and \code{nrow(data)} for \code{crossv_loo()}.
 }
 \description{
 \code{crossv_kfold} splits the data into \code{k} exclusive partitions,
 and uses each partition for a test-training split. \code{crossv_mc}
 generates \code{n} random partitions, holding out \code{p} of the
-data for training.
+data for training. \code{crossv_loo} performs leave-one-out
+cross-validation, i.e., \code{n = nrow(data)} training partitions containing
+\code{n - 1} rows each.
 }
 \examples{
 cv1 <- crossv_kfold(mtcars, 5)
