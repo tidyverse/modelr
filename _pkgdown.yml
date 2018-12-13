@@ -6,7 +6,6 @@ home:
 
 template:
   package: tidytemplate
-  default_assets: false
 
 reference:
 
