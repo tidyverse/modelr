@@ -40,7 +40,7 @@ test_that("number of training pairs to generate is a single integer", {
   expect_error(crossv_mc(mtcars, n = "0"), "`n` must be a single integer")
 })
 
-test_that("crossv_kfold() and crossv_mc() return a tibbles", {
+test_that("crossv_kfold() and crossv_mc() return tibbles", {
   expect_equal(
     class(crossv_kfold(mtcars, 5)),
     c("tbl_df", "tbl", "data.frame")
