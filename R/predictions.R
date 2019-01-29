@@ -3,7 +3,8 @@
 #' @param data A data frame used to generate the predictions.
 #' @param model `add_predictions` takes a single `model`;
 #' @param var The name of the output column, default value is `pred`
-#' @param type The value of `type` is passed through to `stats::predict()`
+#' @param type Prediction type, passed on to `stats::predict()`. Consult
+#'   `predict()` documentation for given `model` to determine valid values.
 #' @param ... `gather_predictions` and `spread_predictions` take
 #'   multiple models. The name will be taken from either the argument
 #'   name of the name of the model.

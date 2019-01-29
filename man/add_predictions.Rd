@@ -20,7 +20,8 @@ gather_predictions(data, ..., .pred = "pred", .model = "model",
 
 \item{var}{The name of the output column, default value is \code{pred}}
 
-\item{type}{The value of \code{type} is passed through to \code{stats::predict()}}
+\item{type}{Prediction type, passed on to \code{stats::predict()}. Consult
+\code{predict()} documentation for given \code{model} to determine valid values.}
 
 \item{...}{\code{gather_predictions} and \code{spread_predictions} take
 multiple models. The name will be taken from either the argument
