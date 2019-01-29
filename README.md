@@ -48,7 +48,7 @@ library(modelr)
 The `resample` class stores a “reference” to the original dataset and a
 vector of row indices. A resample can be turned into a dataframe by
 calling `as.data.frame()`. The indices can be extracted using
-`as.integer)(`:
+`as.integer()`:
 
 ``` r
 # a subsample of the first ten rows in the data frame
