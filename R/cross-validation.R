@@ -2,7 +2,7 @@
 #'
 #' `crossv_kfold` splits the data into `k` exclusive partitions,
 #' and uses each partition for a test-training split. `crossv_mc`
-#' generates `n` random partitions, holding out `p` of the
+#' generates `n` random partitions, holding out `test` of the
 #' data for training.
 #'
 #' @inheritParams resample_partition
