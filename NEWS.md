@@ -1,5 +1,7 @@
 # modelr 0.1.2.9000
 
+* New `crossv_loo()` which implements leave-one-out cross validation (@pmenzel)
+
 * `typical()` no longer ignores missing values in character and factor vectors
   (#80).
 
