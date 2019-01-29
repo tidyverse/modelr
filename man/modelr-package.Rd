@@ -6,8 +6,10 @@
 \alias{modelr-package}
 \title{modelr: Modelling Functions that Work with the Pipe}
 \description{
+\if{html}{\figure{logo.png}{options: align='right'}}
+
 Functions for modelling that help you seamlessly integrate
-modelling into a pipeline of data manipulation and visualisation.
+    modelling into a pipeline of data manipulation and visualisation.
 }
 \seealso{
 Useful links:
