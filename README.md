@@ -1,12 +1,15 @@
 
 # modelr <img src="man/figures/logo.png" align="right" />
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/modelr)](https://cran.r-project.org/package=modelr)
-[![Travis-CI Build
-Status](https://travis-ci.org/tidyverse/modelr.svg?branch=master)](https://travis-ci.org/tidyverse/modelr)
-[![codecov](https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/modelr)
+<!-- badges: start -->
+
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![Travis build
+status](https://travis-ci.org/hadley/modelr.svg?branch=master)](https://travis-ci.org/hadley/modelr)
+[![Codecov test
+coverage](https://codecov.io/gh/hadley/modelr/branch/master/graph/badge.svg)](https://codecov.io/gh/hadley/modelr?branch=master)
+<!-- badges: end -->
 
 The modelr package provides functions that help you create elegant
 pipelines when modelling. It is designed primarily to support teaching
@@ -133,6 +136,8 @@ df <- tibble::data_frame(
   x = sort(runif(100)),
   y = 5 * x + 0.5 * x ^ 2 + 3 + rnorm(length(x))
 )
+#> Warning: `data_frame()` is deprecated, use `tibble()`.
+#> This warning is displayed once per session.
 
 mod <- lm(y ~ x, data = df)
 df %>% add_predictions(mod)
@@ -149,7 +154,7 @@ df %>% add_predictions(mod)
 #>  8 0.138    3.87  3.78
 #>  9 0.152    3.67  3.86
 #> 10 0.153    3.86  3.86
-#> # ... with 90 more rows
+#> # … with 90 more rows
 df %>% add_residuals(mod)
 #> # A tibble: 100 x 3
 #>          x     y    resid
@@ -164,7 +169,7 @@ df %>% add_residuals(mod)
 #>  8 0.138    3.87  0.0888 
 #>  9 0.152    3.67 -0.183  
 #> 10 0.153    3.86  0.00228
-#> # ... with 90 more rows
+#> # … with 90 more rows
 ```
 
 For visualization purposes it is often useful to use an evenly spaced
@@ -185,7 +190,7 @@ data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs)
 #>  8  1.95     4     1
 #>  9  1.95     6     0
 #> 10  1.95     6     1
-#> # ... with 50 more rows
+#> # … with 50 more rows
 
 # For continuous variables, seq_range is useful
 mtcars_mod <- lm(mpg ~ wt + cyl + vs, data = mtcars)
@@ -203,7 +208,7 @@ data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs) %>% add_predictions(mtcars_mo
 #>  8  1.95     4     1  27.5
 #>  9  1.95     6     0  24.2
 #> 10  1.95     6     1  24.8
-#> # ... with 50 more rows
+#> # … with 50 more rows
 ```
 
 ## Code of conduct
