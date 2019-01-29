@@ -36,13 +36,13 @@ typical.numeric <- function(x, ...) {
 
 #' @export
 typical.factor <- function(x, ...) {
-  counts <- table(x)
+  counts <- table(x, exclude = NULL)
   levels(x)[max(counts) == counts]
 }
 
 #' @export
 typical.character <- function(x, ...) {
-  counts <- table(x)
+  counts <- table(x, exclude = NULL)
   names(counts)[max(counts) == counts]
 }
 

@@ -1,5 +1,12 @@
 # modelr 0.1.2.9000
 
+* `typical()` no longer ignores missing values in character and factor vectors
+  (#80).
+
+* `add_predictions()`, `gather_predictions()`, and `spread_predictions()` 
+  gain a `type` parameter which is passed through to `stats::predict()`
+  (#34, @pmenzel)
+
 # modelr 0.1.2
 
 * `data_grid()` no longer fails with modern tidyr (#58).

@@ -33,7 +33,7 @@ and \code{nrow(data)} for \code{crossv_loo()}.
 \description{
 \code{crossv_kfold} splits the data into \code{k} exclusive partitions,
 and uses each partition for a test-training split. \code{crossv_mc}
-generates \code{n} random partitions, holding out \code{p} of the
+generates \code{n} random partitions, holding out \code{test} of the
 data for training. \code{crossv_loo} performs leave-one-out
 cross-validation, i.e., \code{n = nrow(data)} training partitions containing
 \code{n - 1} rows each.

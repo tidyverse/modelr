@@ -2,7 +2,7 @@
 #'
 #' `crossv_kfold` splits the data into `k` exclusive partitions,
 #' and uses each partition for a test-training split. `crossv_mc`
-#' generates `n` random partitions, holding out `p` of the
+#' generates `n` random partitions, holding out `test` of the
 #' data for training. `crossv_loo` performs leave-one-out
 #' cross-validation, i.e., `n = nrow(data)` training partitions containing
 #' `n - 1` rows each.
