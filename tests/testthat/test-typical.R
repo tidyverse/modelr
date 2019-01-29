@@ -12,6 +12,14 @@ test_that("typical.character works as exepected", {
   expect_equal(typical(c("a", "a", "b", "b")), c("a", "b"))
 })
 
+test_that("NA values are considered typical", {
+  x <- c(NA, NA, NA, "x")
+  expect_equal(typical(x), NA_character_)
+
+  f <- factor(x, exclude = NULL)
+  expect_equal(typical(f), NA_character_)
+})
+
 test_that("typical.factor works as exepected", {
   expect_equal(typical(factor(c("a", "a", "b"))), "a")
   expect_equal(typical(factor(c("a", "a", "b", NA))), "a")
