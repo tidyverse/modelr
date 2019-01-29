@@ -11,3 +11,4 @@
 ^LICENSE\.md$
 ^revdep$
 ^CRAN-RELEASE$
+^\.github$
