@@ -29,7 +29,7 @@ A data frame with \code{n}/\code{k} rows and columns \code{test} and
 \description{
 \code{crossv_kfold} splits the data into \code{k} exclusive partitions,
 and uses each partition for a test-training split. \code{crossv_mc}
-generates \code{n} random partitions, holding out \code{p} of the
+generates \code{n} random partitions, holding out \code{test} of the
 data for training.
 }
 \examples{
