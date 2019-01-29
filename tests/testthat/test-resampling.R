@@ -22,6 +22,25 @@ test_that("Can perform cross validation", {
   expect_true(all(lengths(overlaps) == 0))
 })
 
+test_that("Can perform leave-one-out cross validation", {
+  cross <- crossv_loo(d)
+
+  expect_equal(nrow(cross), 30)
+
+  trains <- map(cross$train, as.data.frame)
+  expect_true(all(map_dbl(trains, nrow) == 29))
+
+  tests <- map(cross$test, as.data.frame)
+  expect_true(all(map_dbl(tests, nrow) == 1))
+
+  overlaps <- map2(map(trains, "row"), map(tests, "row"), intersect)
+  expect_true(all(lengths(overlaps) == 0))
+
+  expect_true(cross[nrow(cross),]$.id==nrow(cross))
+  expect_true(cross[1,]$.id==1)
+})
+
+
 
 test_that("Can perform bootstrapping", {
   boot <- mtcars %>%
