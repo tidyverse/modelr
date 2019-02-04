@@ -15,6 +15,8 @@ set.seed(1014)
 [![Codecov test coverage](https://codecov.io/gh/hadley/modelr/branch/master/graph/badge.svg)](https://codecov.io/gh/hadley/modelr?branch=master)
 <!-- badges: end -->
 
+## Overview
+
 The modelr package provides functions that help you create elegant pipelines when modelling. 
 It is designed primarily to support teaching the basics of modelling within the tidyverse, particularly in [R for Data Science](http://r4ds.had.co.nz/model-basics.html).
 

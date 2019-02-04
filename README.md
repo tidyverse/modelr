@@ -11,6 +11,8 @@ status](https://travis-ci.org/hadley/modelr.svg?branch=master)](https://travis-c
 coverage](https://codecov.io/gh/hadley/modelr/branch/master/graph/badge.svg)](https://codecov.io/gh/hadley/modelr?branch=master)
 <!-- badges: end -->
 
+## Overview
+
 The modelr package provides functions that help you create elegant
 pipelines when modelling. It is designed primarily to support teaching
 the basics of modelling within the tidyverse, particularly in [R for
