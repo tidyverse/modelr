@@ -1,4 +1,4 @@
-# modelr 0.1.2.9000
+# modelr 0.1.3
 
 * `add_predictions()`, `gather_predictions()`, and `spread_predictions()` 
   gain a `type` parameter which is passed through to `stats::predict()`
