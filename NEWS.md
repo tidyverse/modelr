@@ -1,3 +1,5 @@
+# modelr (development version)
+
 # modelr 0.1.3
 
 * `add_predictions()`, `gather_predictions()`, and `spread_predictions()` 
