@@ -2,13 +2,6 @@ context("quality")
 
 test_that("model quality metrics work as expected", {
   mod <- lm(mpg ~ wt, data = mtcars)
-  mse(mod, mtcars)
-  rmse(mod, mtcars)
-  rsquare(mod, mtcars)
-  mae(mod, mtcars)
-  qae(mod, mtcars)
-  mape(mod, mtcars)
-  rsae(mod, mtcars)
 
   expect_equal(mse(mod, mtcars), 8.697561, tolerance = 0.0000001)
 
