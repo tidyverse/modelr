@@ -11,6 +11,7 @@ matrix:
     - Rscript -e 'covr::codecov()'
   - r: oldrel
   - r: 3.3
+    warnings_are_errors: false
   - r: 3.2
     warnings_are_errors: false
   # - r: 3.1 - tidyr, broom
