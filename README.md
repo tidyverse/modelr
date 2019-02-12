@@ -6,9 +6,9 @@
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![Travis build
-status](https://travis-ci.org/hadley/modelr.svg?branch=master)](https://travis-ci.org/hadley/modelr)
+status](https://travis-ci.org/tidyverse/modelr.svg?branch=master)](https://travis-ci.org/tidyverse/modelr)
 [![Codecov test
-coverage](https://codecov.io/gh/hadley/modelr/branch/master/graph/badge.svg)](https://codecov.io/gh/hadley/modelr?branch=master)
+coverage](https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/modelr?branch=master)
 <!-- badges: end -->
 
 ## Overview
