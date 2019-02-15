@@ -74,25 +74,18 @@ test_that("Can perform permutation", {
 })
 
 test_that("appropriate args are supplied to resample_*()", {
-  expect_error(
-    resample("mtcars", 1:10),
-    "`data` must be a data frame."
-  )
-  expect_error(
-    resample(mtcars, 10),
-    "`idx` must be an integer vector."
-  )
+  expect_error(resample("mtcars", 1:10), "data frame")
+  expect_error(resample(mtcars, 10), "integer vector")
   expect_error(
     resample_permutation(mtcars,  c("mpg", "cyl"), idx = 2),
-    paste0("`idx` must be an integer vector with ",
-           "the same length as there are rows in `data`")
+    "same length"
   )
   expect_error(
     resample_permutation("mtcars",  c("mpg", "cyl"), idx = 1:32),
-    "`data` must be a data frame."
+    "data frame"
   )
   expect_error(
     resample_permutation(mtcars,  c("mpg", "iris"), idx = 1:32),
-    "`columns` must be a vector of column names in `data`"
+    "vector"
   )
 })

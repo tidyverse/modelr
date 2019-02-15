@@ -1,14 +1,8 @@
 context("test-na-warn")
 
 test_that("Check dropping NA warning", {
-  df <- tibble::tibble(
-    x = 1:10,
-    y = c(5.1, 9.7, NA, 17.4, 21.2, 26.6, 27.9, NA, 36.3, 40.4)
-  )
-  missing <- sum(!stats::complete.cases(df))
-
-  expect_warning(
-    lm(y ~ x, data = df, na.action = na.warn),
-    paste0("Dropping ", missing, " rows with missing values")
-  )
+  df <- data.frame(x = 1:5, y = c(1, NA, 3, NA, 5))
+  expect_warning(mod <- lm(y ~ x, data = df, na.action = na.warn), "Dropping 2")
+  pred <- unname(predict(mod))
+  expect_equal(is.na(pred), is.na(df$y))
 })

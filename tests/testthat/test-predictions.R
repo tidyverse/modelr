@@ -10,41 +10,23 @@ test_that("always uses na.action = na.exclude", {
   expect_equal(2 * 2, 4)
 })
 
-test_that("prediction functions return expected outputs", {
-  df <- tibble::data_frame(
-    x = sort(runif(100)),
-    y = 5 * x + 0.5 * x ^ 2 + 3 + rnorm(length(x))
-  )
-  m1 <- lm(y ~ x, data = df)
-  m2 <- lm(y ~ poly(x, 2), data = df)
-  m3 <- lm(y ~ poly(x, 3), data = df)
+test_that("*_predictions() can return typical outputs", {
+  df <- tibble::tibble(x = 1:5, y = c(1, 4, 3, 2, 5))
+  mod <- lm(y ~ x, data = df)
 
-  # spread_predictions() and gather_predictions() are the reverse of each other
-  expect_equal(
-    spread_predictions(df, m1, m2, m3) %>%
-      tidyr::gather(model, pred, -y, -x),
-    gather_predictions(df, m1, m2, m3)
-  )
+  out <- add_predictions(df, mod)
+  expect_s3_class(out, "tbl_df")
+  expect_named(out, c("x", "y", "pred"))
 
-  expect_equal(
-    gather_predictions(df, m1, m2, m3) %>%
-      tidyr::spread(model, pred),
-    spread_predictions(df, m1, m2, m3)
-  )
+  out <- spread_predictions(df, m1 = mod, m2 = mod)
+  expect_s3_class(out, "tbl_df")
+  expect_named(out, c("x", "y", "m1", "m2"))
+  expect_equal(nrow(out), nrow(df))
 
-  # *_predictions() leaves class unchanged
-  expect_equal(
-    class(add_predictions(df, m1)),
-    c("tbl_df", "tbl", "data.frame")
-  )
-  expect_equal(
-    class(spread_predictions(df, m1, m2, m3)),
-    c("tbl_df", "tbl", "data.frame")
-  )
-  expect_equal(
-    class(gather_predictions(df, m1, m2, m3)),
-    c("tbl_df", "tbl", "data.frame")
-  )
+  out <- gather_predictions(df, m1 = mod, m2 = mod)
+  expect_s3_class(out, "tbl_df")
+  expect_named(out, c("model", "x", "y", "pred"))
+  expect_equal(nrow(out), nrow(df) * 2)
 })
 
 
