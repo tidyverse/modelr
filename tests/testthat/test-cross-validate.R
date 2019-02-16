@@ -1,31 +1,12 @@
 context("test-cross-validate")
 
 test_that("number of crossfolds is a single integer", {
-   expect_error(crossv_kfold(mtcars, k = "0"), "single integer")
+  expect_error(crossv_kfold(mtcars, k = "0"), "single integer")
   expect_error(crossv_kfold(mtcars, k = c(1, 2)), "single integer")
 })
 
 test_that("% of observations held out for testing is between 0 and 1", {
-  expect_error(
-    crossv_mc(mtcars, n = 100, test = "0.8"),
-    "value between"
-  )
-  expect_error(
-    crossv_mc(mtcars, n = 100, test = c(0.1, 0.5)),
-    "value between"
-  )
-  expect_error(
-    crossv_mc(mtcars, n = 100, test = -0.8),
-    "value between"
-  )
-  expect_error(
-    crossv_mc(mtcars, n = 100, test = 1),
-    "value between"
-  )
-  expect_error(
-    crossv_mc(mtcars, n = 100, test = 2),
-    "value between"
-  )
+  expect_error(crossv_mc(mtcars, n = 100, test = 2), "value between")
 })
 
 test_that("number of training pairs to generate is a single integer", {

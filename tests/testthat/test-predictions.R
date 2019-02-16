@@ -10,7 +10,7 @@ test_that("always uses na.action = na.exclude", {
   expect_equal(2 * 2, 4)
 })
 
-test_that("*_predictions() can return typical outputs", {
+test_that("*_predictions() return expected shapes", {
   df <- tibble::tibble(x = 1:5, y = c(1, 4, 3, 2, 5))
   mod <- lm(y ~ x, data = df)
 
