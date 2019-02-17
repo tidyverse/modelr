@@ -12,3 +12,9 @@ test_that("can generate typical values", {
   expect_equal(out$x, c("a", "a", "b", "b"))
   expect_equal(out$y, c("a", "b", "a", "b"))
 })
+
+test_that("data_grid() returns a tibble", {
+  mod <- lm(mpg ~ wt, data = mtcars)
+  out <- data_grid(mtcars, .model = mod)
+  expect_s3_class(out, "tbl_df")
+})

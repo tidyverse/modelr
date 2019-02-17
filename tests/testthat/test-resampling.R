@@ -72,3 +72,20 @@ test_that("Can perform permutation", {
     expect_false(all(mtcars$mpg == pd$mpg))
   }
 })
+
+test_that("appropriate args are supplied to resample_*()", {
+  expect_error(resample("mtcars", 1:10), "data frame")
+  expect_error(resample(mtcars, 10), "integer vector")
+  expect_error(
+    resample_permutation(mtcars,  c("mpg", "cyl"), idx = 2),
+    "same length"
+  )
+  expect_error(
+    resample_permutation("mtcars",  c("mpg", "cyl"), idx = 1:32),
+    "data frame"
+  )
+  expect_error(
+    resample_permutation(mtcars,  c("mpg", "iris"), idx = 1:32),
+    "vector"
+  )
+})
