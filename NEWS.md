@@ -1,5 +1,9 @@
 # modelr (development version)
 
+* `add_predictions()`, `gather_predictions()`, and `spread_predictions()` 
+  more carefully pass along `type` parameter in order to avoid problems with
+  predict methods that don't deal with `type = NULL` (#92).
+
 # modelr 0.1.3
 
 * `add_predictions()`, `gather_predictions()`, and `spread_predictions()` 

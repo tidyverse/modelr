@@ -30,7 +30,7 @@
 #' grid %>% spread_predictions(m1, m2)
 #' grid %>% gather_predictions(m1, m2)
 add_predictions <- function(data, model, var = "pred", type = NULL) {
-  data[[var]] <- stats::predict(model, data, type = type)
+  data[[var]] <- predict2(model, data, type = type)
   data
 }
 
@@ -39,7 +39,7 @@ add_predictions <- function(data, model, var = "pred", type = NULL) {
 spread_predictions <- function(data, ..., type = NULL) {
   models <- tibble::lst(...)
   for (nm in names(models)) {
-    data[[nm]] <- stats::predict(models[[nm]], data, type = type)
+    data[[nm]] <- predict2(models[[nm]], data, type = type)
   }
   data
 }
@@ -54,4 +54,12 @@ gather_predictions <- function(data, ..., .pred = "pred", .model = "model", type
   names(df) <- names(models)
 
   dplyr::bind_rows(df, .id = .model)
+}
+
+predict2 <- function(model, data, type = NULL) {
+  if (is.null(type)) {
+    stats::predict(model, data)
+  } else {
+    stats::predict(model, data, type = type)
+  }
 }
