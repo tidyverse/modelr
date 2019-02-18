@@ -1,4 +1,4 @@
-# modelr (development version)
+# modelr 0.1.4
 
 * `add_predictions()`, `gather_predictions()`, and `spread_predictions()` 
   more carefully pass along `type` parameter in order to avoid problems with
