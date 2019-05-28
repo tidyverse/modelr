@@ -15,15 +15,24 @@
 #' data_grid(mtcars, vs, am)
 #'
 #' # For continuous variables, seq_range is useful
+#' data_grid(mtcars, mpg = mpg)
 #' data_grid(mtcars, mpg = seq_range(mpg, 10))
 #'
-#' # If you optionally supply a model, missing predictors will
-#' # be filled in with typical values
+#' # If you supply a model, missing predictors will be filled in with
+#' # typical values
 #' mod <- lm(mpg ~ wt + cyl + vs, data = mtcars)
 #' data_grid(mtcars, .model = mod)
 #' data_grid(mtcars, cyl = seq_range(cyl, 9), .model = mod)
 data_grid <- function(data, ..., .model = NULL) {
-  expanded <- tidyr::expand(data, ...)
+  if (missing(...) && missing(.model)) {
+    abort("Must supply at least one of `...` and `.model`")
+  }
+
+  if (missing(...)) {
+    expanded <- NULL
+  } else {
+    expanded <- tidyr::expand(data, ...)
+  }
 
   if (is.null(.model)) {
     return(expanded)
@@ -31,8 +40,12 @@ data_grid <- function(data, ..., .model = NULL) {
 
   # Generate grid of typical values
   needed <- setdiff(predictor_vars(.model), names(expanded))
-  typical_vals <- lapply(data[needed], typical)
-  typical_df <- tidyr::crossing(!!!typical_vals)
+  if (length(needed) > 0) {
+    typical_vals <- lapply(data[needed], typical)
+    typical_df <- tidyr::crossing(!!!typical_vals)
+  } else {
+    typical_df <- NULL
+  }
 
   tidyr::crossing(expanded, typical_df)
 }

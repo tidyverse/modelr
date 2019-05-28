@@ -1,5 +1,7 @@
 # modelr (development version)
 
+* Fix to `data_grid()` to work with dev tidyr.
+
 # modelr 0.1.4
 
 * `add_predictions()`, `gather_predictions()`, and `spread_predictions()` 
