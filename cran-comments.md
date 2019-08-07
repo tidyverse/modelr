@@ -11,4 +11,4 @@
 
 ## revdepcheck results
 
-This fixes a small bug introduced in 0.1.3. I did not check revdeps.
+This ensures the package is compatible with an upcoming tidyr release. I did not check revdeps.
