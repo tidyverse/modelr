@@ -97,6 +97,7 @@ qae(mod, mtcars)
 A set of functions let you seamlessly add predictions and residuals as additional columns to an existing data frame:
 
 ```{r}
+set.seed(1014)
 df <- tibble::data_frame(
   x = sort(runif(100)),
   y = 5 * x + 0.5 * x ^ 2 + 3 + rnorm(length(x))
