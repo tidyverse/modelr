@@ -19,7 +19,7 @@ fit_with(data, .f, .formulas, ...)
 \description{
 \code{fit_with()} is a pipe-friendly tool that applies a list of
 formulas to a fitting function such as \code{\link[stats:lm]{stats::lm()}}.
-The list of formulas is typically created with \url{formulas()}.
+The list of formulas is typically created with \code{\link[=formulas]{formulas()}}.
 }
 \details{
 Assumes that \code{.f} takes the formula either as first argument
@@ -42,5 +42,5 @@ disp_fits$full
 mtcars \%>\% fit_with(glm, list(am ~ disp), family = binomial)
 }
 \seealso{
-\url{formulas()}
+\code{\link[=formulas]{formulas()}}
 }

@@ -2,7 +2,7 @@
 #'
 #' `fit_with()` is a pipe-friendly tool that applies a list of
 #' formulas to a fitting function such as [stats::lm()].
-#' The list of formulas is typically created with [formulas()]().
+#' The list of formulas is typically created with [formulas()].
 #'
 #' Assumes that `.f` takes the formula either as first argument
 #' or as second argument if the first argument is `data`.  Most
@@ -12,7 +12,7 @@
 #'   [lme4::lmer()] or [rstanarm::stan_glmer()].
 #' @param .formulas A list of formulas specifying a model.
 #' @param ... Additional arguments passed on to `.f`
-#' @seealso [formulas()]()
+#' @seealso [formulas()]
 #' @export
 #' @examples
 #' # fit_with() is typically used with formulas().

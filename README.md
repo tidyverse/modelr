@@ -217,5 +217,5 @@ data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs) %>% add_predictions(mtcars_mo
 ## Code of conduct
 
 Please note that this project is released with a [Contributor Code of
-Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree
-to abide by its terms.
+Conduct](https://modelr.tidyverse.org/CODE_OF_CONDUCT.html). By
+participating in this project you agree to abide by its terms.
