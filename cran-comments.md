@@ -1,7 +1,3 @@
-This is a resubmission that fixes the broken links.
-
----
-
 ## Test environments
 
 * local: darwin15.6.0-3.5.2
@@ -15,4 +11,4 @@ This is a resubmission that fixes the broken links.
 
 ## revdepcheck results
 
-This ensures the package is compatible with an upcoming tidyr release. I did not check revdeps.
+This release fixes a small R CMD check documentation failure. I did not check revdeps.
