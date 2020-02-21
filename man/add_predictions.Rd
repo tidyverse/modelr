@@ -10,8 +10,7 @@ add_predictions(data, model, var = "pred", type = NULL)
 
 spread_predictions(data, ..., type = NULL)
 
-gather_predictions(data, ..., .pred = "pred", .model = "model",
-  type = NULL)
+gather_predictions(data, ..., .pred = "pred", .model = "model", type = NULL)
 }
 \arguments{
 \item{data}{A data frame used to generate the predictions.}

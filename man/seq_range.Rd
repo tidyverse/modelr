@@ -19,7 +19,7 @@ the reader.}
 \item{trim}{Optionally, trim values off the tails.
 \code{trim / 2 * length(x)} values are removed from each tail.}
 
-\item{expand}{Optionally, expand the range by \code{expand * (1 + range(x)}
+\item{expand}{Optionally, expand the range by \verb{expand * (1 + range(x)}
 (computed after trimming).}
 
 \item{pretty}{If \code{TRUE}, will generate a pretty sequence. If \code{n}
