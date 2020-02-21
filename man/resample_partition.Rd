@@ -21,3 +21,10 @@ mod <- lm(mpg ~ wt, data = ex$train)
 rmse(mod, ex$test)
 rmse(mod, ex$train)
 }
+\seealso{
+Other resampling techniques: 
+\code{\link{bootstrap}()},
+\code{\link{resample_bootstrap}()},
+\code{\link{resample}()}
+}
+\concept{resampling techniques}

@@ -10,7 +10,7 @@
 #' @param idx A vector of integer indexes indicating which rows have
 #'   been selected. These values should lie between 1 and `nrow(data)`
 #'   but they are not checked by this function in the interests of performance.
-#' @inheritParams resampling techniques
+#' @family resampling techniques
 #' @export
 #' @examples
 #' resample(mtcars, 1:10)

@@ -3,7 +3,7 @@
 #' @param data A data frame
 #' @param p A named numeric vector giving where the value is the probability
 #'   that an observation will be assigned to that group.
-#' @inheritParams resampling techniques
+#' @family resampling techniques
 #' @export
 #' @examples
 #' ex <- resample_partition(mtcars, c(test = 0.3, train = 0.7))

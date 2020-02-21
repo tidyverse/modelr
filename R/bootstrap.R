@@ -4,6 +4,7 @@ NULL
 #' Generate `n` bootstrap replicates.
 #'
 #' @inheritParams resample_partition
+#' @family resampling techniques
 #' @param n Number of bootstrap replicates to generate
 #' @param id Name of variable that gives each model a unique integer id.
 #' @return A data frame with `n` rows and one column: `strap`
@@ -28,7 +29,7 @@ bootstrap <- function(data, n, id = ".id") {
 #' Generate a boostrap replicate
 #'
 #' @param data A data frame
-#' @inheritParams resampling techniques
+#' @family resampling techniques
 #' @export
 #' @examples
 #' coef(lm(mpg ~ wt, data = resample_bootstrap(mtcars)))

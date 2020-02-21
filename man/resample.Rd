@@ -32,3 +32,10 @@ as.data.frame(b)
 # use a resample object directly in the data argument
 lm(mpg ~ wt, data = b)
 }
+\seealso{
+Other resampling techniques: 
+\code{\link{bootstrap}()},
+\code{\link{resample_bootstrap}()},
+\code{\link{resample_partition}()}
+}
+\concept{resampling techniques}

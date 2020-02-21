@@ -29,3 +29,10 @@ tidied <- map_df(models, broom::tidy, .id = "id")
 hist(subset(tidied, term == "wt")$estimate)
 hist(subset(tidied, term == "(Intercept)")$estimate)
 }
+\seealso{
+Other resampling techniques: 
+\code{\link{resample_bootstrap}()},
+\code{\link{resample_partition}()},
+\code{\link{resample}()}
+}
+\concept{resampling techniques}
