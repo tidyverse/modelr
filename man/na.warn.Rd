@@ -8,8 +8,6 @@ na.warn(object)
 }
 \arguments{
 \item{object}{A data frame}
-
-\item{...}{Other arguments (not currently used)}
 }
 \description{
 This NA handler ensures that those models that support the

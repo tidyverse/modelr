@@ -7,7 +7,6 @@
 #' `options(na.action = na.warn)`.
 #'
 #' @param object A data frame
-#' @param ... Other arguments (not currently used)
 #' @export
 #' @examples
 #' df <- tibble::tibble(
