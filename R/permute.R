@@ -33,7 +33,7 @@
 #'
 #' @export
 permute <- function(data, n, ..., .id = ".id") {
-  columns <- dplyr::select_vars(colnames(data), ...)
+  columns <- tidyselect::vars_select(colnames(data), ...)
   permute_(data, n, columns, .id = .id)
 }
 
