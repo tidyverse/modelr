@@ -1,4 +1,4 @@
-# modelr (development version)
+# modelr 0.1.6
 
 * R CMD check documentation fix
 
