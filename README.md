@@ -18,6 +18,9 @@ pipelines when modelling. It is designed primarily to support teaching
 the basics of modelling within the tidyverse, particularly in [R for
 Data Science](http://r4ds.had.co.nz/model-basics.html).
 
+Please see <http://tidymodels.org/> for a more comprehensive framework
+for modelling within the tidyverse.
+
 ## Installation
 
 ``` r
