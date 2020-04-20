@@ -8,7 +8,7 @@
 \describe{
 \item{income}{Yearly income. The top two percent of values were averaged
 and that average was used to replace all values in the top range. }
-\item{height}{Height, in feet}
+\item{height}{Height, in inches}
 \item{weight}{Weight, in pounds}
 \item{age}{Age, in years, between 47 and 56.}
 \item{marital}{Marital status}
