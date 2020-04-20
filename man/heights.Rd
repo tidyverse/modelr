@@ -4,7 +4,8 @@
 \name{heights}
 \alias{heights}
 \title{Height and income data.}
-\format{\describe{
+\format{
+\describe{
 \item{income}{Yearly income. The top two percent of values were averaged
 and that average was used to replace all values in the top range. }
 \item{height}{Height, in feet}
@@ -14,7 +15,8 @@ and that average was used to replace all values in the top range. }
 \item{sex}{Sex}
 \item{education}{Years of education}
 \item{afqt}{Percentile score on Armed Forces Qualification Test.}
-}}
+}
+}
 \usage{
 heights
 }

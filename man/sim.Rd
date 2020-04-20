@@ -8,7 +8,6 @@
 \alias{sim3}
 \alias{sim4}
 \title{Simple simulated datasets}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 30 rows and 2 columns.}
 \usage{
 sim1
 

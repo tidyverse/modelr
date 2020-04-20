@@ -27,16 +27,21 @@
 #' basics.
 #'
 #' @name sim
+#' @format NULL
 NULL
 
 #' @rdname sim
+#' @format NULL
 "sim1"
 
 #' @rdname sim
+#' @format NULL
 "sim2"
 
 #' @rdname sim
+#' @format NULL
 "sim3"
 
 #' @rdname sim
+#' @format NULL
 "sim4"
