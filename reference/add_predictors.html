@@ -164,13 +164,13 @@ sides.</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>f</span> <span class='kw'>&lt;-</span> <span class='no'>lhs</span> ~ <span class='no'>rhs</span>
 <span class='fu'>add_predictors</span>(<span class='no'>f</span>, ~<span class='no'>var1</span>, ~<span class='no'>var2</span>)</div><div class='output co'>#&gt; lhs ~ rhs + var1 + var2
-#&gt; &lt;environment: 0x7ff200a97dd0&gt;</div><div class='input'>
+#&gt; &lt;environment: 0x7fcca5ec9ef0&gt;</div><div class='input'>
 <span class='co'># Left-hand sides are ignored:</span>
 <span class='fu'>add_predictors</span>(<span class='no'>f</span>, <span class='no'>lhs1</span> ~ <span class='no'>var1</span>, <span class='no'>lhs2</span> ~ <span class='no'>var2</span>)</div><div class='output co'>#&gt; lhs ~ rhs + var1 + var2
-#&gt; &lt;environment: 0x7ff200a97dd0&gt;</div><div class='input'>
+#&gt; &lt;environment: 0x7fcca5ec9ef0&gt;</div><div class='input'>
 <span class='co'># fun can also be set to a function like "*":</span>
 <span class='fu'>add_predictors</span>(<span class='no'>f</span>, ~<span class='no'>var1</span>, ~<span class='no'>var2</span>, <span class='kw'>fun</span> <span class='kw'>=</span> <span class='st'>"*"</span>)</div><div class='output co'>#&gt; lhs ~ rhs * var1 * var2
-#&gt; &lt;environment: 0x7ff200a97dd0&gt;</div></pre>
+#&gt; &lt;environment: 0x7fcca5ec9ef0&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
