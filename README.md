@@ -5,8 +5,8 @@
 
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Travis build
-status](https://travis-ci.org/tidyverse/modelr.svg?branch=master)](https://travis-ci.org/tidyverse/modelr)
+[![R build
+status](https://github.com/tidyverse/modelr/workflows/R-CMD-check/badge.svg)](https://github.com/tidyverse/modelr/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/modelr?branch=master)
 <!-- badges: end -->
@@ -94,8 +94,17 @@ modelr offers several resampling methods that result in a list of
 ``` r
 # bootstrap
 boot <- bootstrap(mtcars, 100)
+#> Warning: `data_frame()` is deprecated as of tibble 1.1.0.
+#> Please use `tibble()` instead.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_warnings()` to see where this warning was generated.
 # k-fold cross-validation
 cv1 <- crossv_kfold(mtcars, 5)
+#> Warning: `as_data_frame()` is deprecated as of tibble 2.0.0.
+#> Please use `as_tibble()` instead.
+#> The signature and semantics have changed, see `?as_tibble`.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_warnings()` to see where this warning was generated.
 # Monte Carlo cross-validation
 cv2 <- crossv_mc(mtcars, 100)
 
@@ -139,8 +148,6 @@ df <- tibble::data_frame(
   x = sort(runif(100)),
   y = 5 * x + 0.5 * x ^ 2 + 3 + rnorm(length(x))
 )
-#> Warning: `data_frame()` is deprecated, use `tibble()`.
-#> This warning is displayed once per session.
 
 mod <- lm(y ~ x, data = df)
 df %>% add_predictions(mod)
