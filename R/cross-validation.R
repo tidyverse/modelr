@@ -39,7 +39,7 @@ crossv_mc <- function(data, n, test = 0.2, id = ".id") {
   cols <- purrr::transpose(runs)
   cols[[id]] <- id(n)
 
-  tibble::as_data_frame(cols)
+  tibble::as_tibble(cols)
 }
 
 #' @export
@@ -66,7 +66,7 @@ crossv_kfold <- function(data, k = 5, id = ".id") {
   cols <- purrr::transpose(purrr::map(fold_idx, fold))
   cols[[id]] <- id(k)
 
-  tibble::as_data_frame(cols)
+  tibble::as_tibble(cols)
 }
 
 #' @export
@@ -87,6 +87,6 @@ crossv_loo <- function(data, id = ".id") {
   cols <- purrr::transpose(purrr::map(fold_idx, fold))
   cols[[id]] <- 1:n
 
-  tibble::as_data_frame(cols)
+  tibble::as_tibble(cols)
 }
 

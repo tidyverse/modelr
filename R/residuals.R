@@ -14,7 +14,7 @@
 #'   each model.
 #' @export
 #' @examples
-#' df <- tibble::data_frame(
+#' df <- tibble::tibble(
 #'   x = sort(runif(100)),
 #'   y = 5 * x + 0.5 * x ^ 2 + 3 + rnorm(length(x))
 #' )

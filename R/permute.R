@@ -42,7 +42,7 @@ permute <- function(data, n, ..., .id = ".id") {
 permute_ <- function(data, n, columns, .id = ".id") {
   perm <- purrr::rerun(n, resample_permutation(data, columns))
 
-  df <- tibble::data_frame(perm = perm)
+  df <- tibble::tibble(perm = perm)
   df[[.id]] <- id(n)
   df
 }
