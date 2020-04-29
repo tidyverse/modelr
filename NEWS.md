@@ -1,4 +1,4 @@
-# modelr (development version)
+# modelr 0.1.7
 
 * Minor documentation fixes and updates for deprecated functions.
 
