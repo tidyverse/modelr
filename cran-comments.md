@@ -11,4 +11,4 @@
 
 ## revdepcheck results
 
-This release fixes a small R CMD check documentation failure. I did not check revdeps.
+This release fixes a couple of small documentation issues. I did not check revdeps.
