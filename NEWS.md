@@ -1,5 +1,7 @@
 # modelr (development version)
 
+* Minor documentation fixes and updates for deprecated functions.
+
 # modelr 0.1.6
 
 * R CMD check documentation fix
