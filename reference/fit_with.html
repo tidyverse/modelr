@@ -93,7 +93,7 @@ The list of formulas is typically created with formulas()." />
         <a class="navbar-brand" href="../index.html">modelr</a>
         <div class="info hidden-xs hidden-sm">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.6.9000</span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.7</span>
         </div>
       </div>
     </div>
@@ -201,6 +201,7 @@ fitting functions should fit these requirements.</p>
 #&gt;     if (!is.character(linktemp)) 
 #&gt;         linktemp &lt;- deparse(linktemp)
 #&gt;     okLinks &lt;- c("logit", "probit", "cloglog", "cauchit", "log")
+#&gt;     family &lt;- "binomial"
 #&gt;     if (linktemp %in% okLinks) 
 #&gt;         stats &lt;- make.link(linktemp)
 #&gt;     else if (is.character(link)) {
@@ -214,8 +215,8 @@ fitting functions should fit these requirements.</p>
 #&gt;                 linktemp &lt;- stats$name
 #&gt;         }
 #&gt;         else {
-#&gt;             stop(gettextf("link \"%s\" not available for binomial family; available links are %s", 
-#&gt;                 linktemp, paste(sQuote(okLinks), collapse = ", ")), 
+#&gt;             stop(gettextf("link \"%s\" not available for %s family; available links are %s", 
+#&gt;                 linktemp, family, paste(sQuote(okLinks), collapse = ", ")), 
 #&gt;                 domain = NA)
 #&gt;         }
 #&gt;     }
@@ -231,23 +232,6 @@ fitting functions should fit these requirements.</p>
 #&gt;         -2 * sum(ifelse(m &gt; 0, (wt/m), 0) * dbinom(round(m * 
 #&gt;             y), round(m), mu, log = TRUE))
 #&gt;     }
-#&gt;     initialize &lt;- expression({
-#&gt;         if (NCOL(y) == 1) {
-#&gt;             if (is.factor(y)) y &lt;- y != levels(y)[1L]
-#&gt;             n &lt;- rep.int(1, nobs)
-#&gt;             y[weights == 0] &lt;- 0
-#&gt;             if (any(y &lt; 0 | y &gt; 1)) stop("y values must be 0 &lt;= y &lt;= 1")
-#&gt;             mustart &lt;- (weights * y + 0.5)/(weights + 1)
-#&gt;             m &lt;- weights * y
-#&gt;             if (any(abs(m - round(m)) &gt; 0.001)) warning("non-integer #successes in a binomial glm!")
-#&gt;         } else if (NCOL(y) == 2) {
-#&gt;             if (any(abs(y - round(y)) &gt; 0.001)) warning("non-integer counts in a binomial glm!")
-#&gt;             n &lt;- y[, 1] + y[, 2]
-#&gt;             y &lt;- ifelse(n == 0, 0, y[, 1]/n)
-#&gt;             weights &lt;- weights * n
-#&gt;             mustart &lt;- (n * y + 0.5)/(n + 1)
-#&gt;         } else stop("for the 'binomial' family, y must be a vector of 0 and 1's\nor a 2 column matrix where col 1 is no. successes and col 2 is no. failures")
-#&gt;     })
 #&gt;     simfun &lt;- function(object, nsim) {
 #&gt;         ftd &lt;- fitted(object)
 #&gt;         n &lt;- length(ftd)
@@ -276,9 +260,9 @@ fitting functions should fit these requirements.</p>
 #&gt;         }
 #&gt;         else rbinom(ntot, size = wts, prob = ftd)/wts
 #&gt;     }
-#&gt;     structure(list(family = "binomial", link = linktemp, linkfun = stats$linkfun, 
+#&gt;     structure(list(family = family, link = linktemp, linkfun = stats$linkfun, 
 #&gt;         linkinv = stats$linkinv, variance = variance, dev.resids = dev.resids, 
-#&gt;         aic = aic, mu.eta = stats$mu.eta, initialize = initialize, 
+#&gt;         aic = aic, mu.eta = stats$mu.eta, initialize = binomInitialize(family), 
 #&gt;         validmu = validmu, valideta = stats$valideta, simulate = simfun), 
 #&gt;         class = "family")
 #&gt; }, data = data)
