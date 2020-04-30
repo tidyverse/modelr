@@ -1,6 +1,6 @@
 Package: modelr
 Title: Modelling Functions that Work with the Pipe
-Version: 0.1.7
+Version: 0.1.7.9000
 Authors@R: 
     c(person(given = "Hadley",
              family = "Wickham",
