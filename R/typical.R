@@ -58,5 +58,5 @@ typical.integer <- function(x, ...) {
 
 #' @export
 typical.ordered <- function(x, ...) {
-  as.character(stats::quantile(x, 0.5, type = 1, na.rm = TRUE))
+  levels(x)[stats::quantile(as.integer(x), 0.5, type = 1, na.rm = TRUE)]
 }
