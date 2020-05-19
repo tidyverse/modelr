@@ -1,4 +1,4 @@
-# modelr (development version)
+# modelr 0.1.8
 
 * Eliminate direct dplyr dependency in favour of vctrs.
 * Reimplement `typical.ordered()` for R-devel compatibility.
