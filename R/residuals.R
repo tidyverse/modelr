@@ -49,7 +49,7 @@ gather_residuals <- function(data, ..., .resid = "resid", .model = "model") {
   df <- purrr::map2(models, .resid, add_residuals, data = data)
   names(df) <- names(models)
 
-  dplyr::bind_rows(df, .id = .model)
+  vctrs::vec_rbind(!!!df, .names_to = .model)
 }
 
 residuals <- function(model, data) {
