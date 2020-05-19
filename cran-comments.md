@@ -11,4 +11,4 @@
 
 ## revdepcheck results
 
-This release fixes a couple of small documentation issues. I did not check revdeps.
+This release makes a small change for R-devel compatibilty. All revdeps were fine.
