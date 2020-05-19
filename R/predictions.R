@@ -53,7 +53,7 @@ gather_predictions <- function(data, ..., .pred = "pred", .model = "model", type
   df <- purrr::map2(models, .pred, add_predictions, data = data, type = type)
   names(df) <- names(models)
 
-  dplyr::bind_rows(df, .id = .model)
+  vctrs::vec_rbind(!!!df, .names_to = .model)
 }
 
 predict2 <- function(model, data, type = NULL) {
