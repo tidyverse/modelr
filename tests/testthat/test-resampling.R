@@ -1,11 +1,7 @@
 context("resampling")
 
-suppressPackageStartupMessages(library(dplyr))
-suppressPackageStartupMessages(library(purrr))
-
-d <- mtcars %>%
-  head(30) %>%
-  mutate(row = row_number())
+d <- head(mtcars, 30)
+d$row <- 1:30
 
 test_that("Can perform cross validation", {
   cross <- crossv_kfold(d, k = 5)
@@ -13,12 +9,12 @@ test_that("Can perform cross validation", {
   expect_equal(nrow(cross), 5)
 
   trains <- map(cross$train, as.data.frame)
-  expect_true(all(map_dbl(trains, nrow) == 24))
+  expect_true(all(purrr::map_dbl(trains, nrow) == 24))
 
   tests <- map(cross$test, as.data.frame)
-  expect_true(all(map_dbl(tests, nrow) == 6))
+  expect_true(all(purrr::map_dbl(tests, nrow) == 6))
 
-  overlaps <- map2(map(trains, "row"), map(tests, "row"), intersect)
+  overlaps <- purrr::map2(purrr::map(trains, "row"), purrr::map(tests, "row"), intersect)
   expect_true(all(lengths(overlaps) == 0))
 })
 
@@ -28,12 +24,12 @@ test_that("Can perform leave-one-out cross validation", {
   expect_equal(nrow(cross), 30)
 
   trains <- map(cross$train, as.data.frame)
-  expect_true(all(map_dbl(trains, nrow) == 29))
+  expect_true(all(purrr::map_dbl(trains, nrow) == 29))
 
   tests <- map(cross$test, as.data.frame)
-  expect_true(all(map_dbl(tests, nrow) == 1))
+  expect_true(all(purrr::map_dbl(tests, nrow) == 1))
 
-  overlaps <- map2(map(trains, "row"), map(tests, "row"), intersect)
+  overlaps <- purrr::map2(purrr::map(trains, "row"), purrr::map(tests, "row"), intersect)
   expect_true(all(lengths(overlaps) == 0))
 
   expect_true(cross[nrow(cross),]$.id==nrow(cross))
