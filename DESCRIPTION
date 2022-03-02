@@ -3,7 +3,7 @@ Title: Modelling Functions that Work with the Pipe
 Version: 0.1.8.9000
 Authors@R: c(
     person("Hadley", "Wickham", , "hadley@rstudio.com", role = c("aut", "cre")),
-    person("RStudio", role = "cph")
+    person("RStudio", role = c("cph", "fnd"))
   )
 Description: Functions for modelling that help you seamlessly integrate
     modelling into a pipeline of data manipulation and visualisation.
