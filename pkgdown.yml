@@ -1,8 +1,8 @@
-pandoc: 2.7.3
-pkgdown: 1.5.1.9000
-pkgdown_sha: 3b74d8860686ed6d63e536d7ec4971fbbde5faff
-articles: []
-last_built: 2020-05-19T20:17Z
+pandoc: 2.14.2
+pkgdown: 2.0.2
+pkgdown_sha: ~
+articles: {}
+last_built: 2022-03-02T23:02Z
 urls:
   reference: https://modelr.tidyverse.org/reference
   article: https://modelr.tidyverse.org/articles

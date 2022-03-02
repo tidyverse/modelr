@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://modelr.tidyverse.org/404.html</loc>
+  </url>
+  <url>
+    <loc>https://modelr.tidyverse.org/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>https://modelr.tidyverse.org/CONTRIBUTING.html</loc>
+  </url>
+  <url>
+    <loc>https://modelr.tidyverse.org/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://modelr.tidyverse.org/SUPPORT.html</loc>
+  </url>
+  <url>
+    <loc>https://modelr.tidyverse.org/authors.html</loc>
+  </url>
+  <url>
     <loc>https://modelr.tidyverse.org/index.html</loc>
+  </url>
+  <url>
+    <loc>https://modelr.tidyverse.org/news/index.html</loc>
   </url>
   <url>
     <loc>https://modelr.tidyverse.org/reference/add_predictions.html</loc>
@@ -32,6 +53,9 @@
   </url>
   <url>
     <loc>https://modelr.tidyverse.org/reference/heights.html</loc>
+  </url>
+  <url>
+    <loc>https://modelr.tidyverse.org/reference/index.html</loc>
   </url>
   <url>
     <loc>https://modelr.tidyverse.org/reference/model-quality.html</loc>
