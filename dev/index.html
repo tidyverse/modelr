@@ -15,9 +15,9 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><link href="deps/_Source%20Sans%20Pro-0.4.0/font.css" rel="stylesheet">
-<link href="deps/_Source%20Code%20Pro-0.4.0/font.css" rel="stylesheet">
+<link href="deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><link href="deps/Source_Sans_Pro-0.4.2/font.css" rel="stylesheet">
+<link href="deps/Source_Code_Pro-0.4.2/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Modelling Functions that Work with the Pipe">
@@ -78,7 +78,6 @@
 </h1>
 </div>
 <!-- badges: start -->
-
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
@@ -89,15 +88,15 @@
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># The easiest way to get modelr is to install the whole tidyverse:</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span>
-
-<span class="co"># Alternatively, install just modelr:</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"modelr"</span><span class="op">)</span>
-
-<span class="co"># Or the development version from GitHub:</span>
-<span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"tidyverse/modelr"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># The easiest way to get modelr is to install the whole tidyverse:</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Alternatively, install just modelr:</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"modelr"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Or the development version from GitHub:</span></span>
+<span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"tidyverse/modelr"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="status">Status<a class="anchor" aria-label="anchor" href="#status"></a>
@@ -108,151 +107,151 @@
 <h2 id="getting-started">Getting started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://modelr.tidyverse.org">modelr</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://modelr.tidyverse.org">modelr</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level3">
 <h3 id="partitioning-and-sampling">Partitioning and sampling<a class="anchor" aria-label="anchor" href="#partitioning-and-sampling"></a>
 </h3>
 <p>The <code>resample</code> class stores a “reference” to the original dataset and a vector of row indices. A resample can be turned into a dataframe by calling <code><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame()</a></code>. The indices can be extracted using <code><a href="https://rdrr.io/r/base/integer.html" class="external-link">as.integer()</a></code>:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># a subsample of the first ten rows in the data frame</span>
-<span class="va">rs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/resample.html">resample</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">rs</span><span class="op">)</span>
-<span class="co">#&gt;                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb</span>
-<span class="co">#&gt; Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4</span>
-<span class="co">#&gt; Mazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4</span>
-<span class="co">#&gt; Datsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1</span>
-<span class="co">#&gt; Hornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1</span>
-<span class="co">#&gt; Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2</span>
-<span class="co">#&gt; Valiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1</span>
-<span class="co">#&gt; Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4</span>
-<span class="co">#&gt; Merc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2</span>
-<span class="co">#&gt; Merc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2</span>
-<span class="co">#&gt; Merc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4</span>
-<span class="fu"><a href="https://rdrr.io/r/base/integer.html" class="external-link">as.integer</a></span><span class="op">(</span><span class="va">rs</span><span class="op">)</span>
-<span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># a subsample of the first ten rows in the data frame</span></span>
+<span><span class="va">rs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/resample.html">resample</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">rs</span><span class="op">)</span></span>
+<span><span class="co">#&gt;                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb</span></span>
+<span><span class="co">#&gt; Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4</span></span>
+<span><span class="co">#&gt; Mazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4</span></span>
+<span><span class="co">#&gt; Datsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1</span></span>
+<span><span class="co">#&gt; Hornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1</span></span>
+<span><span class="co">#&gt; Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2</span></span>
+<span><span class="co">#&gt; Valiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1</span></span>
+<span><span class="co">#&gt; Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4</span></span>
+<span><span class="co">#&gt; Merc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2</span></span>
+<span><span class="co">#&gt; Merc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2</span></span>
+<span><span class="co">#&gt; Merc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/integer.html" class="external-link">as.integer</a></span><span class="op">(</span><span class="va">rs</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span></span></code></pre></div>
 <p>The class can be utilized in generating an exclusive partitioning of a data frame:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># generate a 30% testing partition and a 70% training partition</span>
-<span class="va">ex</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/resample_partition.html">resample_partition</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>test <span class="op">=</span> <span class="fl">0.3</span>, train <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">ex</span>, <span class="va">dim</span><span class="op">)</span>
-<span class="co">#&gt; $test</span>
-<span class="co">#&gt; [1]  9 11</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $train</span>
-<span class="co">#&gt; [1] 23 11</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># generate a 30% testing partition and a 70% training partition</span></span>
+<span><span class="va">ex</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/resample_partition.html">resample_partition</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>test <span class="op">=</span> <span class="fl">0.3</span>, train <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">ex</span>, <span class="va">dim</span><span class="op">)</span></span>
+<span><span class="co">#&gt; $test</span></span>
+<span><span class="co">#&gt; [1]  9 11</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $train</span></span>
+<span><span class="co">#&gt; [1] 23 11</span></span></code></pre></div>
 <p>modelr offers several resampling methods that result in a list of <code>resample</code> objects (organized in a data frame):</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># bootstrap</span>
-<span class="va">boot</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/bootstrap.html">bootstrap</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fl">100</span><span class="op">)</span>
-<span class="co"># k-fold cross-validation</span>
-<span class="va">cv1</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/crossv_mc.html">crossv_kfold</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fl">5</span><span class="op">)</span>
-<span class="co"># Monte Carlo cross-validation</span>
-<span class="va">cv2</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/crossv_mc.html">crossv_mc</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fl">100</span><span class="op">)</span>
-
-<span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">boot</span><span class="op">$</span><span class="va">strap</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
-<span class="co">#&gt; [1] 32 11</span>
-<span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">cv1</span><span class="op">$</span><span class="va">train</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
-<span class="co">#&gt; [1] 25 11</span>
-<span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">cv1</span><span class="op">$</span><span class="va">test</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
-<span class="co">#&gt; [1]  7 11</span>
-<span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">cv2</span><span class="op">$</span><span class="va">train</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
-<span class="co">#&gt; [1] 25 11</span>
-<span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">cv2</span><span class="op">$</span><span class="va">test</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
-<span class="co">#&gt; [1]  7 11</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># bootstrap</span></span>
+<span><span class="va">boot</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/bootstrap.html">bootstrap</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fl">100</span><span class="op">)</span></span>
+<span><span class="co"># k-fold cross-validation</span></span>
+<span><span class="va">cv1</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/crossv_mc.html">crossv_kfold</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fl">5</span><span class="op">)</span></span>
+<span><span class="co"># Monte Carlo cross-validation</span></span>
+<span><span class="va">cv2</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/crossv_mc.html">crossv_mc</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fl">100</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">boot</span><span class="op">$</span><span class="va">strap</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 32 11</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">cv1</span><span class="op">$</span><span class="va">train</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 25 11</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">cv1</span><span class="op">$</span><span class="va">test</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1]  7 11</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">cv2</span><span class="op">$</span><span class="va">train</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 25 11</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">cv2</span><span class="op">$</span><span class="va">test</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1]  7 11</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="model-quality-metrics">Model quality metrics<a class="anchor" aria-label="anchor" href="#model-quality-metrics"></a>
 </h3>
 <p>modelr includes several often-used model quality metrics:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">wt</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>
-<span class="fu"><a href="reference/model-quality.html">rmse</a></span><span class="op">(</span><span class="va">mod</span>, <span class="va">mtcars</span><span class="op">)</span>
-<span class="co">#&gt; [1] 2.949163</span>
-<span class="fu"><a href="reference/model-quality.html">rsquare</a></span><span class="op">(</span><span class="va">mod</span>, <span class="va">mtcars</span><span class="op">)</span>
-<span class="co">#&gt; [1] 0.7528328</span>
-<span class="fu"><a href="reference/model-quality.html">mae</a></span><span class="op">(</span><span class="va">mod</span>, <span class="va">mtcars</span><span class="op">)</span>
-<span class="co">#&gt; [1] 2.340642</span>
-<span class="fu"><a href="reference/model-quality.html">qae</a></span><span class="op">(</span><span class="va">mod</span>, <span class="va">mtcars</span><span class="op">)</span>
-<span class="co">#&gt;        5%       25%       50%       75%       95% </span>
-<span class="co">#&gt; 0.1784985 1.0005640 2.0946199 3.2696108 6.1794815</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">wt</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/model-quality.html">rmse</a></span><span class="op">(</span><span class="va">mod</span>, <span class="va">mtcars</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 2.949163</span></span>
+<span><span class="fu"><a href="reference/model-quality.html">rsquare</a></span><span class="op">(</span><span class="va">mod</span>, <span class="va">mtcars</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.7528328</span></span>
+<span><span class="fu"><a href="reference/model-quality.html">mae</a></span><span class="op">(</span><span class="va">mod</span>, <span class="va">mtcars</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 2.340642</span></span>
+<span><span class="fu"><a href="reference/model-quality.html">qae</a></span><span class="op">(</span><span class="va">mod</span>, <span class="va">mtcars</span><span class="op">)</span></span>
+<span><span class="co">#&gt;        5%       25%       50%       75%       95% </span></span>
+<span><span class="co">#&gt; 0.1784985 1.0005640 2.0946199 3.2696108 6.1794815</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="interacting-with-models">Interacting with models<a class="anchor" aria-label="anchor" href="#interacting-with-models"></a>
 </h3>
 <p>A set of functions let you seamlessly add predictions and residuals as additional columns to an existing data frame:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1014</span><span class="op">)</span>
-<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span>
-  x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span><span class="op">)</span>,
-  y <span class="op">=</span> <span class="fl">5</span> <span class="op">*</span> <span class="va">x</span> <span class="op">+</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="va">x</span> <span class="op">^</span> <span class="fl">2</span> <span class="op">+</span> <span class="fl">3</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>
-<span class="op">)</span>
-
-<span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x</span>, data <span class="op">=</span> <span class="va">df</span><span class="op">)</span>
-<span class="va">df</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/add_predictions.html">add_predictions</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 100 x 3</span>
-<span class="co">#&gt;          x     y  pred</span>
-<span class="co">#&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 0.00740 3.90   3.08</span>
-<span class="co">#&gt;  2 0.0201  2.86   3.15</span>
-<span class="co">#&gt;  3 0.0280  2.93   3.19</span>
-<span class="co">#&gt;  4 0.0281  3.16   3.19</span>
-<span class="co">#&gt;  5 0.0312  3.19   3.21</span>
-<span class="co">#&gt;  6 0.0342  3.72   3.23</span>
-<span class="co">#&gt;  7 0.0514  0.984  3.32</span>
-<span class="co">#&gt;  8 0.0586  5.98   3.36</span>
-<span class="co">#&gt;  9 0.0637  2.96   3.39</span>
-<span class="co">#&gt; 10 0.0652  3.54   3.40</span>
-<span class="co">#&gt; # … with 90 more rows</span>
-<span class="va">df</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/add_residuals.html">add_residuals</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 100 x 3</span>
-<span class="co">#&gt;          x     y   resid</span>
-<span class="co">#&gt;      &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 0.00740 3.90   0.822 </span>
-<span class="co">#&gt;  2 0.0201  2.86  -0.290 </span>
-<span class="co">#&gt;  3 0.0280  2.93  -0.256 </span>
-<span class="co">#&gt;  4 0.0281  3.16  -0.0312</span>
-<span class="co">#&gt;  5 0.0312  3.19  -0.0223</span>
-<span class="co">#&gt;  6 0.0342  3.72   0.496 </span>
-<span class="co">#&gt;  7 0.0514  0.984 -2.34  </span>
-<span class="co">#&gt;  8 0.0586  5.98   2.62  </span>
-<span class="co">#&gt;  9 0.0637  2.96  -0.428 </span>
-<span class="co">#&gt; 10 0.0652  3.54   0.146 </span>
-<span class="co">#&gt; # … with 90 more rows</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1014</span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span>
+<span>  x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  y <span class="op">=</span> <span class="fl">5</span> <span class="op">*</span> <span class="va">x</span> <span class="op">+</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="va">x</span> <span class="op">^</span> <span class="fl">2</span> <span class="op">+</span> <span class="fl">3</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x</span>, data <span class="op">=</span> <span class="va">df</span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/add_predictions.html">add_predictions</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 100 x 3</span></span>
+<span><span class="co">#&gt;          x     y  pred</span></span>
+<span><span class="co">#&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 0.00740 3.90   3.08</span></span>
+<span><span class="co">#&gt;  2 0.0201  2.86   3.15</span></span>
+<span><span class="co">#&gt;  3 0.0280  2.93   3.19</span></span>
+<span><span class="co">#&gt;  4 0.0281  3.16   3.19</span></span>
+<span><span class="co">#&gt;  5 0.0312  3.19   3.21</span></span>
+<span><span class="co">#&gt;  6 0.0342  3.72   3.23</span></span>
+<span><span class="co">#&gt;  7 0.0514  0.984  3.32</span></span>
+<span><span class="co">#&gt;  8 0.0586  5.98   3.36</span></span>
+<span><span class="co">#&gt;  9 0.0637  2.96   3.39</span></span>
+<span><span class="co">#&gt; 10 0.0652  3.54   3.40</span></span>
+<span><span class="co">#&gt; # … with 90 more rows</span></span>
+<span><span class="va">df</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/add_residuals.html">add_residuals</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 100 x 3</span></span>
+<span><span class="co">#&gt;          x     y   resid</span></span>
+<span><span class="co">#&gt;      &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 0.00740 3.90   0.822 </span></span>
+<span><span class="co">#&gt;  2 0.0201  2.86  -0.290 </span></span>
+<span><span class="co">#&gt;  3 0.0280  2.93  -0.256 </span></span>
+<span><span class="co">#&gt;  4 0.0281  3.16  -0.0312</span></span>
+<span><span class="co">#&gt;  5 0.0312  3.19  -0.0223</span></span>
+<span><span class="co">#&gt;  6 0.0342  3.72   0.496 </span></span>
+<span><span class="co">#&gt;  7 0.0514  0.984 -2.34  </span></span>
+<span><span class="co">#&gt;  8 0.0586  5.98   2.62  </span></span>
+<span><span class="co">#&gt;  9 0.0637  2.96  -0.428 </span></span>
+<span><span class="co">#&gt; 10 0.0652  3.54   0.146 </span></span>
+<span><span class="co">#&gt; # … with 90 more rows</span></span></code></pre></div>
 <p>For visualization purposes it is often useful to use an evenly spaced grid of points from the data:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/data_grid.html">data_grid</a></span><span class="op">(</span><span class="va">mtcars</span>, wt <span class="op">=</span> <span class="fu"><a href="reference/seq_range.html">seq_range</a></span><span class="op">(</span><span class="va">wt</span>, <span class="fl">10</span><span class="op">)</span>, <span class="va">cyl</span>, <span class="va">vs</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 60 x 3</span>
-<span class="co">#&gt;       wt   cyl    vs</span>
-<span class="co">#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt;  1  1.51     4     0</span>
-<span class="co">#&gt;  2  1.51     4     1</span>
-<span class="co">#&gt;  3  1.51     6     0</span>
-<span class="co">#&gt;  4  1.51     6     1</span>
-<span class="co">#&gt;  5  1.51     8     0</span>
-<span class="co">#&gt;  6  1.51     8     1</span>
-<span class="co">#&gt;  7  1.95     4     0</span>
-<span class="co">#&gt;  8  1.95     4     1</span>
-<span class="co">#&gt;  9  1.95     6     0</span>
-<span class="co">#&gt; 10  1.95     6     1</span>
-<span class="co">#&gt; # … with 50 more rows</span>
-
-<span class="co"># For continuous variables, seq_range is useful</span>
-<span class="va">mtcars_mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">wt</span> <span class="op">+</span> <span class="va">cyl</span> <span class="op">+</span> <span class="va">vs</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>
-<span class="fu"><a href="reference/data_grid.html">data_grid</a></span><span class="op">(</span><span class="va">mtcars</span>, wt <span class="op">=</span> <span class="fu"><a href="reference/seq_range.html">seq_range</a></span><span class="op">(</span><span class="va">wt</span>, <span class="fl">10</span><span class="op">)</span>, <span class="va">cyl</span>, <span class="va">vs</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/add_predictions.html">add_predictions</a></span><span class="op">(</span><span class="va">mtcars_mod</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 60 x 4</span>
-<span class="co">#&gt;       wt   cyl    vs  pred</span>
-<span class="co">#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt;  1  1.51     4     0  28.4</span>
-<span class="co">#&gt;  2  1.51     4     1  28.9</span>
-<span class="co">#&gt;  3  1.51     6     0  25.6</span>
-<span class="co">#&gt;  4  1.51     6     1  26.2</span>
-<span class="co">#&gt;  5  1.51     8     0  22.9</span>
-<span class="co">#&gt;  6  1.51     8     1  23.4</span>
-<span class="co">#&gt;  7  1.95     4     0  27.0</span>
-<span class="co">#&gt;  8  1.95     4     1  27.5</span>
-<span class="co">#&gt;  9  1.95     6     0  24.2</span>
-<span class="co">#&gt; 10  1.95     6     1  24.8</span>
-<span class="co">#&gt; # … with 50 more rows</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/data_grid.html">data_grid</a></span><span class="op">(</span><span class="va">mtcars</span>, wt <span class="op">=</span> <span class="fu"><a href="reference/seq_range.html">seq_range</a></span><span class="op">(</span><span class="va">wt</span>, <span class="fl">10</span><span class="op">)</span>, <span class="va">cyl</span>, <span class="va">vs</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 60 x 3</span></span>
+<span><span class="co">#&gt;       wt   cyl    vs</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  1.51     4     0</span></span>
+<span><span class="co">#&gt;  2  1.51     4     1</span></span>
+<span><span class="co">#&gt;  3  1.51     6     0</span></span>
+<span><span class="co">#&gt;  4  1.51     6     1</span></span>
+<span><span class="co">#&gt;  5  1.51     8     0</span></span>
+<span><span class="co">#&gt;  6  1.51     8     1</span></span>
+<span><span class="co">#&gt;  7  1.95     4     0</span></span>
+<span><span class="co">#&gt;  8  1.95     4     1</span></span>
+<span><span class="co">#&gt;  9  1.95     6     0</span></span>
+<span><span class="co">#&gt; 10  1.95     6     1</span></span>
+<span><span class="co">#&gt; # … with 50 more rows</span></span>
+<span></span>
+<span><span class="co"># For continuous variables, seq_range is useful</span></span>
+<span><span class="va">mtcars_mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">wt</span> <span class="op">+</span> <span class="va">cyl</span> <span class="op">+</span> <span class="va">vs</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/data_grid.html">data_grid</a></span><span class="op">(</span><span class="va">mtcars</span>, wt <span class="op">=</span> <span class="fu"><a href="reference/seq_range.html">seq_range</a></span><span class="op">(</span><span class="va">wt</span>, <span class="fl">10</span><span class="op">)</span>, <span class="va">cyl</span>, <span class="va">vs</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/add_predictions.html">add_predictions</a></span><span class="op">(</span><span class="va">mtcars_mod</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 60 x 4</span></span>
+<span><span class="co">#&gt;       wt   cyl    vs  pred</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  1.51     4     0  28.4</span></span>
+<span><span class="co">#&gt;  2  1.51     4     1  28.9</span></span>
+<span><span class="co">#&gt;  3  1.51     6     0  25.6</span></span>
+<span><span class="co">#&gt;  4  1.51     6     1  26.2</span></span>
+<span><span class="co">#&gt;  5  1.51     8     0  22.9</span></span>
+<span><span class="co">#&gt;  6  1.51     8     1  23.4</span></span>
+<span><span class="co">#&gt;  7  1.95     4     0  27.0</span></span>
+<span><span class="co">#&gt;  8  1.95     4     1  27.5</span></span>
+<span><span class="co">#&gt;  9  1.95     6     0  24.2</span></span>
+<span><span class="co">#&gt; 10  1.95     6     1  24.8</span></span>
+<span><span class="co">#&gt; # … with 50 more rows</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -284,6 +283,7 @@
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li><a href="SUPPORT.html">Getting help</a></li>
 </ul>
 </div>
 
@@ -326,7 +326,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
   </div></footer>
