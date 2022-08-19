@@ -1,4 +1,4 @@
-# modelr (development version)
+# modelr 0.1.9
 
 * Redocument to fix HTML issues in .Rd
 
