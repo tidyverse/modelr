@@ -81,8 +81,8 @@
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>The modelr package provides functions that help you create elegant pipelines when modelling. It is designed primarily to support teaching the basics of modelling within the tidyverse, particularly in <a href="http://r4ds.had.co.nz/model-basics.html" class="external-link">R for Data Science</a>.</p>
-<p>Please see <a href="http://tidymodels.org/" class="external-link uri">http://tidymodels.org/</a> for a more comprehensive framework for modelling within the tidyverse.</p>
+<p>The modelr package provides functions that help you create elegant pipelines when modelling. It is designed primarily to support teaching the basics of modelling within the tidyverse, particularly in <a href="https://r4ds.had.co.nz/model-basics.html" class="external-link">R for Data Science</a>.</p>
+<p>Please see <a href="https://www.tidymodels.org/" class="external-link uri">https://www.tidymodels.org/</a> for a more comprehensive framework for modelling within the tidyverse.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -188,7 +188,7 @@
 <span></span>
 <span><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x</span>, data <span class="op">=</span> <span class="va">df</span><span class="op">)</span></span>
 <span><span class="va">df</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/add_predictions.html">add_predictions</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 100 x 3</span></span>
+<span><span class="co">#&gt; # A tibble: 100 × 3</span></span>
 <span><span class="co">#&gt;          x     y  pred</span></span>
 <span><span class="co">#&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1 0.00740 3.90   3.08</span></span>
@@ -202,8 +202,9 @@
 <span><span class="co">#&gt;  9 0.0637  2.96   3.39</span></span>
 <span><span class="co">#&gt; 10 0.0652  3.54   3.40</span></span>
 <span><span class="co">#&gt; # … with 90 more rows</span></span>
+<span><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span>
 <span><span class="va">df</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/add_residuals.html">add_residuals</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 100 x 3</span></span>
+<span><span class="co">#&gt; # A tibble: 100 × 3</span></span>
 <span><span class="co">#&gt;          x     y   resid</span></span>
 <span><span class="co">#&gt;      &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1 0.00740 3.90   0.822 </span></span>
@@ -216,11 +217,12 @@
 <span><span class="co">#&gt;  8 0.0586  5.98   2.62  </span></span>
 <span><span class="co">#&gt;  9 0.0637  2.96  -0.428 </span></span>
 <span><span class="co">#&gt; 10 0.0652  3.54   0.146 </span></span>
-<span><span class="co">#&gt; # … with 90 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # … with 90 more rows</span></span>
+<span><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 <p>For visualization purposes it is often useful to use an evenly spaced grid of points from the data:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/data_grid.html">data_grid</a></span><span class="op">(</span><span class="va">mtcars</span>, wt <span class="op">=</span> <span class="fu"><a href="reference/seq_range.html">seq_range</a></span><span class="op">(</span><span class="va">wt</span>, <span class="fl">10</span><span class="op">)</span>, <span class="va">cyl</span>, <span class="va">vs</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 60 x 3</span></span>
+<span><span class="co">#&gt; # A tibble: 60 × 3</span></span>
 <span><span class="co">#&gt;       wt   cyl    vs</span></span>
 <span><span class="co">#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1  1.51     4     0</span></span>
@@ -234,11 +236,12 @@
 <span><span class="co">#&gt;  9  1.95     6     0</span></span>
 <span><span class="co">#&gt; 10  1.95     6     1</span></span>
 <span><span class="co">#&gt; # … with 50 more rows</span></span>
+<span><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span>
 <span></span>
 <span><span class="co"># For continuous variables, seq_range is useful</span></span>
 <span><span class="va">mtcars_mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">wt</span> <span class="op">+</span> <span class="va">cyl</span> <span class="op">+</span> <span class="va">vs</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/data_grid.html">data_grid</a></span><span class="op">(</span><span class="va">mtcars</span>, wt <span class="op">=</span> <span class="fu"><a href="reference/seq_range.html">seq_range</a></span><span class="op">(</span><span class="va">wt</span>, <span class="fl">10</span><span class="op">)</span>, <span class="va">cyl</span>, <span class="va">vs</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/add_predictions.html">add_predictions</a></span><span class="op">(</span><span class="va">mtcars_mod</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 60 x 4</span></span>
+<span><span class="co">#&gt; # A tibble: 60 × 4</span></span>
 <span><span class="co">#&gt;       wt   cyl    vs  pred</span></span>
 <span><span class="co">#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1  1.51     4     0  28.4</span></span>
@@ -251,7 +254,8 @@
 <span><span class="co">#&gt;  8  1.95     4     1  27.5</span></span>
 <span><span class="co">#&gt;  9  1.95     6     0  24.2</span></span>
 <span><span class="co">#&gt; 10  1.95     6     1  24.8</span></span>
-<span><span class="co">#&gt; # … with 50 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # … with 50 more rows</span></span>
+<span><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -307,9 +311,9 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
 <li><a href="https://github.com/tidyverse/modelr/actions" class="external-link"><img src="https://github.com/tidyverse/modelr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://codecov.io/gh/tidyverse/modelr?branch=master" class="external-link"><img src="https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://app.codecov.io/gh/tidyverse/modelr?branch=master" class="external-link"><img src="https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 
