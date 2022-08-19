@@ -12,7 +12,7 @@ na.warn(object)
 \description{
 This NA handler ensures that those models that support the
 \code{na.action} parameter do not silently drop missing values. It
-wraps around \code{\link[stats:na.exclude]{stats::na.exclude()}} so that there is one
+wraps around \code{\link[stats:na.fail]{stats::na.exclude()}} so that there is one
 prediction/residual for input row. To apply it globally, run
 \code{options(na.action = na.warn)}.
 }

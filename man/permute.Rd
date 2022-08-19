@@ -15,7 +15,7 @@ permute_(data, n, columns, .id = ".id")
 \item{n}{Number of permutations to generate.}
 
 \item{...}{Columns to permute. This supports bare column names or dplyr
-\link[dplyr:select_helpers]{dplyr::select_helpers}}
+\link[dplyr:reexports]{dplyr::select_helpers}}
 
 \item{.id}{Name of variable that gives each model a unique integer id.}
 

@@ -6,11 +6,9 @@
 \alias{modelr-package}
 \title{modelr: Modelling Functions that Work with the Pipe}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Functions for modelling that help you seamlessly
-    integrate modelling into a pipeline of data manipulation and
-    visualisation.
+Functions for modelling that help you seamlessly integrate modelling into a pipeline of data manipulation and visualisation.
 }
 \seealso{
 Useful links:
@@ -26,7 +24,7 @@ Useful links:
 
 Other contributors:
 \itemize{
-  \item RStudio [copyright holder]
+  \item RStudio [copyright holder, funder]
 }
 
 }
