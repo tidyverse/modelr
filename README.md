@@ -4,11 +4,11 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R build
 status](https://github.com/tidyverse/modelr/workflows/R-CMD-check/badge.svg)](https://github.com/tidyverse/modelr/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg)](https://codecov.io/gh/tidyverse/modelr?branch=master)
+coverage](https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/modelr?branch=master)
 <!-- badges: end -->
 
 ## Overview
@@ -16,10 +16,10 @@ coverage](https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg)]
 The modelr package provides functions that help you create elegant
 pipelines when modelling. It is designed primarily to support teaching
 the basics of modelling within the tidyverse, particularly in [R for
-Data Science](http://r4ds.had.co.nz/model-basics.html).
+Data Science](https://r4ds.had.co.nz/model-basics.html).
 
-Please see <http://tidymodels.org/> for a more comprehensive framework
-for modelling within the tidyverse.
+Please see <https://www.tidymodels.org/> for a more comprehensive
+framework for modelling within the tidyverse.
 
 ## Installation
 
@@ -145,7 +145,7 @@ df <- tibble::tibble(
 
 mod <- lm(y ~ x, data = df)
 df %>% add_predictions(mod)
-#> # A tibble: 100 x 3
+#> # A tibble: 100 × 3
 #>          x     y  pred
 #>      <dbl> <dbl> <dbl>
 #>  1 0.00740 3.90   3.08
@@ -159,8 +159,9 @@ df %>% add_predictions(mod)
 #>  9 0.0637  2.96   3.39
 #> 10 0.0652  3.54   3.40
 #> # … with 90 more rows
+#> # ℹ Use `print(n = ...)` to see more rows
 df %>% add_residuals(mod)
-#> # A tibble: 100 x 3
+#> # A tibble: 100 × 3
 #>          x     y   resid
 #>      <dbl> <dbl>   <dbl>
 #>  1 0.00740 3.90   0.822 
@@ -174,6 +175,7 @@ df %>% add_residuals(mod)
 #>  9 0.0637  2.96  -0.428 
 #> 10 0.0652  3.54   0.146 
 #> # … with 90 more rows
+#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
 For visualization purposes it is often useful to use an evenly spaced
@@ -181,7 +183,7 @@ grid of points from the data:
 
 ``` r
 data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs)
-#> # A tibble: 60 x 3
+#> # A tibble: 60 × 3
 #>       wt   cyl    vs
 #>    <dbl> <dbl> <dbl>
 #>  1  1.51     4     0
@@ -195,11 +197,12 @@ data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs)
 #>  9  1.95     6     0
 #> 10  1.95     6     1
 #> # … with 50 more rows
+#> # ℹ Use `print(n = ...)` to see more rows
 
 # For continuous variables, seq_range is useful
 mtcars_mod <- lm(mpg ~ wt + cyl + vs, data = mtcars)
 data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs) %>% add_predictions(mtcars_mod)
-#> # A tibble: 60 x 4
+#> # A tibble: 60 × 4
 #>       wt   cyl    vs  pred
 #>    <dbl> <dbl> <dbl> <dbl>
 #>  1  1.51     4     0  28.4
@@ -213,6 +216,7 @@ data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs) %>% add_predictions(mtcars_mo
 #>  9  1.95     6     0  24.2
 #> 10  1.95     6     1  24.8
 #> # … with 50 more rows
+#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
 ## Code of conduct
