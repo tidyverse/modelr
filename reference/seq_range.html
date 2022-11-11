@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">modelr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.1.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.1.10</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,29 +90,28 @@ value to a multiple of <code>by</code>.</p></dd>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Cauchy.html" class="external-link">rcauchy</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">seq_range</span><span class="op">(</span><span class="va">x</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -47.547427 -30.209663 -12.871899   4.465864  21.803628  39.141392</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]  56.479156  73.816919  91.154683 108.492447</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -59.542807 -48.518955 -37.495103 -26.471252 -15.447400  -4.423548</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]   6.600303  17.624155  28.648007  39.671858</span>
 <span class="r-in"><span><span class="fu">seq_range</span><span class="op">(</span><span class="va">x</span>, n <span class="op">=</span> <span class="fl">10</span>, trim <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -7.29471738 -5.47652146 -3.65832553 -1.84012960 -0.02193368</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6]  1.79626225  3.61445817  5.43265410  7.25085003  9.06904595</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -3.58894813 -2.36284623 -1.13674434  0.08935756  1.31545946</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6]  2.54156135  3.76766325  4.99376515  6.21986704  7.44596894</span>
 <span class="r-in"><span><span class="fu">seq_range</span><span class="op">(</span><span class="va">x</span>, by <span class="op">=</span> <span class="fl">1</span>, trim <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -7.2947174 -6.2947174 -5.2947174 -4.2947174 -3.2947174 -2.2947174</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] -1.2947174 -0.2947174  0.7052826  1.7052826  2.7052826  3.7052826</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13]  4.7052826  5.7052826  6.7052826  7.7052826  8.7052826</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -3.5889481 -2.5889481 -1.5889481 -0.5889481  0.4110519  1.4110519</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]  2.4110519  3.4110519  4.4110519  5.4110519  6.4110519  7.4110519</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Make pretty sequences</span></span></span>
 <span class="r-in"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">seq_range</span><span class="op">(</span><span class="va">y</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.01493567 0.12425832 0.23358097 0.34290363 0.45222628 0.56154893</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] 0.67087159 0.78019424 0.88951690 0.99883955</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.01080974 0.11995645 0.22910316 0.33824987 0.44739658 0.55654329</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] 0.66569000 0.77483671 0.88398342 0.99313012</span>
 <span class="r-in"><span><span class="fu">seq_range</span><span class="op">(</span><span class="va">y</span>, n <span class="op">=</span> <span class="fl">10</span>, pretty <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0</span>
 <span class="r-in"><span><span class="fu">seq_range</span><span class="op">(</span><span class="va">y</span>, n <span class="op">=</span> <span class="fl">10</span>, expand <span class="op">=</span> <span class="fl">0.5</span>, pretty <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -0.4 -0.2  0.0  0.2  0.4  0.6  0.8  1.0  1.2  1.4</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">seq_range</span><span class="op">(</span><span class="va">y</span>, by <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.01493567 0.11493567 0.21493567 0.31493567 0.41493567 0.51493567</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] 0.61493567 0.71493567 0.81493567 0.91493567</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.01080974 0.11080974 0.21080974 0.31080974 0.41080974 0.51080974</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] 0.61080974 0.71080974 0.81080974 0.91080974</span>
 <span class="r-in"><span><span class="fu">seq_range</span><span class="op">(</span><span class="va">y</span>, by <span class="op">=</span> <span class="fl">0.1</span>, pretty <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0</span>
 </code></pre></div>
