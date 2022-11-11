@@ -31,15 +31,10 @@
 fit_with <- function(data, .f, .formulas, ...) {
   args <- list(...)
 
-  # Quoting data to avoid getting the whole raw SEXP structure in the
-  # calls captured by the fitting function (which gets displayed in
-  # print methods)
-  args$data <- quote(data)
-
   # Supply .f quoted, otherwise the whole fitting function is inlined
   # in the call recorded in the fit objects
   map(.formulas, function(formula) {
-    purrr::invoke(".f", args, formula = formula, .env = environment())
+    inject(.f(!!formula, data = data, !!!args))
   })
 }
 
