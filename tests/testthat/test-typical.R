@@ -36,6 +36,6 @@ test_that("typical.ordered works as expected", {
 })
 
 test_that("typical.integer works as expected", {
-  expect_identical(typical(c(1L, 2L, 3L, 8L)), 2L)
-  expect_identical(typical(c(1L, 2L, 3L, 8L, NA_integer_)), 2L)
+  expect_equal(typical(c(1L, 2L, 3L, 8L)), 2)
+  expect_equal(typical(c(1L, 2L, 3L, 8L, NA_integer_)), 2)
 })
