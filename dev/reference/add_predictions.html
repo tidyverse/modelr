@@ -113,52 +113,52 @@ model.</p>
 <span class="r-in"><span><span class="va">grid</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, length <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">grid</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu">add_predictions</span><span class="op">(</span><span class="va">m1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>            x     pred</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.0000000 2.889870</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  0.1111111 3.509277</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.2222222 4.128685</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.3333333 4.748092</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  0.4444444 5.367499</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  0.5555556 5.986906</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.6666667 6.606313</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  0.7777778 7.225720</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.8888889 7.845127</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 1.0000000 8.464535</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.0000000 3.262441</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  0.1111111 3.802760</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.2222222 4.343078</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.3333333 4.883397</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  0.4444444 5.423715</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  0.5555556 5.964034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.6666667 6.504352</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  0.7777778 7.044670</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.8888889 7.584989</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 1.0000000 8.125307</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">m2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/poly.html" class="external-link">poly</a></span><span class="op">(</span><span class="va">x</span>, <span class="fl">2</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">df</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">grid</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu">spread_predictions</span><span class="op">(</span><span class="va">m1</span>, <span class="va">m2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>            x       m1       m2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.0000000 2.889870 2.977829</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  0.1111111 3.509277 3.547632</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.2222222 4.128685 4.129489</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.3333333 4.748092 4.723401</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  0.4444444 5.367499 5.329366</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  0.5555556 5.986906 5.947386</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.6666667 6.606313 6.577460</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  0.7777778 7.225720 7.219588</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.8888889 7.845127 7.873771</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 1.0000000 8.464535 8.540007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.0000000 3.262441 2.896876</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  0.1111111 3.802760 3.653012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  0.2222222 4.343078 4.354355</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  0.3333333 4.883397 5.000904</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  0.4444444 5.423715 5.592661</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  0.5555556 5.964034 6.129623</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  0.6666667 6.504352 6.611792</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  0.7777778 7.044670 7.039168</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  0.8888889 7.584989 7.411751</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 1.0000000 8.125307 7.729540</span>
 <span class="r-in"><span><span class="va">grid</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu">gather_predictions</span><span class="op">(</span><span class="va">m1</span>, <span class="va">m2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    model         x     pred</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     m1 0.0000000 2.889870</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     m1 0.1111111 3.509277</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     m1 0.2222222 4.128685</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     m1 0.3333333 4.748092</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     m1 0.4444444 5.367499</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     m1 0.5555556 5.986906</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7     m1 0.6666667 6.606313</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8     m1 0.7777778 7.225720</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9     m1 0.8888889 7.845127</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10    m1 1.0000000 8.464535</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11    m2 0.0000000 2.977829</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12    m2 0.1111111 3.547632</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13    m2 0.2222222 4.129489</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14    m2 0.3333333 4.723401</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15    m2 0.4444444 5.329366</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16    m2 0.5555556 5.947386</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17    m2 0.6666667 6.577460</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18    m2 0.7777778 7.219588</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19    m2 0.8888889 7.873771</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20    m2 1.0000000 8.540007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     m1 0.0000000 3.262441</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     m1 0.1111111 3.802760</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     m1 0.2222222 4.343078</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     m1 0.3333333 4.883397</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     m1 0.4444444 5.423715</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6     m1 0.5555556 5.964034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7     m1 0.6666667 6.504352</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8     m1 0.7777778 7.044670</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9     m1 0.8888889 7.584989</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10    m1 1.0000000 8.125307</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11    m2 0.0000000 2.896876</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12    m2 0.1111111 3.653012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13    m2 0.2222222 4.354355</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14    m2 0.3333333 5.000904</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15    m2 0.4444444 5.592661</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16    m2 0.5555556 6.129623</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17    m2 0.6666667 6.611792</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18    m2 0.7777778 7.039168</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19    m2 0.8888889 7.411751</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20    m2 1.0000000 7.729540</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
