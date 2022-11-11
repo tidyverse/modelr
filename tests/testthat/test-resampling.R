@@ -1,5 +1,3 @@
-context("resampling")
-
 d <- head(mtcars, 30)
 d$row <- 1:30
 

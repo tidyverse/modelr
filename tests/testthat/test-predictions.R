@@ -1,5 +1,3 @@
-context("predictions")
-
 test_that("always uses na.action = na.exclude", {
   df <- tibble::tibble(x = c(1, 2, NA), y = c(1.5, 2, 3.5))
 

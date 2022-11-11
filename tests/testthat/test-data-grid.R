@@ -1,5 +1,3 @@
-context("test-data-grid.R")
-
 test_that("can generate typical values", {
   df <- tibble::tibble(
     x = rep(c("a", "b"), each = 5),

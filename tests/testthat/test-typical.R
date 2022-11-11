@@ -1,5 +1,3 @@
-context("typical")
-
 test_that("typical.numeric works as expected", {
   x <- c(1, 2, 5)
   expect_equal(typical(x), median(x))

@@ -1,5 +1,3 @@
-context("resample-partition")
-
 test_that("resample_partition() generates error messages & warnings", {
   expect_error(
     resample_partition(mtcars, c(test = "0.8", train = 0.7)),

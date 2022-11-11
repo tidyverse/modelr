@@ -1,5 +1,3 @@
-context("test-cross-validate")
-
 test_that("number of crossfolds is a single integer", {
   expect_error(crossv_kfold(mtcars, k = "0"), "single integer")
   expect_error(crossv_kfold(mtcars, k = c(1, 2)), "single integer")

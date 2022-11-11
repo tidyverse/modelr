@@ -1,5 +1,3 @@
-context("response_var")
-
 test_that("can extract response from linear model", {
   mod <- lm(mpg ~ wt, data = mtcars)
   expect_identical(response_var(mod), quote(mpg))

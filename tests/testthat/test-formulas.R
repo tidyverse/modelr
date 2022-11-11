@@ -1,6 +1,4 @@
 
-context("formulas")
-
 test_that("add_predictors() combines predictors", {
   expect_identical(add_predictors(~1, ~2, ~3), ~1 + 2 + 3)
 })
@@ -50,5 +48,5 @@ test_that("formulas() combines the lhs", {
 test_that("bytecoded fit_with() works", {
   bc_fit_with <- compiler::cmpfun(fit_with)
   fit <- bc_fit_with(mtcars, lm, list(disp ~ drat))
-  expect_is(fit[[1]], "lm")
+  expect_s3_class(fit[[1]], "lm")
 })

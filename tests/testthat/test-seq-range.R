@@ -1,5 +1,3 @@
-context("seq-range")
-
 test_that("seq_range() can generate error messages and typical values", {
   x <- 1:4
   expect_error(
