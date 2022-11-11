@@ -33,7 +33,7 @@ to the generated distribution of null statistics.
 \examples{
 
 library(purrr)
-perms <- permute(mtcars,  1000, mpg)
+perms <- permute(mtcars, 100, mpg)
 
 models <- map(perms$perm, ~ lm(mpg ~ wt, data = .))
 glanced <- map_df(models, broom::glance, .id = "id")
