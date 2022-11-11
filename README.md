@@ -8,7 +8,7 @@ stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://
 [![R build
 status](https://github.com/tidyverse/modelr/workflows/R-CMD-check/badge.svg)](https://github.com/tidyverse/modelr/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/modelr?branch=master)
+coverage](https://codecov.io/gh/tidyverse/modelr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/modelr?branch=main)
 <!-- badges: end -->
 
 ## Overview
@@ -159,7 +159,6 @@ df %>% add_predictions(mod)
 #>  9 0.0637  2.96   3.39
 #> 10 0.0652  3.54   3.40
 #> # … with 90 more rows
-#> # ℹ Use `print(n = ...)` to see more rows
 df %>% add_residuals(mod)
 #> # A tibble: 100 × 3
 #>          x     y   resid
@@ -175,7 +174,6 @@ df %>% add_residuals(mod)
 #>  9 0.0637  2.96  -0.428 
 #> 10 0.0652  3.54   0.146 
 #> # … with 90 more rows
-#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
 For visualization purposes it is often useful to use an evenly spaced
@@ -197,7 +195,6 @@ data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs)
 #>  9  1.95     6     0
 #> 10  1.95     6     1
 #> # … with 50 more rows
-#> # ℹ Use `print(n = ...)` to see more rows
 
 # For continuous variables, seq_range is useful
 mtcars_mod <- lm(mpg ~ wt + cyl + vs, data = mtcars)
@@ -216,7 +213,6 @@ data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs) %>% add_predictions(mtcars_mo
 #>  9  1.95     6     0  24.2
 #> 10  1.95     6     1  24.8
 #> # … with 50 more rows
-#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
 ## Code of conduct

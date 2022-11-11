@@ -12,7 +12,7 @@ set.seed(1014)
 <!-- badges: start -->
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R build status](https://github.com/tidyverse/modelr/workflows/R-CMD-check/badge.svg)](https://github.com/tidyverse/modelr/actions)
-[![Codecov test coverage](https://codecov.io/gh/tidyverse/modelr/branch/master/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/modelr?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/tidyverse/modelr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/modelr?branch=main)
 <!-- badges: end -->
 
 ## Overview
