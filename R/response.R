@@ -1,4 +1,4 @@
-response_var <- function(model) {
+response_var <- function(model, data) {
   UseMethod("response_var")
 }
 
@@ -7,7 +7,7 @@ response_var.default <- function(model, data) {
   stats::formula(model)[[2L]]
 }
 
-predictor_vars <- function(model) {
+predictor_vars <- function(model, data) {
   UseMethod("predictor_vars")
 }
 
