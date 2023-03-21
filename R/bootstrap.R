@@ -19,7 +19,7 @@ NULL
 #' hist(subset(tidied, term == "wt")$estimate)
 #' hist(subset(tidied, term == "(Intercept)")$estimate)
 bootstrap <- function(data, n, id = ".id") {
-  bootstrap <- purrr::rerun(n, resample_bootstrap(data))
+  bootstrap <- purrr::map(seq_len(n), ~ resample_bootstrap(data))
 
   df <- tibble::tibble(strap = bootstrap)
   df[[id]] <- id(n)

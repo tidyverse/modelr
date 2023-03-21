@@ -35,7 +35,7 @@ crossv_mc <- function(data, n, test = 0.2, id = ".id") {
   }
 
   p <- c(train = 1 - test, test = test)
-  runs <- purrr::rerun(n, resample_partition(data, p))
+  runs <- purrr::map(seq_len(n), ~ resample_partition(data, p))
   cols <- purrr::transpose(runs)
   cols[[id]] <- id(n)
 

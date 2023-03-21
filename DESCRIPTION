@@ -2,8 +2,8 @@ Package: modelr
 Title: Modelling Functions that Work with the Pipe
 Version: 0.1.10.9000
 Authors@R: c(
-    person("Hadley", "Wickham", , "hadley@rstudio.com", role = c("aut", "cre")),
-    person("RStudio", role = c("cph", "fnd"))
+    person("Hadley", "Wickham", , "hadley@posit.co", role = c("aut", "cre")),
+    person("Posit Software, PBC", role = c("cph", "fnd"))
   )
 Description: Functions for modelling that help you seamlessly integrate
     modelling into a pipeline of data manipulation and visualisation.
@@ -30,5 +30,5 @@ Config/Needs/website: tidyverse/tidytemplate
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Config/testthat/edition: 3

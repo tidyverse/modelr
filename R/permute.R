@@ -40,7 +40,7 @@ permute <- function(data, n, ..., .id = ".id") {
 #' @rdname permute
 #' @export
 permute_ <- function(data, n, columns, .id = ".id") {
-  perm <- purrr::rerun(n, resample_permutation(data, columns))
+  perm <- purrr::map(seq_len(n), ~ resample_permutation(data, columns))
 
   df <- tibble::tibble(perm = perm)
   df[[.id]] <- id(n)
