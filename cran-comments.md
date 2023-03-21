@@ -4,4 +4,4 @@
 
 ## revdepcheck results
 
-This release fixes a failing test on R-devel; I didn't re-check revdeps.
+This release fixes a failing check on R-devel; I didn't re-check revdeps.
