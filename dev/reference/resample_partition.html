@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">modelr</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.1.10.9000</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.1.11.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,9 +78,9 @@ that an observation will be assigned to that group.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">ex</span> <span class="op">&lt;-</span> <span class="fu">resample_partition</span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>test <span class="op">=</span> <span class="fl">0.3</span>, train <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">wt</span>, data <span class="op">=</span> <span class="va">ex</span><span class="op">$</span><span class="va">train</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="model-quality.html">rmse</a></span><span class="op">(</span><span class="va">mod</span>, <span class="va">ex</span><span class="op">$</span><span class="va">test</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 3.629214</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2.382216</span>
 <span class="r-in"><span><span class="fu"><a href="model-quality.html">rmse</a></span><span class="op">(</span><span class="va">mod</span>, <span class="va">ex</span><span class="op">$</span><span class="va">train</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2.72345</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 3.155123</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
