@@ -11,11 +11,6 @@ template:
 development:
   mode: auto
 
-home:
-  links:
-    - text: Learn more
-      href: http://r4ds.had.co.nz/model-basics.html
-
 reference:
 
 - title: Resampling
