@@ -16,8 +16,8 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="deps/Source_Sans_Pro-0.4.5/font.css" rel="stylesheet">
-<link href="deps/Source_Code_Pro-0.4.5/font.css" rel="stylesheet">
+<script src="deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="deps/Source_Sans_Pro-0.4.7/font.css" rel="stylesheet">
+<link href="deps/Source_Code_Pro-0.4.7/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Modelling Functions that Work with the Pipe">
@@ -82,8 +82,8 @@
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>The modelr package provides functions that help you create elegant pipelines when modelling. It is designed primarily to support teaching the basics of modelling within the tidyverse, particularly in <a href="https://r4ds.had.co.nz/model-basics.html" class="external-link">R for Data Science</a>.</p>
-<p>Please see <a href="https://www.tidymodels.org/" class="external-link uri">https://www.tidymodels.org/</a> for a more comprehensive framework for modelling within the tidyverse.</p>
+<p>The modelr package provides functions that help you create elegant pipelines when modelling. It was designed primarily to support teaching the basics of modelling for the 1st edition of <a href="https://r4ds.had.co.nz/model-basics.html" class="external-link">R for Data Science</a>.</p>
+<p>We no longer recommend it and instead suggest <a href="https://www.tidymodels.org/" class="external-link uri">https://www.tidymodels.org/</a> for a more comprehensive framework for modelling within the tidyverse.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -93,16 +93,7 @@
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Alternatively, install just modelr:</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"modelr"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Or the development version from GitHub:</span></span>
-<span><span class="co"># install.packages("devtools")</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"tidyverse/modelr"</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="status">Status<a class="anchor" aria-label="anchor" href="#status"></a>
-</h2>
-<p>modelr is stable: it has achieved its goal of making it easier to teach modelling within the tidyverse. For more general modelling tasks, check out the family of “tidymodel” packages like <a href="https://topepo.github.io/recipes/" class="external-link">recipes</a>, <a href="https://topepo.github.io/rsample/" class="external-link">rsample</a>, <a href="https://topepo.github.io/parsnip/" class="external-link">parsnip</a>, and <a href="https://topepo.github.io/tidyposterior/" class="external-link">tidyposterior</a>.</p>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"modelr"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="getting-started">Getting started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
@@ -202,7 +193,7 @@
 <span><span class="co">#&gt;  8 0.0586  5.98   3.36</span></span>
 <span><span class="co">#&gt;  9 0.0637  2.96   3.39</span></span>
 <span><span class="co">#&gt; 10 0.0652  3.54   3.40</span></span>
-<span><span class="co">#&gt; # … with 90 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 90 more rows</span></span>
 <span><span class="va">df</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/add_residuals.html">add_residuals</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 100 × 3</span></span>
 <span><span class="co">#&gt;          x     y   resid</span></span>
@@ -217,7 +208,7 @@
 <span><span class="co">#&gt;  8 0.0586  5.98   2.62  </span></span>
 <span><span class="co">#&gt;  9 0.0637  2.96  -0.428 </span></span>
 <span><span class="co">#&gt; 10 0.0652  3.54   0.146 </span></span>
-<span><span class="co">#&gt; # … with 90 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 90 more rows</span></span></code></pre></div>
 <p>For visualization purposes it is often useful to use an evenly spaced grid of points from the data:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/data_grid.html">data_grid</a></span><span class="op">(</span><span class="va">mtcars</span>, wt <span class="op">=</span> <span class="fu"><a href="reference/seq_range.html">seq_range</a></span><span class="op">(</span><span class="va">wt</span>, <span class="fl">10</span><span class="op">)</span>, <span class="va">cyl</span>, <span class="va">vs</span><span class="op">)</span></span>
@@ -234,7 +225,7 @@
 <span><span class="co">#&gt;  8  1.95     4     1</span></span>
 <span><span class="co">#&gt;  9  1.95     6     0</span></span>
 <span><span class="co">#&gt; 10  1.95     6     1</span></span>
-<span><span class="co">#&gt; # … with 50 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 50 more rows</span></span>
 <span></span>
 <span><span class="co"># For continuous variables, seq_range is useful</span></span>
 <span><span class="va">mtcars_mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">wt</span> <span class="op">+</span> <span class="va">cyl</span> <span class="op">+</span> <span class="va">vs</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
@@ -252,13 +243,8 @@
 <span><span class="co">#&gt;  8  1.95     4     1  27.5</span></span>
 <span><span class="co">#&gt;  9  1.95     6     0  24.2</span></span>
 <span><span class="co">#&gt; 10  1.95     6     1  24.8</span></span>
-<span><span class="co">#&gt; # … with 50 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 50 more rows</span></span></code></pre></div>
 </div>
-</div>
-<div class="section level2">
-<h2 id="code-of-conduct">Code of conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
-</h2>
-<p>Please note that this project is released with a <a href="https://modelr.tidyverse.org/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
@@ -267,7 +253,6 @@
 <li><a href="https://cloud.r-project.org/package=modelr" class="external-link">View on CRAN</a></li>
 <li><a href="https://github.com/tidyverse/modelr/" class="external-link">Browse source code</a></li>
 <li><a href="https://github.com/tidyverse/modelr/issues" class="external-link">Report a bug</a></li>
-<li><a href="http://r4ds.had.co.nz/model-basics.html" class="external-link">Learn more</a></li>
 </ul>
 </div>
 
@@ -308,8 +293,8 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
-<li><a href="https://github.com/tidyverse/modelr/actions" class="external-link"><img src="https://github.com/tidyverse/modelr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#superseded" class="external-link"><img src="https://img.shields.io/badge/lifecycle-superseded-blue.svg" alt="Lifecycle: superseded"></a></li>
+<li><a href="https://github.com/tidyverse/modelr/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/tidyverse/modelr/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://app.codecov.io/gh/tidyverse/modelr?branch=main" class="external-link"><img src="https://codecov.io/gh/tidyverse/modelr/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
