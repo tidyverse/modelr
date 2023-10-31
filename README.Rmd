@@ -10,7 +10,7 @@ set.seed(1014)
 # modelr <img src="man/figures/logo.png" align="right" />
 
 <!-- badges: start -->
-[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![Lifecycle: superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#superseded)
 [![R build status](https://github.com/tidyverse/modelr/workflows/R-CMD-check/badge.svg)](https://github.com/tidyverse/modelr/actions)
 [![Codecov test coverage](https://codecov.io/gh/tidyverse/modelr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/modelr?branch=main)
 <!-- badges: end -->
@@ -18,9 +18,9 @@ set.seed(1014)
 ## Overview
 
 The modelr package provides functions that help you create elegant pipelines when modelling. 
-It is designed primarily to support teaching the basics of modelling within the tidyverse, particularly in [R for Data Science](https://r4ds.had.co.nz/model-basics.html). 
+It was designed primarily to support teaching the basics of modelling for the 1st edition of [R for Data Science](https://r4ds.had.co.nz/model-basics.html). 
 
-Please see <https://www.tidymodels.org/> for a more comprehensive framework for modelling within the tidyverse.
+We no longer recommend it and instead suggest <https://www.tidymodels.org/> for a more comprehensive framework for modelling within the tidyverse.
 
 ## Installation
 
@@ -30,15 +30,7 @@ install.packages("tidyverse")
 
 # Alternatively, install just modelr:
 install.packages("modelr")
-
-# Or the development version from GitHub:
-# install.packages("devtools")
-devtools::install_github("tidyverse/modelr")
 ```
-
-## Status 
-
-modelr is stable: it has achieved its goal of making it easier to teach modelling within the tidyverse. For more general modelling tasks, check out the family of "tidymodel" packages like [recipes](https://topepo.github.io/recipes/), [rsample](https://topepo.github.io/rsample/), [parsnip](https://topepo.github.io/parsnip/), and [tidyposterior](https://topepo.github.io/tidyposterior/).
 
 ## Getting started
 
@@ -119,8 +111,3 @@ data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs)
 mtcars_mod <- lm(mpg ~ wt + cyl + vs, data = mtcars)
 data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs) %>% add_predictions(mtcars_mod)
 ```
-
-## Code of conduct
-
-Please note that this project is released with a [Contributor Code of Conduct](https://modelr.tidyverse.org/CODE_OF_CONDUCT.html).
-By participating in this project you agree to abide by its terms.
