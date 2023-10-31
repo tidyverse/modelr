@@ -11,7 +11,7 @@ set.seed(1014)
 
 <!-- badges: start -->
 [![Lifecycle: superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#superseded)
-[![R build status](https://github.com/tidyverse/modelr/workflows/R-CMD-check/badge.svg)](https://github.com/tidyverse/modelr/actions)
+[![R-CMD-check](https://github.com/tidyverse/modelr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/tidyverse/modelr/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/tidyverse/modelr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/modelr?branch=main)
 <!-- badges: end -->
 
