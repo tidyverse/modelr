@@ -4,9 +4,8 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R build
-status](https://github.com/tidyverse/modelr/workflows/R-CMD-check/badge.svg)](https://github.com/tidyverse/modelr/actions)
+superseded](https://img.shields.io/badge/lifecycle-superseded-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#superseded)
+[![R-CMD-check](https://github.com/tidyverse/modelr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/tidyverse/modelr/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/tidyverse/modelr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tidyverse/modelr?branch=main)
 <!-- badges: end -->
@@ -14,12 +13,13 @@ coverage](https://codecov.io/gh/tidyverse/modelr/branch/main/graph/badge.svg)](h
 ## Overview
 
 The modelr package provides functions that help you create elegant
-pipelines when modelling. It is designed primarily to support teaching
-the basics of modelling within the tidyverse, particularly in [R for
-Data Science](https://r4ds.had.co.nz/model-basics.html).
+pipelines when modelling. It was designed primarily to support teaching
+the basics of modelling for the 1st edition of [R for Data
+Science](https://r4ds.had.co.nz/model-basics.html).
 
-Please see <https://www.tidymodels.org/> for a more comprehensive
-framework for modelling within the tidyverse.
+We no longer recommend it and instead suggest
+<https://www.tidymodels.org/> for a more comprehensive framework for
+modelling within the tidyverse.
 
 ## Installation
 
@@ -29,21 +29,7 @@ install.packages("tidyverse")
 
 # Alternatively, install just modelr:
 install.packages("modelr")
-
-# Or the development version from GitHub:
-# install.packages("devtools")
-devtools::install_github("tidyverse/modelr")
 ```
-
-## Status
-
-modelr is stable: it has achieved its goal of making it easier to teach
-modelling within the tidyverse. For more general modelling tasks, check
-out the family of “tidymodel” packages like
-[recipes](https://topepo.github.io/recipes/),
-[rsample](https://topepo.github.io/rsample/),
-[parsnip](https://topepo.github.io/parsnip/), and
-[tidyposterior](https://topepo.github.io/tidyposterior/).
 
 ## Getting started
 
@@ -158,7 +144,7 @@ df %>% add_predictions(mod)
 #>  8 0.0586  5.98   3.36
 #>  9 0.0637  2.96   3.39
 #> 10 0.0652  3.54   3.40
-#> # … with 90 more rows
+#> # ℹ 90 more rows
 df %>% add_residuals(mod)
 #> # A tibble: 100 × 3
 #>          x     y   resid
@@ -173,7 +159,7 @@ df %>% add_residuals(mod)
 #>  8 0.0586  5.98   2.62  
 #>  9 0.0637  2.96  -0.428 
 #> 10 0.0652  3.54   0.146 
-#> # … with 90 more rows
+#> # ℹ 90 more rows
 ```
 
 For visualization purposes it is often useful to use an evenly spaced
@@ -194,7 +180,7 @@ data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs)
 #>  8  1.95     4     1
 #>  9  1.95     6     0
 #> 10  1.95     6     1
-#> # … with 50 more rows
+#> # ℹ 50 more rows
 
 # For continuous variables, seq_range is useful
 mtcars_mod <- lm(mpg ~ wt + cyl + vs, data = mtcars)
@@ -212,11 +198,5 @@ data_grid(mtcars, wt = seq_range(wt, 10), cyl, vs) %>% add_predictions(mtcars_mo
 #>  8  1.95     4     1  27.5
 #>  9  1.95     6     0  24.2
 #> 10  1.95     6     1  24.8
-#> # … with 50 more rows
+#> # ℹ 50 more rows
 ```
-
-## Code of conduct
-
-Please note that this project is released with a [Contributor Code of
-Conduct](https://modelr.tidyverse.org/CODE_OF_CONDUCT.html). By
-participating in this project you agree to abide by its terms.
